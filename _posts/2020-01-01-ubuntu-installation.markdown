@@ -146,7 +146,7 @@ img:  index.jpeg
 <!-- wp:embed {"url":"https://www.youtube.com/watch?v=TgDURedNZSs","type":"rich","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
 
 <!-- /wp:embed -->
-<iframe width="420" height="315"
+<iframe width="720" height="350"
 src="https://www.youtube.com/embed/TgDURedNZSs
 ">
 </iframe>
