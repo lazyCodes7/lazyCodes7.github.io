@@ -8,7 +8,7 @@ fig-caption: # Add figcaption (optional)
 tags: [Holidays, Hawaii]
 ---
 <!-- wp:image {"id":124,"width":1069,"height":594,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large is-resized"><img src="https://ub8home.files.wordpress.com/2020/03/networking-protocols.jpg?w=900" alt="" class="wp-image-124" width="1069" height="594"/></figure>
+
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
