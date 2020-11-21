@@ -10,7 +10,7 @@ img:  index.jpeg
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"large"} -->
-<p class="has-large-font-size">                                           A Guide On Ubuntu Installation</p>
+
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
