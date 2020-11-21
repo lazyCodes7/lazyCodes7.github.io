@@ -67,8 +67,7 @@ tags: [Holidays, Hawaii]
 <!-- /wp:jetpack/layout-grid-column -->
 
 <!-- wp:jetpack/layout-grid-column -->
-<div class="wp-block-jetpack-layout-grid-column wp-block-jetpack-layout-grid__padding-none"><!-- wp:image {"align":"wide","id":128,"sizeSlug":"large"} -->
-<figure class="wp-block-image alignwide size-large"><img src="https://ub8home.files.wordpress.com/2020/03/two-humans-sanding-bag-books-600w-1185881617.jpg?w=570" alt="" class="wp-image-128"/><figcaption>A boy and girl talking(they look similar though except for the skirt).</figcaption></figure>
+
 <!-- /wp:image -->
 
 <!-- wp:paragraph -->
