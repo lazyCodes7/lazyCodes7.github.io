@@ -144,11 +144,12 @@ img:  index.jpeg
 <!-- /wp:paragraph -->
 
 <!-- wp:embed {"url":"https://www.youtube.com/watch?v=TgDURedNZSs","type":"rich","providerNameSlug":"youtube","responsive":true,"className":"wp-embed-aspect-16-9 wp-has-aspect-ratio"} -->
-<figure class="wp-block-embed is-type-rich is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
-https://www.youtube.com/watch?v=TgDURedNZSs
-</div></figure>
-<!-- /wp:embed -->
 
+<!-- /wp:embed -->
+<iframe width="420" height="315"
+src="https://www.youtube.com/watch?v=TgDURedNZSs
+">
+</iframe>
 <!-- wp:paragraph -->
 <p>Now if you don’t want to do all that partitioning you can just click on Install Ubuntu and Ubuntu will do it’s work and all you have to do is wait!</p>
 <!-- /wp:paragraph -->
