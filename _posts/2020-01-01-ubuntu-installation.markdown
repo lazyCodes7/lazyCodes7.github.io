@@ -6,7 +6,7 @@ description: You’ll find this post in your `_posts` directory. Go ahead and ed
 img:  index.jpeg
 ---
 <!-- wp:image {"id":16,"sizeSlug":"large"} -->
-<figure class="wp-block-image size-large"><img src="https://ub8home.files.wordpress.com/2020/01/calm.jpg?w=750" alt=" A Guide On Ubuntu Installation" class="wp-image-16"/><figcaption>                                                                                              </figcaption></figure>
+
 <!-- /wp:image -->
 
 <!-- wp:paragraph {"fontSize":"large"} -->
@@ -34,7 +34,7 @@ img:  index.jpeg
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2>2. It is Free!</h2>
+<h3>2. It is Free!</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -42,7 +42,7 @@ img:  index.jpeg
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
-<h2>3.No AntiVirus.</h2>
+<h3>3.No AntiVirus.</h3>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
@@ -50,7 +50,7 @@ img:  index.jpeg
 <!-- /wp:paragraph -->
 
 <!-- wp:heading {"level":1} -->
-<h1>How To Install Ubuntu?</h1>
+<h2>How To Install Ubuntu?</h2>
 <!-- /wp:heading -->
 
 <!-- wp:paragraph -->
