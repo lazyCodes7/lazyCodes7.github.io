@@ -58,12 +58,11 @@ img:  index.jpeg
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Link for Installing Ubuntu</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:group -->
 <div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:paragraph -->
-<p><a href="https://ubuntu.com/download/desktop">https://ubuntu.com/download/desktop</a></p>
+<p><a href="https://ubuntu.com/download/desktop">Link For Installing Ubuntu</a></p>
 <!-- /wp:paragraph --></div></div>
 <!-- /wp:group -->
 
@@ -72,11 +71,10 @@ img:  index.jpeg
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p>Link for Installing Power ISO</p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
-<p><a href="https://www.poweriso.com/download.php">https://www.poweriso.com/download.php</a></p>
+<p><a href="https://www.poweriso.com/download.php">Link for Installing Power ISO</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:paragraph -->
@@ -91,12 +89,10 @@ img:  index.jpeg
 <p>For this you require a Pen Drive of course!<br>And for converting this into a live USB we will use an application called BalenaEtcher</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:paragraph -->
-<p>Link for Installing BalenaEtcher</p>
-<!-- /wp:paragraph -->
+
 
 <!-- wp:paragraph -->
-<p><a href="https://www.balena.io/etcher/">https://www.balena.io/etcher/</a></p>
+<p><a href="https://www.balena.io/etcher/">Link for Installing BalenaEtcher</a></p>
 <!-- /wp:paragraph -->
 
 <!-- wp:heading -->
