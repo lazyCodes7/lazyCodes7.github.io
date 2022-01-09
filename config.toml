@@ -1,4 +1,4 @@
-baseURL = "localhost"
+baseURL = "https://lazycodes7.github.io/"
 title = "rishab_m"
 theme = "hugo-coder"
 languageCode = "en"
