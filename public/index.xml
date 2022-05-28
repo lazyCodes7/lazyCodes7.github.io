@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rishab_m</title>
+    <link>https://lazycodes7.github.io/</link>
+    <description>Recent content on rishab_m</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 27 May 2022 14:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week-1 (Community Bonding) 20th May - 27th May</title>
+      <link>https://lazycodes7.github.io/posts/week1/</link>
+      <pubDate>Fri, 27 May 2022 14:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week1/</guid>
+      <description>Introduction    Hi new readers! I am Rishab Mudliar and I am currently in the final year of my Computer Science Major. This blog is part of a series dedicated to noting down my activities during the period of Google Summer of Code.
+GSoC    Google Summer of Code or the acronym GSoC is a program aimed at people in tech looking to contribute to open-source software development.</description>
+    </item>
+    
+    <item>
+      <title>Bertelsmann Scholarship</title>
+      <link>https://lazycodes7.github.io/posts/bertelsmann-scholarship/</link>
+      <pubDate>Tue, 23 Mar 2021 15:27:56 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/bertelsmann-scholarship/</guid>
+      <description>Today I wanted to talk about my experience about the &amp;ldquo;Bertelsmann Scholarship&amp;rdquo; via this post. I hope after reading this, more people will be interested in what I believe is a truly amazing program for learning something that might interest you!
+Beginnings    It all started when one of my friends recommending this to program back in November. The application had 3 choices &amp;ldquo;AI&amp;rdquo; or &amp;ldquo;Data&amp;rdquo; or &amp;ldquo;Cloud&amp;rdquo;. I decided to go with AI as I always wanted to try it out but didn&amp;rsquo;t have much knowledge about it.</description>
+    </item>
+    
+    <item>
+      <title>Networking Protocols</title>
+      <link>https://lazycodes7.github.io/posts/networking-protocols/</link>
+      <pubDate>Sat, 28 Mar 2020 14:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/networking-protocols/</guid>
+      <description>Protocols.    So what exactly are protocols? Protocols according to me are certain set of rules that we use to communicate with each other
+Why do we use Protocols ?    So in brief I explained about protocols but the next question is why do we need them.Let&amp;rsquo;s consider an example,say I am Thor and I wanna talk to some new avenger(Night Monkey) then first I need Night Monkey&amp;rsquo;s permission to talk(although I can just smash him with thunder and make him talk) and then Night Monkey will talk to Thor and so on a talk session starts.</description>
+    </item>
+    
+    <item>
+      <title>My first post!</title>
+      <link>https://lazycodes7.github.io/posts/first/</link>
+      <pubDate>Wed, 01 Jan 2020 14:27:35 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/first/</guid>
+      <description>My First Blog!    Hi there! I am Rishab Mudliar and coincidentally i am writing my first blog post on the first day of this year (I know this is a bad joke). I don&amp;rsquo;t know how bad this will be but i hope it&amp;rsquo;s not that bad that nobody understands..
+Why Ubuntu?    1. Ubuntu is user-friendly    Many computer users consider Linux-based systems hard to use and made for developers.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lazycodes7.github.io/about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lazycodes7.github.io/about/</guid>
+      <description>About me    Kansamida/Annyeonghaseyo! to whoever decided to visit me. I am Rishab Mudliar and currently I am in junior year of my Computer Science Undergrad. I spend most of my time building projects that solve real-life problems or doing hackathons:p
+What do I do    Well after exploring a lot of stuff during the 3yrs of my Computer Science Degree. Computer Vision is what I liked the most so I try to build projects in those domains.</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://lazycodes7.github.io/projects/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://lazycodes7.github.io/projects/</guid>
+      <description>Projects.    CoVID Related.      ShieldBot    Shield Bot curates tweets about vital resources like ICU beds, plasma oxygen and more
+You can contact the supplier through the links that the bot sends you
+Twitter
+  MaskAppeal    A computer vision based script that detects specific facial features from a video feed. It determines the of the person/persons in the video frame is wearing a face mask or not within milliseconds for each frame input and requires minimal computational resources for each iteration.</description>
+    </item>
+    
+  </channel>
+</rss>

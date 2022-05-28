@@ -13,7 +13,7 @@ enableEmoji = true
 
 [params]
 author = "Rishab Mudliar"
-description = "John Doe's personal website"
+description = "Rishab's personal website"
 keywords = "blog,developer,personal"
 info = ["Hackathon Junkie"]
 avatarURL = "/avatar.png"
