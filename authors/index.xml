@@ -1,1 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Authors on rishab_m</title><link>https://lazycodes7.github.io/authors/</link><description>Recent content in Authors on rishab_m</description><generator>Hugo -- gohugo.io</generator><language>en</language><atom:link href="https://lazycodes7.github.io/authors/index.xml" rel="self" type="application/rss+xml"/></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Authors on rishab_m</title>
+    <link>https://lazycodes7.github.io/authors/</link>
+    <description>Recent content in Authors on rishab_m</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 27 May 2022 14:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/authors/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Rishab Mudliar</title>
+      <link>https://lazycodes7.github.io/authors/rishab-mudliar/</link>
+      <pubDate>Fri, 27 May 2022 14:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/authors/rishab-mudliar/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
