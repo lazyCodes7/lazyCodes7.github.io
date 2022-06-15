@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google Summer of Code on rishab_m</title>
+    <link>https://lazycodes7.github.io/categories/google-summer-of-code/</link>
+    <description>Recent content in Google Summer of Code on rishab_m</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 04 Jun 2022 14:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/categories/google-summer-of-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week-2 (Community Bonding) 28th May - 4th June</title>
+      <link>https://lazycodes7.github.io/posts/week2/</link>
+      <pubDate>Sat, 04 Jun 2022 14:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week2/</guid>
+      <description>This week    CWRU Accounts    The first thing that happened this week was that we got our CWRU Gmail accounts.
+HPC Setup    After this it was time to setup CWRU&amp;rsquo;s HPC(High Performing Cluster). The steps for that are following.
+  First setup CWRU&amp;rsquo;s VPN by following the guide here. Make sure that Duo is setup as a 2FA option as each time a connection to the VPN occurs a subsequent push notification is sent to Duo Mobile.</description>
+    </item>
+    
+    <item>
+      <title>Week-1 (Community Bonding) 20th May - 27th May</title>
+      <link>https://lazycodes7.github.io/posts/week1/</link>
+      <pubDate>Fri, 27 May 2022 14:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week1/</guid>
+      <description>Introduction    Hi new readers! I am Rishab Mudliar and I am currently in the final year of my Computer Science Major. This blog is part of a series dedicated to noting down my activities during the period of Google Summer of Code.
+GSoC    Google Summer of Code or the acronym GSoC is a program aimed at people in tech looking to contribute to open-source software development.</description>
+    </item>
+    
+  </channel>
+</rss>
