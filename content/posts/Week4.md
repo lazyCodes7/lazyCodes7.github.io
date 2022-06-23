@@ -79,6 +79,12 @@ More on this can be found [here](https://colab.research.google.com/drive/1rHVdRM
 
 ## The Raw pipeline.
 
+### 1. Data Curation
+![curation](/curation.png)
+
+### 2. Tagging
+![architecture](/arch.png)
+
 
 # Next week
 Finalizing probably on what sources to take images from and what period.
