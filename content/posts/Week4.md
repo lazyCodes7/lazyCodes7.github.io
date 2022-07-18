@@ -13,7 +13,7 @@ series = []
 # This week
 The project kickoff
 
-Before the coding period began I had previously been working on classification of the Christian icons in the painting. But in order to do caption art, we needed a good source. So I had been collecting sources here. 
+Before the coding period began I had previously been working on classification of the Christian icons in the painting. But in order to caption art, we needed a good source. So I had been collecting sources here. 
 
 In order to get some idea on how to proceed with the sources collected I contacted my mentor Fred.
 

@@ -6,14 +6,24 @@
     <description>Recent content on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Jul 2022 14:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jul 2022 14:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week-7 (Coding Period) 4th July - 11th July</title>
+      <link>https://lazycodes7.github.io/posts/week7/</link>
+      <pubDate>Mon, 11 Jul 2022 14:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week7/</guid>
+      <description>This week This week I worked on curating data points from two sources i.e the Art Institute of Chicago and the Metropolitan Museum of Art.
+1. Art Institute of Chicago. The Art Institute of Chicago provides open access to around 50,000 artworks with rich metadata involved. By using the search tool provided by the Institute we have got around 1500 results that pertain to containing Christian content in them.</description>
+    </item>
+    
     <item>
       <title>Week-5&#43;6 (Coding Period) 19th June - 3rd July</title>
       <link>https://lazycodes7.github.io/posts/week5/</link>
       <pubDate>Sun, 03 Jul 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week5/</guid>
-      <description>This weekI continued my search for licensed souces and also found a really good site that provides API access/open access to museum metadata After compiling enough sources for 2 weeks I finally started the process for curation. Source 1 - The Web Gallery of ArtThe Web Gallery of Art provides access to 60,000 artworks in the form of a dataset. This source has also been used in other art-related datasets like SemArt and ArtDL.</description>
+      <description>This week I continued my search for licensed souces and also found a really good site that provides API access/open access to museum metadata After compiling enough sources for 2 weeks I finally started the process for curation. Source 1 - The Web Gallery of Art The Web Gallery of Art provides access to 60,000 artworks in the form of a dataset. This source has also been used in other art-related datasets like SemArt and ArtDL.</description>
     </item>
     
     <item>
@@ -22,10 +32,10 @@
       <pubDate>Sun, 19 Jun 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week4/</guid>
-      <description>This weekThe project kickoff
-Before the coding period began I had previously been working on classification of the Christian icons in the painting. But in order to do caption art, we needed a good source. So I had been collecting sources here.
+      <description>This week The project kickoff
+Before the coding period began I had previously been working on classification of the Christian icons in the painting. But in order to caption art, we needed a good source. So I had been collecting sources here.
 In order to get some idea on how to proceed with the sources collected I contacted my mentor Fred.
-Minutes of the meeting.Attendees - Fred, Marcelo, Rishab, Tiago</description>
+Minutes of the meeting. Attendees - Fred, Marcelo, Rishab, Tiago</description>
     </item>
     
     <item>
@@ -34,9 +44,9 @@ Minutes of the meeting.Attendees - Fred, Marcelo, Rishab, Tiago</description>
       <pubDate>Sun, 12 Jun 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week3/</guid>
-      <description>This weekThis week was mostly aimed towards meeting people from RedHenLab as well as our peers.
-Meeting #1Professor Mark organized a meeting consisting of mentors and contributors. The contributors were limited to the people Mark is mentoring. It was a normal discussion where people talked about the things they are doing where they are from etc.
-Meeting #2During the first meeting, Mark had informed me that Parth&amp;rsquo;s project and mine arise from a similar arena i.</description>
+      <description>This week This week was mostly aimed towards meeting people from RedHenLab as well as our peers.
+Meeting #1 Professor Mark organized a meeting consisting of mentors and contributors. The contributors were limited to the people Mark is mentoring. It was a normal discussion where people talked about the things they are doing where they are from etc.
+Meeting #2 During the first meeting, Mark had informed me that Parth&amp;rsquo;s project and mine arise from a similar arena i.</description>
     </item>
     
     <item>
@@ -45,8 +55,8 @@ Meeting #2During the first meeting, Mark had informed me that Parth&amp;rsquo;s
       <pubDate>Sat, 04 Jun 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week2/</guid>
-      <description>This weekCWRU AccountsThe first thing that happened this week was that we got our CWRU Gmail accounts.
-HPC SetupAfter this it was time to setup CWRU&amp;rsquo;s HPC(High Performing Cluster). The steps for that are following.
+      <description>This week CWRU Accounts The first thing that happened this week was that we got our CWRU Gmail accounts.
+HPC Setup After this it was time to setup CWRU&amp;rsquo;s HPC(High Performing Cluster). The steps for that are following.
 First setup CWRU&amp;rsquo;s VPN by following the guide here. Make sure that Duo is setup as a 2FA option as each time a connection to the VPN occurs a subsequent push notification is sent to Duo Mobile.</description>
     </item>
     
@@ -56,8 +66,8 @@ First setup CWRU&amp;rsquo;s VPN by following the guide here. Make sure that Duo
       <pubDate>Fri, 27 May 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week1/</guid>
-      <description>IntroductionHi new readers! I am Rishab Mudliar and I am currently in the final year of my Computer Science Major. This blog is part of a series dedicated to noting down my activities during the period of Google Summer of Code.
-GSoCGoogle Summer of Code or the acronym GSoC is a program aimed at people in tech looking to contribute to open-source software development. Selected contributors work for 12+ weeks on projects that solve interesting problems.</description>
+      <description>Introduction Hi new readers! I am Rishab Mudliar and I am currently in the final year of my Computer Science Major. This blog is part of a series dedicated to noting down my activities during the period of Google Summer of Code.
+GSoC Google Summer of Code or the acronym GSoC is a program aimed at people in tech looking to contribute to open-source software development. Selected contributors work for 12+ weeks on projects that solve interesting problems.</description>
     </item>
     
     <item>
@@ -67,7 +77,7 @@ GSoCGoogle Summer of Code or the acronym GSoC is a program aimed at people in t
       
       <guid>https://lazycodes7.github.io/posts/bertelsmann-scholarship/</guid>
       <description>Today I wanted to talk about my experience about the &amp;ldquo;Bertelsmann Scholarship&amp;rdquo; via this post. I hope after reading this, more people will be interested in what I believe is a truly amazing program for learning something that might interest you!
-BeginningsIt all started when one of my friends recommending this to program back in November. The application had 3 choices &amp;ldquo;AI&amp;rdquo; or &amp;ldquo;Data&amp;rdquo; or &amp;ldquo;Cloud&amp;rdquo;. I decided to go with AI as I always wanted to try it out but didn&amp;rsquo;t have much knowledge about it.</description>
+Beginnings It all started when one of my friends recommending this to program back in November. The application had 3 choices &amp;ldquo;AI&amp;rdquo; or &amp;ldquo;Data&amp;rdquo; or &amp;ldquo;Cloud&amp;rdquo;. I decided to go with AI as I always wanted to try it out but didn&amp;rsquo;t have much knowledge about it.</description>
     </item>
     
     <item>
@@ -76,8 +86,8 @@ BeginningsIt all started when one of my friends recommending this to program ba
       <pubDate>Sat, 28 Mar 2020 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/networking-protocols/</guid>
-      <description>Protocols.So what exactly are protocols? Protocols according to me are certain set of rules that we use to communicate with each other
-Why do we use Protocols ?So in brief I explained about protocols but the next question is why do we need them.Let&amp;rsquo;s consider an example,say I am Thor and I wanna talk to some new avenger(Night Monkey) then first I need Night Monkey&amp;rsquo;s permission to talk(although I can just smash him with thunder and make him talk) and then Night Monkey will talk to Thor and so on a talk session starts.</description>
+      <description>Protocols. So what exactly are protocols? Protocols according to me are certain set of rules that we use to communicate with each other
+Why do we use Protocols ? So in brief I explained about protocols but the next question is why do we need them.Let&amp;rsquo;s consider an example,say I am Thor and I wanna talk to some new avenger(Night Monkey) then first I need Night Monkey&amp;rsquo;s permission to talk(although I can just smash him with thunder and make him talk) and then Night Monkey will talk to Thor and so on a talk session starts.</description>
     </item>
     
     <item>
@@ -86,8 +96,8 @@ Why do we use Protocols ?So in brief I explained about protocols but the next q
       <pubDate>Wed, 01 Jan 2020 14:27:35 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/first/</guid>
-      <description>My First Blog!Hi there! I am Rishab Mudliar and coincidentally i am writing my first blog post on the first day of this year (I know this is a bad joke). I don&amp;rsquo;t know how bad this will be but i hope it&amp;rsquo;s not that bad that nobody understands..
-Why Ubuntu?1. Ubuntu is user-friendlyMany computer users consider Linux-based systems hard to use and made for developers. It’s a huge misconception and Ubuntu Linux acts as a perfect myth-buster.</description>
+      <description>My First Blog! Hi there! I am Rishab Mudliar and coincidentally i am writing my first blog post on the first day of this year (I know this is a bad joke). I don&amp;rsquo;t know how bad this will be but i hope it&amp;rsquo;s not that bad that nobody understands..
+Why Ubuntu? 1. Ubuntu is user-friendly Many computer users consider Linux-based systems hard to use and made for developers. It’s a huge misconception and Ubuntu Linux acts as a perfect myth-buster.</description>
     </item>
     
     <item>
@@ -96,8 +106,8 @@ Why Ubuntu?1. Ubuntu is user-friendlyMany computer users consider Linux-based 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://lazycodes7.github.io/about/</guid>
-      <description>About meKansamida/Annyeonghaseyo! to whoever decided to visit me. I am Rishab Mudliar and currently I am in junior year of my Computer Science Undergrad. I spend most of my time building projects that solve real-life problems or doing hackathons:p
-What do I doWell after exploring a lot of stuff during the 3yrs of my Computer Science Degree. Computer Vision is what I liked the most so I try to build projects in those domains.</description>
+      <description>About me Kansamida/Annyeonghaseyo! to whoever decided to visit me. I am Rishab Mudliar and currently I am in junior year of my Computer Science Undergrad. I spend most of my time building projects that solve real-life problems or doing hackathons:p
+What do I do Well after exploring a lot of stuff during the 3yrs of my Computer Science Degree. Computer Vision is what I liked the most so I try to build projects in those domains.</description>
     </item>
     
     <item>
@@ -106,10 +116,10 @@ What do I doWell after exploring a lot of stuff during the 3yrs of my Computer 
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
       <guid>https://lazycodes7.github.io/projects/</guid>
-      <description>Projects.CoVID Related.ShieldBotShield Bot curates tweets about vital resources like ICU beds, plasma oxygen and more
+      <description>Projects. CoVID Related. ShieldBot Shield Bot curates tweets about vital resources like ICU beds, plasma oxygen and more
 You can contact the supplier through the links that the bot sends you
 Twitter
-MaskAppealA computer vision based script that detects specific facial features from a video feed. It determines the of the person/persons in the video frame is wearing a face mask or not within milliseconds for each frame input and requires minimal computational resources for each iteration.</description>
+MaskAppeal A computer vision based script that detects specific facial features from a video feed. It determines the of the person/persons in the video frame is wearing a face mask or not within milliseconds for each frame input and requires minimal computational resources for each iteration.</description>
     </item>
     
   </channel>

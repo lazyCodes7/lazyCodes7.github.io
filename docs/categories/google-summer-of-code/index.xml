@@ -6,14 +6,24 @@
     <description>Recent content in Google Summer of Code on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 03 Jul 2022 14:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/categories/google-summer-of-code/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 11 Jul 2022 14:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/categories/google-summer-of-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week-7 (Coding Period) 4th July - 11th July</title>
+      <link>https://lazycodes7.github.io/posts/week7/</link>
+      <pubDate>Mon, 11 Jul 2022 14:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week7/</guid>
+      <description>This week This week I worked on curating data points from two sources i.e the Art Institute of Chicago and the Metropolitan Museum of Art.
+1. Art Institute of Chicago. The Art Institute of Chicago provides open access to around 50,000 artworks with rich metadata involved. By using the search tool provided by the Institute we have got around 1500 results that pertain to containing Christian content in them.</description>
+    </item>
+    
     <item>
       <title>Week-5&#43;6 (Coding Period) 19th June - 3rd July</title>
       <link>https://lazycodes7.github.io/posts/week5/</link>
       <pubDate>Sun, 03 Jul 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week5/</guid>
-      <description>This weekI continued my search for licensed souces and also found a really good site that provides API access/open access to museum metadata After compiling enough sources for 2 weeks I finally started the process for curation. Source 1 - The Web Gallery of ArtThe Web Gallery of Art provides access to 60,000 artworks in the form of a dataset. This source has also been used in other art-related datasets like SemArt and ArtDL.</description>
+      <description>This week I continued my search for licensed souces and also found a really good site that provides API access/open access to museum metadata After compiling enough sources for 2 weeks I finally started the process for curation. Source 1 - The Web Gallery of Art The Web Gallery of Art provides access to 60,000 artworks in the form of a dataset. This source has also been used in other art-related datasets like SemArt and ArtDL.</description>
     </item>
     
     <item>
@@ -22,10 +32,10 @@
       <pubDate>Sun, 19 Jun 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week4/</guid>
-      <description>This weekThe project kickoff
-Before the coding period began I had previously been working on classification of the Christian icons in the painting. But in order to do caption art, we needed a good source. So I had been collecting sources here.
+      <description>This week The project kickoff
+Before the coding period began I had previously been working on classification of the Christian icons in the painting. But in order to caption art, we needed a good source. So I had been collecting sources here.
 In order to get some idea on how to proceed with the sources collected I contacted my mentor Fred.
-Minutes of the meeting.Attendees - Fred, Marcelo, Rishab, Tiago</description>
+Minutes of the meeting. Attendees - Fred, Marcelo, Rishab, Tiago</description>
     </item>
     
     <item>
@@ -34,9 +44,9 @@ Minutes of the meeting.Attendees - Fred, Marcelo, Rishab, Tiago</description>
       <pubDate>Sun, 12 Jun 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week3/</guid>
-      <description>This weekThis week was mostly aimed towards meeting people from RedHenLab as well as our peers.
-Meeting #1Professor Mark organized a meeting consisting of mentors and contributors. The contributors were limited to the people Mark is mentoring. It was a normal discussion where people talked about the things they are doing where they are from etc.
-Meeting #2During the first meeting, Mark had informed me that Parth&amp;rsquo;s project and mine arise from a similar arena i.</description>
+      <description>This week This week was mostly aimed towards meeting people from RedHenLab as well as our peers.
+Meeting #1 Professor Mark organized a meeting consisting of mentors and contributors. The contributors were limited to the people Mark is mentoring. It was a normal discussion where people talked about the things they are doing where they are from etc.
+Meeting #2 During the first meeting, Mark had informed me that Parth&amp;rsquo;s project and mine arise from a similar arena i.</description>
     </item>
     
     <item>
@@ -45,8 +55,8 @@ Meeting #2During the first meeting, Mark had informed me that Parth&amp;rsquo;s
       <pubDate>Sat, 04 Jun 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week2/</guid>
-      <description>This weekCWRU AccountsThe first thing that happened this week was that we got our CWRU Gmail accounts.
-HPC SetupAfter this it was time to setup CWRU&amp;rsquo;s HPC(High Performing Cluster). The steps for that are following.
+      <description>This week CWRU Accounts The first thing that happened this week was that we got our CWRU Gmail accounts.
+HPC Setup After this it was time to setup CWRU&amp;rsquo;s HPC(High Performing Cluster). The steps for that are following.
 First setup CWRU&amp;rsquo;s VPN by following the guide here. Make sure that Duo is setup as a 2FA option as each time a connection to the VPN occurs a subsequent push notification is sent to Duo Mobile.</description>
     </item>
     
@@ -56,8 +66,8 @@ First setup CWRU&amp;rsquo;s VPN by following the guide here. Make sure that Duo
       <pubDate>Fri, 27 May 2022 14:56:36 +0530</pubDate>
       
       <guid>https://lazycodes7.github.io/posts/week1/</guid>
-      <description>IntroductionHi new readers! I am Rishab Mudliar and I am currently in the final year of my Computer Science Major. This blog is part of a series dedicated to noting down my activities during the period of Google Summer of Code.
-GSoCGoogle Summer of Code or the acronym GSoC is a program aimed at people in tech looking to contribute to open-source software development. Selected contributors work for 12+ weeks on projects that solve interesting problems.</description>
+      <description>Introduction Hi new readers! I am Rishab Mudliar and I am currently in the final year of my Computer Science Major. This blog is part of a series dedicated to noting down my activities during the period of Google Summer of Code.
+GSoC Google Summer of Code or the acronym GSoC is a program aimed at people in tech looking to contribute to open-source software development. Selected contributors work for 12+ weeks on projects that solve interesting problems.</description>
     </item>
     
   </channel>
