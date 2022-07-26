@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="Rishab Mudliar">
+<meta name="description" content="This week This week I spent curating data from two sources.
+1. Corpus Vitrearum. Corpus Vitrearum is a museum that has around 7000 stained glass artworks that are stored according to their iconclasses. By using various scraping techniques I scraped 2000 images that pertain to Christian iconographic content.
+During the curation process I am also logging some of the attributes from the metadata. The advantage of this is that it keeps the dataset open to more usecases.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Week-8 (Coding Period) 12th July - 19th July"/>
+<meta name="twitter:description" content="This week This week I spent curating data from two sources.
+1. Corpus Vitrearum. Corpus Vitrearum is a museum that has around 7000 stained glass artworks that are stored according to their iconclasses. By using various scraping techniques I scraped 2000 images that pertain to Christian iconographic content.
+During the curation process I am also logging some of the attributes from the metadata. The advantage of this is that it keeps the dataset open to more usecases."/>
+
+<meta property="og:title" content="Week-8 (Coding Period) 12th July - 19th July" />
+<meta property="og:description" content="This week This week I spent curating data from two sources.
+1. Corpus Vitrearum. Corpus Vitrearum is a museum that has around 7000 stained glass artworks that are stored according to their iconclasses. By using various scraping techniques I scraped 2000 images that pertain to Christian iconographic content.
+During the curation process I am also logging some of the attributes from the metadata. The advantage of this is that it keeps the dataset open to more usecases." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lazycodes7.github.io/posts/week8/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-07-18T14:56:36+05:30" />
+<meta property="article:modified_time" content="2022-07-18T14:56:36+05:30" />
+
+
+
+
+  <title>rishab_m</title>
+
+  
+  <link rel="canonical" href="https://lazycodes7.github.io/posts/week8/">
+  
+
+  <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.6b1a4fbc48955b72aea7913e43fabeb45e8bc120da5aa41b598dd33adcac4b59.css" integrity="sha256-axpPvEiVW3Kup5E&#43;Q/q&#43;tF6LwSDaWqQbWY3TOtysS1k=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css" integrity="sha256-OeQafxa9&#43;MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+   
+
+
+
+
+  <link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+  
+
+  <meta name="generator" content="Hugo 0.101.0" />
+
+
+  
+
+</head>
+
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      rishab_m
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://lazycodes7.github.io/posts/week8/">
+              Week-8 (Coding Period) 12th July - 19th July
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-07-18T14:56:36&#43;05:30">
+                July 18, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/rishab-mudliar/">Rishab Mudliar</a></div>
+
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/google-summer-of-code/">Google Summer of Code</a></div>
+
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="this-week">
+  This week
+  <a class="heading-link" href="#this-week">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<p>This week I spent curating data from two sources.</p>
+<h2 id="1-corpus-vitrearum">
+  1. Corpus Vitrearum.
+  <a class="heading-link" href="#1-corpus-vitrearum">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Corpus Vitrearum is a museum that has around 7000 stained glass artworks that are stored according to their iconclasses. By using various scraping techniques I scraped 2000 images that pertain to Christian iconographic content.</p>
+<p>During the curation process I am also logging some of the attributes from the metadata. The advantage of this is that it keeps the dataset open to more usecases.</p>
+<h3 id="filtering-the-artpieces">
+  Filtering the artpieces.
+  <a class="heading-link" href="#filtering-the-artpieces">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>The artpieces are a numerous but we are only focussing on two-dimensional versions like paintings, prints, stained-glass. Apart from that while Christian Icons might be a lot we only want to focus on saints, actors like Mary, Jesus etc.</p>
+<p>To accomplish the former we use the metadata itself and for the latter we use the labels from the <a href="https://test.iconclass.org">Iconclass</a> dataset.</p>
+<p>What we do is that we take the labels and we find keywords matching to the labels. Once we do it is considered a valid source.</p>
+<h3 id="results">
+  Results.
+  <a class="heading-link" href="#results">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p><img src="/corpus.jpg" alt="chicago-source"></p>
+<h2 id="2-national-gallery-of-art">
+  2. National Gallery of Art.
+  <a class="heading-link" href="#2-national-gallery-of-art">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>The <a href="https://www.metmuseum.org/art/collection">National Gallery of Art</a> provides open access to 130k images with metadata.</p>
+<h3 id="filtering-the-artpieces-1">
+  Filtering the artpieces.
+  <a class="heading-link" href="#filtering-the-artpieces-1">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>After retrieving these images we limit the amount of artworks we want.</p>
+<p>Hence the artworks are restricted to.</p>
+<ol>
+<li>Tempera</li>
+<li>Stained Glass</li>
+<li>Painting</li>
+<li>Oil Paintings</li>
+<li>Canvas</li>
+</ol>
+<p>After following the criteria the dataset provided by NGA reduces to 900 records</p>
+<h3 id="results-1">
+  Results.
+  <a class="heading-link" href="#results-1">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>The final results along with the metadata have been added.</p>
+<p><img src="/nga.jpg" alt="nga"></p>
+<h2 id="completion-of-curation">
+  Completion of curation.
+  <a class="heading-link" href="#completion-of-curation">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Over the past few weeks I spent a good amount of time understanding the types of paintings we are looking for and the types of descriptions. For instance if we consider an image of Mary we are looking for something that describes the emotions in the painting.</p>
+<p>Let&rsquo;s consider two paintings.</p>
+<p><img src="/mary.png" alt="mh"></p>
+<p>Now if we scraped an amateur title they both would probably say that Mary is with Jesus or something like there is Mary in this painting.</p>
+<p>But that doesn&rsquo;t capture what is really happening.</p>
+<p>After going through dozens of images what I have observed these are both different. In the first painting Mary is holding a baby version of Jesus and the second painting shows that Mary is sad as Jesus has died which is natural for a mother. When I started this project I would not have been able to identify these people but I think the captions that I was collecting built this intuition into me as a result of which I got better understanding of Christian Iconography and that&rsquo;s what the model should do as well and hence collecting good captions is important.</p>
+<p>So following this methodology</p>
+<p>I have curated images from 5 sources.</p>
+<ol>
+<li><a href="https://www.wga.hu/">Web Gallery of Art</a> - 5k images</li>
+<li><a href="https://www.artic.edu/collection">Art Institute of Chicago</a> - 500-700</li>
+<li><a href="https://www.metmuseum.org/">Met Art</a> - 500-700</li>
+<li><a href="https://corpusvitrearum.de/">Corpus Viteraeum</a> - 2k</li>
+<li><a href="https://www.nga.gov/">National Gallery of Art, Washington DC</a> - 4-5k(WIP)</li>
+</ol>
+<p>Which approximately sums up to 12-13k unfiltered images with metadata comprising.</p>
+<ol>
+<li>Title</li>
+<li>Medium</li>
+<li>Artist</li>
+<li>Creation Time</li>
+<li>Description(Contextual meaning basically)</li>
+</ol>
+<p>And forms of art mainly divided into</p>
+<ol>
+<li>Painting</li>
+<li>Print</li>
+<li>Stained glass</li>
+</ol>
+<p>And period belonging to renaissance except for some prints.</p>
+<h1 id="next-week">
+  Next week
+  <a class="heading-link" href="#next-week">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<p>Now that I have gotten a satisfactory amount of images the next step is to work on the image-captioning model</p>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2022
+     Rishab Mudliar 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+  
+  <script src="/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js" integrity="sha256-I2BJOV3DaC&#43;ycZZAhylY4S8fJAZ7sJwyeyM&#43;YpDH7aw="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
