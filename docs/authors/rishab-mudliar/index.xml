@@ -6,7 +6,17 @@
     <description>Recent content in Rishab Mudliar on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Jul 2022 14:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/authors/rishab-mudliar/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 26 Jul 2022 23:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/authors/rishab-mudliar/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week-10 (Phase-1 Report) 27th July - 4th August</title>
+      <link>https://lazycodes7.github.io/posts/week10/</link>
+      <pubDate>Tue, 26 Jul 2022 23:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week10/</guid>
+      <description>This week This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1
+The Modified Pipeline 1. Data Curation. 2. Image Captioning Model Changes I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold.</description>
+    </item>
+    
     <item>
       <title>Week-9 (Coding Period) 20th July - 27th July</title>
       <link>https://lazycodes7.github.io/posts/week9/</link>
