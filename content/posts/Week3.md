@@ -1,7 +1,7 @@
 +++ 
 draft = false
 date = 2022-06-12T14:56:36+05:30
-title = "Week-3 (Community Bonding) 5th June - 12th June"
+title = "Week-3 (Community Bonding) 3rd June - 10th June"
 description = "Orientation"
 slug = ""
 authors = ["Rishab Mudliar"]

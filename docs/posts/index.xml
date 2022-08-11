@@ -6,9 +6,27 @@
     <description>Recent content in Posts on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 26 Jul 2022 23:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 09 Aug 2022 23:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>Week-10 (Phase-1 Report) 27th July - 4th August</title>
+      <title>Week-12 (Coding Period) 4th August - 11th August</title>
+      <link>https://lazycodes7.github.io/posts/week12/</link>
+      <pubDate>Tue, 09 Aug 2022 23:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week12/</guid>
+      <description>This week Read a chapter exclusively on saints from The Gothic Image by Emile Male. Annotated 200 images + previous images with more attributes I learned from reading the book by Emile Male Paintings in context This whole time I had been curating images and trying to annotate them but after reading 70 pages of this book. It made things really clear for me so I think it will be great to explain how Christian Paintings really work.</description>
+    </item>
+    
+    <item>
+      <title>Week-11 (Coding Period) 29th July - 4th August</title>
+      <link>https://lazycodes7.github.io/posts/week11/</link>
+      <pubDate>Thu, 04 Aug 2022 23:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week11/</guid>
+      <description>This week Worked on moving my module to CaseHPC Tried perfecting F-RCNN for detecting saints and their attributes in paintings. Regarding CaseHPC One of the things I couldn&amp;rsquo;t do in the first phase of this program was to use Case Western&amp;rsquo;s HPC to train my models in general. So this week I decided to get my hands dirty and made my module work on one of the gpu nodes of Case HPC</description>
+    </item>
+    
+    <item>
+      <title>Week-10 (Phase-1 Report) 22nd July - 29th July</title>
       <link>https://lazycodes7.github.io/posts/week10/</link>
       <pubDate>Tue, 26 Jul 2022 23:56:36 +0530</pubDate>
       
@@ -18,7 +36,7 @@ The Modified Pipeline 1. Data Curation. 2. Image Captioning Model Changes I have
     </item>
     
     <item>
-      <title>Week-9 (Coding Period) 20th July - 27th July</title>
+      <title>Week-9 (Coding Period) 15th July - 22nd July</title>
       <link>https://lazycodes7.github.io/posts/week9/</link>
       <pubDate>Tue, 26 Jul 2022 14:56:36 +0530</pubDate>
       
@@ -28,7 +46,7 @@ Meeting 1 Since I was done with my curation I wanted some idea on how to proceed
     </item>
     
     <item>
-      <title>Week-8 (Coding Period) 12th July - 19th July</title>
+      <title>Week-8 (Coding Period) 8th July - 15th July</title>
       <link>https://lazycodes7.github.io/posts/week8/</link>
       <pubDate>Mon, 18 Jul 2022 14:56:36 +0530</pubDate>
       
@@ -39,7 +57,7 @@ During the curation process I am also logging some of the attributes from the me
     </item>
     
     <item>
-      <title>Week-7 (Coding Period) 4th July - 11th July</title>
+      <title>Week-7 (Coding Period) 1st July - 8th July</title>
       <link>https://lazycodes7.github.io/posts/week7/</link>
       <pubDate>Mon, 11 Jul 2022 14:56:36 +0530</pubDate>
       
@@ -49,7 +67,7 @@ During the curation process I am also logging some of the attributes from the me
     </item>
     
     <item>
-      <title>Week-5&#43;6 (Coding Period) 19th June - 3rd July</title>
+      <title>Week-5&#43;6 (Coding Period) 17th June - 1st July</title>
       <link>https://lazycodes7.github.io/posts/week5/</link>
       <pubDate>Sun, 03 Jul 2022 14:56:36 +0530</pubDate>
       
@@ -58,7 +76,7 @@ During the curation process I am also logging some of the attributes from the me
     </item>
     
     <item>
-      <title>Week-4 (Coding Period) 12th June - 19th June</title>
+      <title>Week-4 (Coding Period) 10th June - 17th June</title>
       <link>https://lazycodes7.github.io/posts/week4/</link>
       <pubDate>Sun, 19 Jun 2022 14:56:36 +0530</pubDate>
       
@@ -70,7 +88,7 @@ Minutes of the meeting. Attendees - Fred, Marcelo, Rishab, Tiago</description>
     </item>
     
     <item>
-      <title>Week-3 (Community Bonding) 5th June - 12th June</title>
+      <title>Week-3 (Community Bonding) 3rd June - 10th June</title>
       <link>https://lazycodes7.github.io/posts/week3/</link>
       <pubDate>Sun, 12 Jun 2022 14:56:36 +0530</pubDate>
       
@@ -81,7 +99,7 @@ Meeting #2 During the first meeting, Mark had informed me that Parth&amp;rsquo;s
     </item>
     
     <item>
-      <title>Week-2 (Community Bonding) 28th May - 4th June</title>
+      <title>Week-2 (Community Bonding) 27th May - 3th June</title>
       <link>https://lazycodes7.github.io/posts/week2/</link>
       <pubDate>Sat, 04 Jun 2022 14:56:36 +0530</pubDate>
       

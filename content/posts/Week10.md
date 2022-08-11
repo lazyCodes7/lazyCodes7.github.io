@@ -1,7 +1,7 @@
 +++ 
 draft = false
 date = 2022-07-26T23:56:36+05:30
-title = "Week-10 (Phase-1 Report) 27th July - 4th August"
+title = "Week-10 (Phase-1 Report) 22nd July - 29th July"
 slug = ""
 authors = ["Rishab Mudliar"]
 tags = []

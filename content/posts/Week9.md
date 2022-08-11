@@ -1,7 +1,7 @@
 +++ 
 draft = false
 date = 2022-07-26T14:56:36+05:30
-title = "Week-9 (Coding Period) 20th July - 27th July"
+title = "Week-9 (Coding Period) 15th July - 22nd July"
 slug = ""
 authors = ["Rishab Mudliar"]
 tags = []

@@ -1,7 +1,7 @@
 +++ 
 draft = false
 date = 2022-06-04T14:56:36+05:30
-title = "Week-2 (Community Bonding) 28th May - 4th June"
+title = "Week-2 (Community Bonding) 27th May - 3th June"
 description = "Setting up CWRU and HPC"
 slug = ""
 authors = ["Rishab Mudliar"]
