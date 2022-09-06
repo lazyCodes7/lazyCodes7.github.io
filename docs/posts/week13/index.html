@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="Rishab Mudliar">
+<meta name="description" content="This week Worked on using the captions I had collected during the curation stage I also build up a CNN&#43;LSTM model to see if we could achieve good captioning results without use of Transformers Approach towards using the text. A image captioning model makes use of both text and an image but interpreting text can be difficult. Normally to solve this we use word embeddings which give us an idea about the similarity between two or more words.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Week-13 (Coding Period) 11th August - 18th August"/>
+<meta name="twitter:description" content="This week Worked on using the captions I had collected during the curation stage I also build up a CNN&#43;LSTM model to see if we could achieve good captioning results without use of Transformers Approach towards using the text. A image captioning model makes use of both text and an image but interpreting text can be difficult. Normally to solve this we use word embeddings which give us an idea about the similarity between two or more words."/>
+
+<meta property="og:title" content="Week-13 (Coding Period) 11th August - 18th August" />
+<meta property="og:description" content="This week Worked on using the captions I had collected during the curation stage I also build up a CNN&#43;LSTM model to see if we could achieve good captioning results without use of Transformers Approach towards using the text. A image captioning model makes use of both text and an image but interpreting text can be difficult. Normally to solve this we use word embeddings which give us an idea about the similarity between two or more words." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lazycodes7.github.io/posts/week13/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-08-18T23:56:36+05:30" />
+<meta property="article:modified_time" content="2022-08-18T23:56:36+05:30" />
+
+
+
+
+  <title>rishab_m</title>
+
+  
+  <link rel="canonical" href="https://lazycodes7.github.io/posts/week13/">
+  
+
+  <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.6b1a4fbc48955b72aea7913e43fabeb45e8bc120da5aa41b598dd33adcac4b59.css" integrity="sha256-axpPvEiVW3Kup5E&#43;Q/q&#43;tF6LwSDaWqQbWY3TOtysS1k=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css" integrity="sha256-OeQafxa9&#43;MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+   
+
+
+
+
+  <link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+  
+
+  <meta name="generator" content="Hugo 0.102.3" />
+
+
+  
+
+</head>
+
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      rishab_m
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://lazycodes7.github.io/posts/week13/">
+              Week-13 (Coding Period) 11th August - 18th August
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-08-18T23:56:36&#43;05:30">
+                August 18, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              3-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/rishab-mudliar/">Rishab Mudliar</a></div>
+
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/google-summer-of-code/">Google Summer of Code</a></div>
+
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="this-week">
+  This week
+  <a class="heading-link" href="#this-week">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<ul>
+<li>Worked on using the captions I had collected during the curation stage</li>
+<li>I also build up a CNN+LSTM model to see if we could achieve good captioning results without use of Transformers</li>
+</ul>
+<h2 id="approach-towards-using-the-text">
+  Approach towards using the text.
+  <a class="heading-link" href="#approach-towards-using-the-text">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>A image captioning model makes use of both text and an image but interpreting text can be difficult. Normally to solve this we use word embeddings which give us an idea about the similarity between two or more words.</p>
+<p>In this week I focussed on training a word embedding model that could learn to associate the various agents in our painting. To give an idea if we have Mary then we should words like Virgin or Christ appear more nearer to her as Christ is her son and Virgin is a title associated with her.</p>
+<p>Here is the workflow for the same</p>
+<p><img src="/4.png" alt=""></p>
+<p>The idea is to train a Word2Vec model that will learn to interpret the text and give us some understandable representation of what we know about Christian Iconography. So for instance when I pass &lsquo;John The Baptist&rsquo; to my word2vec model it should predict some words like Mary, Christ being the closest words according to Christian Iconography.</p>
+<p>Here are some preliminary results of the training. I have used gensim&rsquo;s word2vec implementation for training on the corpus</p>
+<h3 id="1-virgin-mary">
+  1. Virgin Mary
+  <a class="heading-link" href="#1-virgin-mary">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p><img src="/6.png" alt=""></p>
+<h3 id="2-saint-sebastian">
+  2. Saint Sebastian
+  <a class="heading-link" href="#2-saint-sebastian">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p><img src="/7.png" alt=""></p>
+<h3 id="3-representation-of-the-words-as-vectors">
+  3. Representation of the words as vectors
+  <a class="heading-link" href="#3-representation-of-the-words-as-vectors">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p><img src="/5.png" alt=""></p>
+<h2 id="building-a-captioning-model">
+  Building a captioning model
+  <a class="heading-link" href="#building-a-captioning-model">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Since past few years, captioning models generally use an encoder-decoder strategy where the encoder is a CNN and the decoder is an LSTM. Since I had implemented these parts I felt it would be good to test out this strategy and see if I could build something without using a Transformer.</p>
+<p>The workflow of this model generated from the overall workflow of my captioning module</p>
+<p><img src="/captioner.png" alt=""></p>
+<p>I trained this model for 10 epochs and the loss reduced steadily till 0.4. Following are some of the captions generated using this strategy.</p>
+<h3 id="example1">
+  Example1
+  <a class="heading-link" href="#example1">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p><img src="/11.png" alt=""></p>
+<h3 id="example2">
+  Example2
+  <a class="heading-link" href="#example2">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p><img src="/12.png" alt=""></p>
+<p>If we observe, the captions generated are far from perfect.</p>
+<p>Another interesting thing happening with the model I trained.</p>
+<p>For a lot of the images the caption is as following <code>the holy family with st john the baptist</code>. I am not sure why this was as the loss was constantly decreasing. I think it might have something to do with word2vec as it misses out on contextual understanding of words and tries to represent each word with a fixed vector.</p>
+<p>To give an example if word <code>bank</code> has a certain representation in word2vec then two statements <code>river bank</code> and <code>bank robbery</code> might have almost same representation</p>
+<h2 id="meeting">
+  Meeting
+  <a class="heading-link" href="#meeting">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Based on last week&rsquo;s discussion I was supposed to show how I was planning to use text in my model. So I showcased the results of this blog. I got some suggestions regarding using language models that are trained on a large corpus (gpt2 for eg). I was also suggested to use sections from Emile Male&rsquo;s book as corpus to improve the performance of my model. Apart from that I was instructed to showcase a demo of the captioning process for next week</p>
+<h1 id="next-week">
+  Next week
+  <a class="heading-link" href="#next-week">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<ul>
+<li>Exploring some language models like GPT2, BeRT</li>
+<li>Also finishing the captioning module for demo</li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2022
+     Rishab Mudliar 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+  
+  <script src="/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js" integrity="sha256-I2BJOV3DaC&#43;ycZZAhylY4S8fJAZ7sJwyeyM&#43;YpDH7aw="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>
