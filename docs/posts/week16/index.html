@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="Rishab Mudliar">
+<meta name="description" content="This week Deployed the pipeline to Case HPC Documented and commented the codebase Current progress of the pipeline Stage 1: Curation After working on collecting paintings related to Christian Iconography for 3-4 weeks. The final version of the dataset consists of approximately 9.6k data points.
+Museums Web Gallery of Art - 5k images Art Institute of Chicago - 500-700 Met Art - 500-700 Corpus Viteraeum - 2k National Gallery of Art, Washington DC - 1k-2k Artforms.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Week-16 (Coding Period) 2nd September - 11th September"/>
+<meta name="twitter:description" content="This week Deployed the pipeline to Case HPC Documented and commented the codebase Current progress of the pipeline Stage 1: Curation After working on collecting paintings related to Christian Iconography for 3-4 weeks. The final version of the dataset consists of approximately 9.6k data points.
+Museums Web Gallery of Art - 5k images Art Institute of Chicago - 500-700 Met Art - 500-700 Corpus Viteraeum - 2k National Gallery of Art, Washington DC - 1k-2k Artforms."/>
+
+<meta property="og:title" content="Week-16 (Coding Period) 2nd September - 11th September" />
+<meta property="og:description" content="This week Deployed the pipeline to Case HPC Documented and commented the codebase Current progress of the pipeline Stage 1: Curation After working on collecting paintings related to Christian Iconography for 3-4 weeks. The final version of the dataset consists of approximately 9.6k data points.
+Museums Web Gallery of Art - 5k images Art Institute of Chicago - 500-700 Met Art - 500-700 Corpus Viteraeum - 2k National Gallery of Art, Washington DC - 1k-2k Artforms." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lazycodes7.github.io/posts/week16/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-09-09T23:56:36+05:30" />
+<meta property="article:modified_time" content="2022-09-09T23:56:36+05:30" />
+
+
+
+
+  <title>rishab_m</title>
+
+  
+  <link rel="canonical" href="https://lazycodes7.github.io/posts/week16/">
+  
+
+  <link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.6b1a4fbc48955b72aea7913e43fabeb45e8bc120da5aa41b598dd33adcac4b59.css" integrity="sha256-axpPvEiVW3Kup5E&#43;Q/q&#43;tF6LwSDaWqQbWY3TOtysS1k=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+  
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.39e41a7f16bdf8cb16e43cae7d714fa1016f1d2d2898a5b3f27f42c9979204e2.css" integrity="sha256-OeQafxa9&#43;MsW5DyufXFPoQFvHS0omKWz8n9CyZeSBOI=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+   
+
+
+
+
+  <link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+  
+
+  <meta name="generator" content="Hugo 0.102.3" />
+
+
+  
+
+</head>
+
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      rishab_m
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">Blog</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container post">
+    <article>
+      <header>
+        <div class="post-title">
+          <h1 class="title">
+            <a class="title-link" href="https://lazycodes7.github.io/posts/week16/">
+              Week-16 (Coding Period) 2nd September - 11th September
+            </a>
+          </h1>
+        </div>
+        <div class="post-meta">
+          <div class="date">
+            <span class="posted-on">
+              <i class="fa fa-calendar" aria-hidden="true"></i>
+              <time datetime="2022-09-09T23:56:36&#43;05:30">
+                September 9, 2022
+              </time>
+            </span>
+            <span class="reading-time">
+              <i class="fa fa-clock-o" aria-hidden="true"></i>
+              6-minute read
+            </span>
+          </div>
+          <div class="authors">
+  <i class="fa fa-user" aria-hidden="true"></i>
+    <a href="/authors/rishab-mudliar/">Rishab Mudliar</a></div>
+
+          <div class="categories">
+  <i class="fa fa-folder" aria-hidden="true"></i>
+    <a href="/categories/google-summer-of-code/">Google Summer of Code</a></div>
+
+          
+        </div>
+      </header>
+
+      <div>
+        
+        <h1 id="this-week">
+  This week
+  <a class="heading-link" href="#this-week">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h1>
+<ul>
+<li>Deployed the pipeline to Case HPC</li>
+<li>Documented and commented the codebase</li>
+</ul>
+<h2 id="current-progress-of-the-pipeline">
+  Current progress of the pipeline
+  <a class="heading-link" href="#current-progress-of-the-pipeline">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p><img src="/final_pipeline.png" alt=""></p>
+<h3 id="stage-1-curation">
+  Stage 1: Curation
+  <a class="heading-link" href="#stage-1-curation">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>After working on collecting paintings related to Christian Iconography for 3-4 weeks. The final version of the dataset consists of approximately 9.6k data points.</p>
+<h4 id="museums">
+  Museums
+  <a class="heading-link" href="#museums">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<ol>
+<li><a href="https://www.wga.hu/">Web Gallery of Art</a> - 5k images</li>
+<li><a href="https://www.artic.edu/collection">Art Institute of Chicago</a> - 500-700</li>
+<li><a href="https://www.metmuseum.org/">Met Art</a> - 500-700</li>
+<li><a href="https://corpusvitrearum.de/">Corpus Viteraeum</a> - 2k</li>
+<li><a href="https://www.nga.gov/">National Gallery of Art, Washington DC</a> - 1k-2k</li>
+</ol>
+<h4 id="artforms">
+  Artforms.
+  <a class="heading-link" href="#artforms">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<ol>
+<li>Painting</li>
+<li>Print</li>
+<li>Stained glass</li>
+</ol>
+<h4 id="metadata">
+  Metadata.
+  <a class="heading-link" href="#metadata">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<ol>
+<li>Title</li>
+<li>Medium</li>
+<li>Artist</li>
+<li>Creation Time</li>
+<li>Description(Contextual meaning basically)</li>
+</ol>
+<p>Note: The paintings itself are largely unfiltered.</p>
+<p>Download the dataset and corresponding metadata <a href="https://drive.google.com/drive/folders/1a1vUdRYvFHzw3xs_Y1Yxfe_tanLogWBj?usp=sharing">here</a></p>
+<p>You can also generate the dataset from scratch by using the curation module from my <a href="https://github.com/lazyCodes7/RedHenLab_Multimodal_Christian_Art_Tagging">repository</a></p>
+<h3 id="stage-2-extracting-features">
+  Stage 2: Extracting features.
+  <a class="heading-link" href="#stage-2-extracting-features">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<p>The Transformer model that I proposed requires a set of tokens/patches as input. In order to accomplish this I tried out two ways.</p>
+<h4 id="using-frcnn">
+  Using FRCNN
+  <a class="heading-link" href="#using-frcnn">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>The first method that I tried out was using an object-detection model for extracting certain ROIs in the image. For this I again worked on generating a dataset consisting of around 500-600 images and further increased to 1200 images by applying data augmentation.</p>
+<p>Following are the classes employed.</p>
+<ul>
+<li>Angel</li>
+<li>Arrow</li>
+<li>Baby</li>
+<li>Book</li>
+<li>Christ</li>
+<li>Cross</li>
+<li>Crown</li>
+<li>Cup</li>
+<li>Flower</li>
+<li>Fruit</li>
+<li>Horse</li>
+<li>Instrument</li>
+<li>Key</li>
+<li>Lamb</li>
+<li>Lion</li>
+<li>Mary</li>
+<li>Pen</li>
+<li>Saint</li>
+<li>Skull</li>
+<li>Staff</li>
+<li>Sword</li>
+</ul>
+<h5 id="performance">
+  Performance
+  <a class="heading-link" href="#performance">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p>16.3%
+mAP</p>
+<p>71.8%
+precision</p>
+<p>14.3%
+recall</p>
+<h5 id="training-curves">
+  Training curves
+  <a class="heading-link" href="#training-curves">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p><img src="/results_frcnn.png" alt="results"></p>
+<h5 id="examples">
+  Examples
+  <a class="heading-link" href="#examples">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p><img src="/frcnn_outputs.jpg" alt="example"></p>
+<h4 id="using-vit">
+  Using ViT
+  <a class="heading-link" href="#using-vit">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>One of the problems with using object-detection for feature extraction is that we need some datasets as a pre-requisite. While this is possible in case of real-life objects it is difficult when tackling paintings as there are not much datasets. Hence using ViT is a newer way to extract features. I have also mentioned why I have done this in my <a href="https://lazycodes7.github.io/posts/week14/">blog</a></p>
+<h5 id="training-vit">
+  Training ViT
+  <a class="heading-link" href="#training-vit">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p>While we can use pretrained ViT trained on datasets like ImageNet. The performance could improve if we trained it on a dataset in similar domain. Hence I decided to train the ViT on the ArtDL Dataset</p>
+<p>ArtDL dataset is a recent dataset related to classification of saints in the paintings. It has over 45k data points spanning over 19 classes.</p>
+<p>My approach towards using the ArtDL dataset was to reduce the problem a more simpler one. Given we are looking at a painting can we know whether the painting has mary a male saint or a female saint in it. By using this approach I reduced the problem to a 3-class multi-classification problem.</p>
+<h4 id="performance-1">
+  Performance
+  <a class="heading-link" href="#performance-1">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>Epochs - 10</p>
+<ul>
+<li>Mary Accuracy - 75%</li>
+<li>Female Saint Accuracy - 95%</li>
+<li>Male Saint Accuracy - 95%</li>
+</ul>
+<p>Note - In the dataset the instances of Male and Female Saints are less and hence there is a class imbalance that needs to be fixed. Due to those reasons we can&rsquo;t really think of 95% accuracy in both cases as the actual result. I would have to do more work on these two classes to get robust results.</p>
+<h3 id="stage-3---captioning">
+  Stage 3 - Captioning
+  <a class="heading-link" href="#stage-3---captioning">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h3>
+<h4 id="final-architecture">
+  Final architecture
+  <a class="heading-link" href="#final-architecture">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p><img src="/final_model.png" alt="arch">
+In the past few weeks I had tried out different language models and  feature extraction models. For the finally architecture I have fixated on using ViT as my feature extractor and GPT2 as my language model/decoder. In this the feature extraction module is pretrained on the ArtDL dataset while the GPT2 is finetuned. We can also train GPT2 individually on a corpus related to this topic but I have got considerably good results even without this and hence for now I haven&rsquo;t tried out this approach.</p>
+<h4 id="performance-of-the-model">
+  Performance of the model
+  <a class="heading-link" href="#performance-of-the-model">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<table>
+<thead>
+<tr>
+<th>BLEU-1</th>
+<th>BLEU-2</th>
+<th>BLEU-3</th>
+<th>BLEU-4</th>
+<th>METEOR</th>
+<th>ROUGE-L</th>
+<th>CIDER</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.314</td>
+<td>0.172</td>
+<td>0.101</td>
+<td>0.052</td>
+<td>0.141</td>
+<td>0.312</td>
+<td>0.068</td>
+</tr>
+</tbody>
+</table>
+<p>Since we don&rsquo;t have other datasets or models on this. This can be thought of as the current-benchmark for this architecture. In future this will be updated accordingly as I try out more approaches towards captioning</p>
+<h4 id="example">
+  Example
+  <a class="heading-link" href="#example">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h4>
+<p>Here is an example that I had shown during the demo of my pipeline.</p>
+<p><img src="/christ.jpg" alt="christ"></p>
+<h5 id="using-prompts">
+  Using prompts
+  <a class="heading-link" href="#using-prompts">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h5>
+<p>In order to generate captions the model I have built uses prompts. A prompt is a simple thing like &ldquo;What is in this painting&rdquo; , &ldquo;Caption this painting&rdquo;. Since GPT2 is very useful for text generation I have modified the dataset in a way that each title/caption has some random prompt associated with and so during inference we pass in the image and a random prompt to generate the caption.</p>
+<p>So in context with the image I have used, these are the prompts and the results.</p>
+<p>Describe the painting.</p>
+<p>Answer - Christ on the Cross</p>
+<p>What symbols do you notice in the artwork?</p>
+<p>Answer - Virgin Mary</p>
+<p>Describe the icons in the painting</p>
+<p>Answer - Saint John</p>
+<p>And this is the actual title that was not passed during inference
+Christ on the Cross with the Virgin, Saint John the Evangelist, and Saint Catherine of Siena in Adoration</p>
+<p>While the model is not absolutely perfect it is still able to generate some meaningful inference from the painting by using an image + prompt</p>
+<p>And here are the defined prompts I used during training</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>Describe the painting.
+</span></span><span style="display:flex;"><span>What’s going on in this artwork?
+</span></span><span style="display:flex;"><span>What title would you give this artwork?
+</span></span><span style="display:flex;"><span>What symbols do you notice in the artwork?
+</span></span><span style="display:flex;"><span>What is the subject matter
+</span></span><span style="display:flex;"><span>Describe the agents in painting
+</span></span><span style="display:flex;"><span>Describe the icons in painting
+</span></span><span style="display:flex;"><span>Best title for this painting
+</span></span><span style="display:flex;"><span>Caption this painting
+</span></span><span style="display:flex;"><span>Describe the artwork
+</span></span><span style="display:flex;"><span>What is this painting about
+</span></span><span style="display:flex;"><span>&#34; &#34;
+</span></span></code></pre></div><h2 id="future-plans">
+  Future plans
+  <a class="heading-link" href="#future-plans">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>Looking back I feel like I have accomplished a lot of things in a domain that has not been explored much but since this is a new thing we can always do more.</p>
+<ul>
+<li>
+<p>The first thing I want to continue work on is to generate more detailed descriptions of the paintings. So it should not just caption the agents in the paintings but should also describe properly what the agents might be doing and some story that we don&rsquo;t know of. This is a relatively difficult task to take I am still working on. The progress can be viewed in this notebook.</p>
+</li>
+<li>
+<p>Next step is to leverage both images and text in the Emile Male Pipeline. While my captioning model uses both of these by fusing the modalities during training. We don&rsquo;t use these captions during inference and the only text we rely on are the prompts. In order to improve this I have tried to work on using the titles for generating captions that tell us about the finer details. This is what the first point also stresses upon.</p>
+</li>
+<li>
+<p>Another idea I am thinking of is to build a search tool for enthusiasts in Christian Iconography. The idea is that the user will send in a title and the model could retrieve images similar to it. I feel that this would be a really useful thing for people just getting started with Iconography.</p>
+</li>
+</ul>
+<h2 id="the-code">
+  The code
+  <a class="heading-link" href="#the-code">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>The results, implementation of the methods discussed can be found <a href="https://github.com/lazyCodes7/RedHenLab_Multimodal_Christian_Art_Tagging">here</a></p>
+<h2 id="deploying-the-pipeline">
+  Deploying the pipeline
+  <a class="heading-link" href="#deploying-the-pipeline">
+    <i class="fa fa-link" aria-hidden="true"></i>
+  </a>
+</h2>
+<p>The pipeline is built in a modular way but they all combine together to form the Emile Male pipeline which is ready to be used on the Case HPC. Know more on how to do this in my <a href="https://github.com/lazyCodes7/RedHenLab_Multimodal_Christian_Art_Tagging#readme">README</a></p>
+<ul>
+<li></li>
+</ul>
+
+      </div>
+
+
+      <footer>
+        
+
+
+        
+        
+        
+      </footer>
+    </article>
+
+    
+  </section>
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2022
+     Rishab Mudliar 
+    ·
+    
+    Powered by <a href="https://gohugo.io/">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+  
+  <script src="/js/coder.min.236049395dc3682fb2719640872958e12f1f24067bb09c327b233e6290c7edac.js" integrity="sha256-I2BJOV3DaC&#43;ycZZAhylY4S8fJAZ7sJwyeyM&#43;YpDH7aw="></script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

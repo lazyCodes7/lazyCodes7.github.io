@@ -6,7 +6,36 @@
     <description>Recent content in Google Summer of Code on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Thu, 18 Aug 2022 23:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/categories/google-summer-of-code/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 09 Sep 2022 23:56:36 +0530</lastBuildDate><atom:link href="https://lazycodes7.github.io/categories/google-summer-of-code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Week-16 (Coding Period) 2nd September - 11th September</title>
+      <link>https://lazycodes7.github.io/posts/week16/</link>
+      <pubDate>Fri, 09 Sep 2022 23:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week16/</guid>
+      <description>This week Deployed the pipeline to Case HPC Documented and commented the codebase Current progress of the pipeline Stage 1: Curation After working on collecting paintings related to Christian Iconography for 3-4 weeks. The final version of the dataset consists of approximately 9.6k data points.
+Museums Web Gallery of Art - 5k images Art Institute of Chicago - 500-700 Met Art - 500-700 Corpus Viteraeum - 2k National Gallery of Art, Washington DC - 1k-2k Artforms.</description>
+    </item>
+    
+    <item>
+      <title>Week-15 (Coding Period) 25th August - 2nd September</title>
+      <link>https://lazycodes7.github.io/posts/week15/</link>
+      <pubDate>Fri, 02 Sep 2022 23:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week15/</guid>
+      <description>This week Implemented the transformer model for captioning task Presented the demo of the pipeline to the mentors Changing the dataset(torch.Dataset instance i.e) Earlier the dataset instance of PyTorch that I was using was simple. Whenever I referred an index it would return the image and numericalized version of the caption. But I wanted to use GPT2 for what it is good for. Hint: Text generation. So I changed the captions by providing a prompt as a token.</description>
+    </item>
+    
+    <item>
+      <title>Week-14 (Coding Period) 18th August - 25th August</title>
+      <link>https://lazycodes7.github.io/posts/week14/</link>
+      <pubDate>Thu, 25 Aug 2022 23:56:36 +0530</pubDate>
+      
+      <guid>https://lazycodes7.github.io/posts/week14/</guid>
+      <description>This week Used a transformer based model to work on the captioning task A Transformer that uses images + text During the last week&amp;rsquo;s meeting I had concluded that using models like Word2Vec might not always work as they have a fixed representation of each word but words can differ contextually so this week I decided to use some better language models like GPT2 and BERT.
+VisionEncoderDecoder For incorporating transformer I used huggingface&amp;rsquo;s VisionEncoderDecoder implementation which helps us in initializing any vision-transformer(ViT, BEiT etc) based model as the encoder and a language model(GPT2, BERT, RoBERTa etc) as the decoder.</description>
+    </item>
+    
     <item>
       <title>Week-13 (Coding Period) 11th August - 18th August</title>
       <link>https://lazycodes7.github.io/posts/week13/</link>
