@@ -15,8 +15,8 @@ enableEmoji = true
 author = "Rishab Mudliar"
 description = "Rishab's personal website"
 keywords = "blog,developer,personal"
-info = ["Hackathon Junkie"]
-avatarURL = "/avatar.png"
+info = ["Excessively using neural networks to solve some/lot of problems"]
+avatarURL = "/me.jpeg"
 
 #gravatar = "themes/hugo-coder/images/rm.png"
 favicon_32 = "/images/rm.png"
@@ -130,9 +130,14 @@ weight = 1
 url = "about/"
 
 [[languages.en.menu.main]]
-name = "Blog"
+name = "GSoC"
 weight = 2
 url = "posts/"
+
+[[languages.en.menu.main]]
+name = "Blogs"
+weight = 2
+url = "blogs/"
 
 [[languages.en.menu.main]]
 name = "Projects"
