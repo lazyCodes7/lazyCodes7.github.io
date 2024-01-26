@@ -6,8 +6,22 @@
     <description>Recent content in Blogs on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 23 Mar 2021 15:27:56 +0530</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jan 2023 15:27:56 +0530</lastBuildDate>
     <atom:link href="https://lazycodes7.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS236 Deep Generative Models (Part2)</title>
+      <link>https://lazycodes7.github.io/blogs/cs236_2/</link>
+      <pubDate>Tue, 24 Jan 2023 15:27:56 +0530</pubDate>
+      <guid>https://lazycodes7.github.io/blogs/cs236_2/</guid>
+      <description>About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.&#xA;Part 2 Link to heading Learning a generative model Link to heading In the last part we defined a statistical generative model represented as p(x) that lets us sample from this distribution to generate new images. But p(x) is unknown.&#xA;How do we learn it?&#xA;Before I go into it, we would be going into a lot of probablity terminologies that we will see.</description>
+    </item>
+    <item>
+      <title>CS236 Deep Generative Models (Part1)</title>
+      <link>https://lazycodes7.github.io/blogs/cs236_1/</link>
+      <pubDate>Thu, 19 Jan 2023 15:27:56 +0530</pubDate>
+      <guid>https://lazycodes7.github.io/blogs/cs236_1/</guid>
+      <description>About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.&#xA;Part 1 Link to heading Generative Modelling Link to heading Generative modelling is a way to model/sample data that looks like something we might know.&#xA;I am going to put more weight on the last part as it is important to generate something that makes sense. For instance, a machine learning model that generates &amp;lsquo;qweefejfww&amp;rsquo; (random jargon) will not be of any use to us.</description>
+    </item>
     <item>
       <title>Bertelsmann Scholarship</title>
       <link>https://lazycodes7.github.io/blogs/bertelsmann-scholarship/</link>
