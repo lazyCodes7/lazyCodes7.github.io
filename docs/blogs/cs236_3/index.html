@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  CS236 Deep Generative Models (Part3) · rishab_m
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="Rishab Mudliar">
+<meta name="description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap: Learning a generative model Link to heading Recall that we want to learn a probability distribution p(x) over images x such that sampling from this distribution gives us new images. In the last part we dived deeper into probability distributions. Finally we saw ways to learn a probability distrubution for a discriminative model using techniques like logistic regression or neural models.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CS236 Deep Generative Models (Part3)"/>
+<meta name="twitter:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap: Learning a generative model Link to heading Recall that we want to learn a probability distribution p(x) over images x such that sampling from this distribution gives us new images. In the last part we dived deeper into probability distributions. Finally we saw ways to learn a probability distrubution for a discriminative model using techniques like logistic regression or neural models."/>
+
+<meta property="og:title" content="CS236 Deep Generative Models (Part3)" />
+<meta property="og:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap: Learning a generative model Link to heading Recall that we want to learn a probability distribution p(x) over images x such that sampling from this distribution gives us new images. In the last part we dived deeper into probability distributions. Finally we saw ways to learn a probability distrubution for a discriminative model using techniques like logistic regression or neural models." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lazycodes7.github.io/blogs/cs236_3/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2023-01-26T15:27:56+05:30" />
+<meta property="article:modified_time" content="2023-01-26T15:27:56+05:30" />
+
+
+
+
+
+<link rel="canonical" href="https://lazycodes7.github.io/blogs/cs236_3/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      rishab_m
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/blogs/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">GSoC</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://lazycodes7.github.io/blogs/cs236_3/">
+          CS236 Deep Generative Models (Part3)
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="about">
+  About
+  <a class="heading-link" href="#about">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.</p>
+<h2 id="recap-learning-a-generative-model">
+  Recap: Learning a generative model
+  <a class="heading-link" href="#recap-learning-a-generative-model">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>Recall that we want to learn a probability distribution p(x) over images x such that sampling from this distribution gives us new images. In the last part we dived deeper into probability distributions. Finally we saw ways to learn a probability distrubution for a discriminative model using techniques like logistic regression or neural models.</p>
+<p>Following that we will now understand how we can learn a probability distribution p(x) over images x using an autoregressive approach.</p>
+<h2 id="autoregressive-models">
+  Autoregressive models
+  <a class="heading-link" href="#autoregressive-models">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p>The terminology of why an autoregressive model is called autoregressive is that it uses the information of previous states to predict the next state. Let&rsquo;s understand this with an example</p>
+<p>Assume that we have a 28x28 image with 784 pixels == 784 random variables.</p>
+<p>In this image we assume an ordering of these variables a raster-scan ordering where we start from the top-left of the image and end at the bottom-right.</p>
+<p>Using the logic mentioned in previous blog, we represent the distribution in the following way.</p>
+<p>Assume <br>
+p(x1 , · · · , x784 ) = pCPT (x1 ; α1 ) plogit (x2 | x1 ; α2 ) plogit (x3 | x1 , x2 ; α3 ) · · · plogit (xn | x1 , · · · , xn−1 ; αn ) <br>
+CPT = Conditional Probablity Table <br>
+logit = logistic model to represent p(x|y)</p>
+<p>To Elaborate <br>
+pCPT (X1 = 1; α¹ ) = α¹ , p(X1 = 0) = 1 − α¹ <br>
+plogit (X2 = 1 | x1 ; α² ) = σ(α0² + α1²x1) <br>
+plogit (X3 = 1 | x1 , x2 ; α³ ) = σ(α0³ + α1³x1 + α2³x2)
+(Note that αⁿ is not a power but a way to depict variables distinctly)</p>
+<p>In this example we are making a modelling assumption where we are depicting our probablities in the form of parameterized functions. Also if we observe each pixel is dependent on all the pixels before it (following a raster-scan) which makes it an autoregressive model.</p>
+<h3 id="autoregressive-models-architectures">
+  Autoregressive models: Architectures
+  <a class="heading-link" href="#autoregressive-models-architectures">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="fvsbn">
+  FVSBN
+  <a class="heading-link" href="#fvsbn">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><img src="/application12.png" alt=""></p>
+<p>Given that the conditional variables Xi | X1 , · · · , Xi−1 are Bernoulli with parameters \</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>x̂i = p(Xi = 1|x1 , · · · , xi−1 ; αⁱ ) = p(Xi = 1|x&lt;i ; αⁱ ) = σ(αⁱ0 + sum(αⁱjxj) for j = 1 to i-1)
+</span></span></code></pre></div><h5 id="how-to-evaluate">
+  How to evaluate?
+  <a class="heading-link" href="#how-to-evaluate">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p>How do we evaluate p(x) = p(x1 , · · · , x784)?</p>
+<p>An example: p(X1 = 0, X2 = 1, X3 = 1, X4 = 0)</p>
+<p>From the previous equation.</p>
+<p>p(X1 = 0) = 1 - x̂1
+p(X2=1|X1=0) = x̂2
+p(X3=1|X1=0, X2=1) = x̂3
+p(X4=0|X1=0, X2=1, X3=1) = 1 - x̂4</p>
+<p>Multiplying the conditionals gives us p(X1 = 0, X2 = 1, X3 = 1, X4 = 0) = (1 − x̂1) × x̂2 × x̂3 × (1 − x̂4)</p>
+<h5 id="how-to-sample">
+  How to sample?
+  <a class="heading-link" href="#how-to-sample">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p>How to sample from p(x1 , · · · , x784 )?</p>
+<ul>
+<li>For x1_bar ∼ p(x1) (np.random.choice([1,0],p=[x̂1 , 1 − x̂1 ])) // making random choice of 1 and 0 based on probablity x̂1</li>
+<li>For sampling second pixel ~ p(x2) use p(x2 | x1 = x1_bar )</li>
+<li>For sampling third pixel ∼ p(x3 | x1 = x1_bar , x2 = x2_bar )</li>
+<li>and so on..</li>
+</ul>
+<h5 id="how-many-parameters-in-the-αⁱ-vectors-1--2--3------n--n2-2">
+  How many parameters (in the αⁱ vectors)? 1 + 2 + 3 + · · · + n ≈ n2 /2
+  <a class="heading-link" href="#how-many-parameters-in-the-%ce%b1%e2%81%b1-vectors-1--2--3------n--n2-2">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<h5 id="example">
+  Example
+  <a class="heading-link" href="#example">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p><img src="/application13.png" alt="">
+Training data on the left (Caltech 101 Silhouettes). Samples from the model on the right. <br>
+<strong>Figure from Learning Deep Sigmoid Belief Networks with Data Augmentation, 2015.</strong></p>
+<h4 id="nade-neural-autoregressive-density-estimation">
+  NADE: Neural Autoregressive Density Estimation
+  <a class="heading-link" href="#nade-neural-autoregressive-density-estimation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><img src="/application14.png" alt=""></p>
+<p>Idea: Instead of using logistic regression use a layer of neural network followed by logistic regression to represent probablity. Advantage is that it introduces non-linearity.</p>
+<p><img src="/application16.png" alt="Alt text"></p>
+<p>Example computation</p>
+<p><img src="/application15.png" alt="Alt text"></p>
+<p>We have to use a seperate matrix for each computation that increases the parameters and the time.</p>
+<p>Instead share the parameters in a single matrix.</p>
+<p><img src="/application17.png" alt="Alt text"></p>
+<p>Example</p>
+<p><img src="/application18.png" alt="Alt text"></p>
+<h5 id="parameters">
+  Parameters
+  <a class="heading-link" href="#parameters">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p>If hi ∈ Rᵈ , how many total parameters? Linear in n: weights W ∈ Rᵈ*ⁿ , <br>
+biases c ∈ Rᵈ , and n logistic regression coefficient vectors αi , bi ∈ Rᵈ⁺¹ . <br>
+Probability is evaluated in O(nd).</p>
+<h5 id="samples">
+  Samples
+  <a class="heading-link" href="#samples">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p><img src="/application19.png" alt="Alt text"></p>
+<p>Samples from a model trained on MNIST on the left. Conditional probabilities x̂i on the right.</p>
+<p><strong>Figure from The Neural Autoregressive Distribution Estimator, 2011.</strong></p>
+<h4 id="modelling-non-binary-discrete-random-variables">
+  Modelling non-binary discrete random variables
+  <a class="heading-link" href="#modelling-non-binary-discrete-random-variables">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Till now we saw model architecures that help us model distributions having binary values. But what if we want to model non-binary random variables like an image having pixel values from 0 to 255.</p>
+<p>To evaluate p(xi |x1 , · · · , xi−1 ).
+Instead of logistic function use a softmax function that generalizes the logistic by transforming a vector of K numbers into a vector of K probabilities that sum to 1.</p>
+<p>Updated logic <br>
+x̂i = (pi¹ , · · · , piᵏ) = softmax(Aihi + bi)</p>
+<p>where softmax is as follows</p>
+<p><img src="/application20.png" alt="Alt text"></p>
+<h4 id="modelling-continuous-distributions">
+  Modelling continuous distributions
+  <a class="heading-link" href="#modelling-continuous-distributions">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>How to model continuous random variables Xi ∈ R? E.g., speech signals <br>
+Solution: let x̂ i parameterize a continuous distribution <br>
+E.g., uniform mixture of K Gaussians</p>
+<p><img src="/application21.png" alt="Alt text"></p>
+<h5 id="rnade">
+  RNADE
+  <a class="heading-link" href="#rnade">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p><img src="/application14.png" alt="Alt text"></p>
+<p>Our goal is to model a continuous distribution.</p>
+<p>Example:
+Assume that we want to learn a distribution p(xi |x1 , · · · , xi−1 )</p>
+<p>Consider that x1,&hellip;,xi-1 are Gaussian distributions. Then xi can be represented as a mixture of Gaussians as shown below <br>
+<img src="/application22.png" alt="Alt text"></p>
+<p>The parameters of xi? mean and variance of the K Gaussian models.</p>
+<p>Can use exponential exp(·) to ensure non-negativity</p>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Rishab Mudliar 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

@@ -6,8 +6,22 @@
     <description>Recent content on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Tue, 24 Jan 2023 15:27:56 +0530</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jan 2023 14:56:36 +0530</lastBuildDate>
     <atom:link href="https://lazycodes7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Google Summer of Code at RedHenLab</title>
+      <link>https://lazycodes7.github.io/posts/experience/</link>
+      <pubDate>Fri, 27 Jan 2023 14:56:36 +0530</pubDate>
+      <guid>https://lazycodes7.github.io/posts/experience/</guid>
+      <description>Why am I writing this blog? Link to heading Well I did my Google Summer of Code in 2022 that was like two years back. But every year I get a lot of people on LinkedIn or Twitter DMing about guidance, tips or just wanting to know about my experience. So this is a blog for them and to answer their questions!&#xA;So let&amp;rsquo;s get started..&#xA;Why RedHenLab? Link to heading Here in my college people are passionate to do GSoC like I am not kidding.</description>
+    </item>
+    <item>
+      <title>CS236 Deep Generative Models (Part3)</title>
+      <link>https://lazycodes7.github.io/blogs/cs236_3/</link>
+      <pubDate>Thu, 26 Jan 2023 15:27:56 +0530</pubDate>
+      <guid>https://lazycodes7.github.io/blogs/cs236_3/</guid>
+      <description>About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.&#xA;Recap: Learning a generative model Link to heading Recall that we want to learn a probability distribution p(x) over images x such that sampling from this distribution gives us new images. In the last part we dived deeper into probability distributions. Finally we saw ways to learn a probability distrubution for a discriminative model using techniques like logistic regression or neural models.</description>
+    </item>
     <item>
       <title>CS236 Deep Generative Models (Part2)</title>
       <link>https://lazycodes7.github.io/blogs/cs236_2/</link>
