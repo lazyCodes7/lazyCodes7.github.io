@@ -29,8 +29,8 @@ Recap: Learning a generative model Link to heading Recall that we want to learn 
 Recap: Learning a generative model Link to heading Recall that we want to learn a probability distribution p(x) over images x such that sampling from this distribution gives us new images. In the last part we dived deeper into probability distributions. Finally we saw ways to learn a probability distrubution for a discriminative model using techniques like logistic regression or neural models." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lazycodes7.github.io/blogs/cs236_3/" /><meta property="article:section" content="blogs" />
-<meta property="article:published_time" content="2023-01-26T15:27:56+05:30" />
-<meta property="article:modified_time" content="2023-01-26T15:27:56+05:30" />
+<meta property="article:published_time" content="2024-01-26T15:27:56+05:30" />
+<meta property="article:modified_time" content="2024-01-26T15:27:56+05:30" />
 
 
 
@@ -326,6 +326,115 @@ Assume that we want to learn a distribution p(xi |x1 , · · · , xi−1 )</p>
 <img src="/application22.png" alt="Alt text"></p>
 <p>The parameters of xi? mean and variance of the K Gaussian models.</p>
 <p>Can use exponential exp(·) to ensure non-negativity</p>
+<h3 id="are-autoregressive-models-similar-to-autoencoders">
+  Are autoregressive models similar to autoencoders?
+  <a class="heading-link" href="#are-autoregressive-models-similar-to-autoencoders">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><img src="/application23.png" alt="Alt text"></p>
+<p>On the surface, FVSBN and NADE look similar to an autoencoder: <br>
+an encoder e(·). E.g., e(x) = σ(W² (W¹ x + b¹) + b²) <br>
+a decoder such that d(e(x)) ≈ x. E.g., d(h) = σ(Vh + c)</p>
+<p>Here&rsquo;s what the computation of NADE looks like</p>
+<p><img src="/application16.png" alt="Alt text"></p>
+<p>If we observe then the first equation seems to match with the definition of e(x) as NADE uses neural network to represent x in a compact way and then uses d(e(x)) to approximate a probability distribution from which we would sample the original data point xi.</p>
+<p>But while an autoregressive model may seem like an autoencoder but the vice-versa is not true. Vanilla autoencoders do not learn any probablity distribution that we can sample from. Nor do they assume any ordering.</p>
+<p>But an autoregressive model lets us parellelize operations. If we recall the NADE computation process. Then each hidden state is computed sequentially and not simultaneously. Whereas with an autoencoder we can get these hidden states in a single pass.</p>
+<p><img src="/application18.png" alt="Alt text"></p>
+<p>How? Let&rsquo;s see that next..</p>
+<h4 id="made-masked-autoencoder-for-distribution-estimation">
+  MADE: Masked Autoencoder for Distribution Estimation
+  <a class="heading-link" href="#made-masked-autoencoder-for-distribution-estimation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><img src="/application24.png" alt="Alt text"></p>
+<p>Challenge: An autoencoder that is autoregressive (DAG structure)</p>
+<p>Solution: use masks to disallow certain paths (Germain et al., 2015).
+Suppose ordering is x2 , x3 , x1 , so p(x1 , x2 , x3 ) = p(x2 )p(x3 | x2 )p(x1 | x2 , x3 ).</p>
+<ul>
+<li>The unit producing the parameters for x̂2 = p(x2 ) is not allowed to
+depend on any input. Unit for p(x3 |x2 ) only on x2 . And so on&hellip;
+For each unit in a hidden layer, pick a random integer i in [1, n − 1].</li>
+<li>That unit is allowed to depend only on the first i inputs (according to
+the chosen ordering).</li>
+<li>Add mask to preserve this invariant: connect to all units in previous
+layer with smaller or equal assigned number (strictly &lt; in final layer)</li>
+</ul>
+<h3 id="some-more-model-architectures-that-are-modified-to-be-autoregressive">
+  Some more model architectures that are modified to be autoregressive.
+  <a class="heading-link" href="#some-more-model-architectures-that-are-modified-to-be-autoregressive">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="pixel-rnn-oord-et-al-2016">
+  Pixel RNN (Oord et al., 2016)
+  <a class="heading-link" href="#pixel-rnn-oord-et-al-2016">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><img src="/application25.png" alt="Alt text">
+
+
+<p>
+Model images pixel by pixel using raster scan order
+
+Each pixel conditional p(x<sub>t</sub> | x<sub>1</sub>:<sub>t−1</sub> ) needs to specify 3 colors
+p(x<sub>t</sub> | x<sub>1:t−1</sub> ) = p(x<sub>t</sub>red | x<sub>1:t−1</sub> )p(x<sub>t</sub> green | x<sub>1:t−1</sub>  , x<sub>t</sub>red )p(x<sub>t</sub>blue | x<sub>1:t−1</sub> , x<sub>t</sub>red , x<sub>t</sub>green ) and each conditional is a categorical random variable with 256 possible values.
+
+Conditionals modeled using RNN variants. LSTMs + masking (like MADE)
+
+</p>
+
+</p>
+<h4 id="pixelcnn-oord-et-al-2016">
+  PixelCNN (Oord et al., 2016)
+  <a class="heading-link" href="#pixelcnn-oord-et-al-2016">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><img src="/application26.png" alt="Alt text">
+Idea: Use convolutional architecture to predict next pixel given context (a
+neighborhood of pixels). <br>
+Challenge: Has to be autoregressive. Masked convolutions preserve raster scan
+order. Additional masking for colors order.</p>
+<h3 id="summary-of-autoregressive-models">
+  Summary of autoregressive models
+  <a class="heading-link" href="#summary-of-autoregressive-models">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Easy to sample from
+<ul>
+<li>Sample x0 ∼ p(x0 )</li>
+<li>Sample x1 ∼ p(x1 | x0 = x 0 )</li>
+<li>···</li>
+</ul>
+</li>
+<li>Easy to compute probability p(x = x)
+<ul>
+<li>Compute p(x0 = x0 )</li>
+<li>Compute p(x1 = x1 | x0 = x0 )</li>
+<li>Multiply together (sum their logarithms)</li>
+<li>···</li>
+<li>Ideally, can compute all these terms in parallel for fast training</li>
+</ul>
+</li>
+<li>Easy to extend to continuous variables. For example, can choose
+Gaussian conditionals p(xt | x&lt;t ) = N (µθ (x&lt;t ), Σθ (x&lt;t )) or mixture
+of logistics</li>
+<li>No natural way to get features, cluster points, do unsupervised
+learning</li>
+<li>Next: learning</li>
+</ul>
 
   </article>
 </section>
