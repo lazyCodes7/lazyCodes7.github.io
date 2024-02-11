@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Fri, 26 Jan 2024 15:27:56 +0530</lastBuildDate>
+    <lastBuildDate>Mon, 05 Feb 2024 11:27:56 +0530</lastBuildDate>
     <atom:link href="https://lazycodes7.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS236 Deep Generative Models (Part4)</title>
+      <link>https://lazycodes7.github.io/blogs/cs236_4/</link>
+      <pubDate>Mon, 05 Feb 2024 11:27:56 +0530</pubDate>
+      <guid>https://lazycodes7.github.io/blogs/cs236_4/</guid>
+      <description>About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.&#xA;Recap Link to heading Learning a generative model. Link to heading We are given a training set of examples, e.g., images of dogs&#xA;We want to learn a probability distribution p(x) over images x such that&#xA;Generation: If we sample xnew ∼ p(x), xnew should look like a dog (sampling) Density estimation: p(x) should be high if x looks like a dog, and low otherwise (anomaly detection) Unsupervised representation learning: We should be able to learn what these images have in common, e.</description>
+    </item>
     <item>
       <title>CS236 Deep Generative Models (Part3)</title>
       <link>https://lazycodes7.github.io/blogs/cs236_3/</link>

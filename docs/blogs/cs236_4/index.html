@@ -3,7 +3,7 @@
 
 <head>
   <title>
-   · rishab_m
+  CS236 Deep Generative Models (Part4) · rishab_m
 </title>
   <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,18 +16,27 @@
 
 
 <meta name="author" content="Rishab Mudliar">
-<meta name="description" content="Rishab&#39;s personal website">
+<meta name="description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap Link to heading Learning a generative model. Link to heading We are given a training set of examples, e.g., images of dogs
+We want to learn a probability distribution p(x) over images x such that
+Generation: If we sample xnew ∼ p(x), xnew should look like a dog (sampling) Density estimation: p(x) should be high if x looks like a dog, and low otherwise (anomaly detection) Unsupervised representation learning: We should be able to learn what these images have in common, e.">
 <meta name="keywords" content="blog,developer,personal">
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content=""/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CS236 Deep Generative Models (Part4)"/>
+<meta name="twitter:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap Link to heading Learning a generative model. Link to heading We are given a training set of examples, e.g., images of dogs
+We want to learn a probability distribution p(x) over images x such that
+Generation: If we sample xnew ∼ p(x), xnew should look like a dog (sampling) Density estimation: p(x) should be high if x looks like a dog, and low otherwise (anomaly detection) Unsupervised representation learning: We should be able to learn what these images have in common, e."/>
 
-<meta property="og:title" content="" />
-<meta property="og:description" content="" />
+<meta property="og:title" content="CS236 Deep Generative Models (Part4)" />
+<meta property="og:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap Link to heading Learning a generative model. Link to heading We are given a training set of examples, e.g., images of dogs
+We want to learn a probability distribution p(x) over images x such that
+Generation: If we sample xnew ∼ p(x), xnew should look like a dog (sampling) Density estimation: p(x) should be high if x looks like a dog, and low otherwise (anomaly detection) Unsupervised representation learning: We should be able to learn what these images have in common, e." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://lazycodes7.github.io/blogs/cs236_4/" /><meta property="article:section" content="blogs" />
-
-
+<meta property="article:published_time" content="2024-02-05T11:27:56+05:30" />
+<meta property="article:modified_time" content="2024-02-05T11:27:56+05:30" />
 
 
 
@@ -140,12 +149,348 @@
     <header>
       <h1 class="title">
         <a class="title-link" href="https://lazycodes7.github.io/blogs/cs236_4/">
-          
+          CS236 Deep Generative Models (Part4)
         </a>
       </h1>
     </header>
 
-    
+    <h1 id="about">
+  About
+  <a class="heading-link" href="#about">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.</p>
+<h1 id="recap">
+  Recap
+  <a class="heading-link" href="#recap">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<h2 id="learning-a-generative-model">
+  Learning a generative model.
+  <a class="heading-link" href="#learning-a-generative-model">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<p><img src="/application27.png" alt=""></p>
+<ul>
+<li>
+<p>We are given a training set of examples, e.g., images of dogs</p>
+</li>
+<li>
+<p>We want to learn a probability distribution p(x) over images x such that</p>
+<ul>
+<li>Generation: If we sample xnew ∼ p(x), xnew should look like a dog
+(sampling)</li>
+<li>Density estimation: p(x) should be high if x looks like a dog, and low
+otherwise (anomaly detection)</li>
+<li>Unsupervised representation learning: We should be able to learn
+what these images have in common, e.g., ears, tail, etc. (features)</li>
+</ul>
+</li>
+<li>
+<p>First question: how to represent pθ(x). Second question: how to learn it.</p>
+</li>
+</ul>
+<h2 id="defining-the-setting">
+  Defining the setting
+  <a class="heading-link" href="#defining-the-setting">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Lets assume that the domain is governed by some underlying distribution
+Pdata</li>
+<li>We are given a dataset D of m samples from Pdata
+<ul>
+<li>Each sample is an assignment of values to (a subset of) the variables,
+e.g., (Xbank = 1, Xdollar = 0, &hellip;, Y = 1) or pixel intensities.</li>
+</ul>
+</li>
+<li>The standard assumption is that the data instances are independent and
+identically distributed (IID)</li>
+<li>We are also given a family of models M, and our task is to learn some
+“good” distribution in this set:
+<ul>
+<li>For example, M could be all Bayes nets with a given graph structure,
+for all possible choices of the CPD tables</li>
+<li>For example, a FVSBN for all possible choices of the logistic regression
+parameters , θ = concatenation of all logistic regression coefficients</li>
+</ul>
+</li>
+</ul>
+<p>We have defined a way already in the last blog to represent probablity distributions in terms of parameters. But how do we find a model that captures the real data distribution as closely as possible. What are the factors to keep in mind?</p>
+<p>That depends on the type of task.</p>
+<ul>
+<li>
+<p>For Density estimation: we are interested in the full distribution (so later we can
+compute whatever conditional probabilities we want)</p>
+</li>
+<li>
+<p>Specific prediction tasks: we are using the distribution to make a prediction. Is this email spam or not? Structured prediction: Predict next frame in a video, or caption given an image. In these cases we might not have to compute full distribution if we assume that the input given for prediction is valid. So we are more interested in correctly modelling the conditional probablity.</p>
+</li>
+<li>
+<p>Structure or knowledge discovery: we are interested in the model itself. Usecases related to xAI</p>
+<ul>
+<li>How do some genes interact with each other?</li>
+<li>What causes cancer?</li>
+</ul>
+</li>
+</ul>
+<h3 id="learning-as-density-estimation">
+  Learning as density estimation
+  <a class="heading-link" href="#learning-as-density-estimation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>We want to learn the full distribution so that later we can answer any
+probabilistic inference query</li>
+<li>In this setting we can view the learning problem as density estimation</li>
+<li>We want to construct Pθ as ”close” as possible to Pdata (recall we assume we are given a dataset D of samples from Pdata )</li>
+</ul>
+<p>But how do we evaluate closeness?</p>
+<h3 id="kl-divergence">
+  KL-divergence
+  <a class="heading-link" href="#kl-divergence">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>How should we measure distance between distributions?</p>
+</li>
+<li>
+<p>The Kullback-Leibler divergence (KL-divergence) between two distributions p and q is defined as
+<img src="/application28.png" alt="Alt text"></p>
+</li>
+<li>
+<p>D(p ∥ q) ≥ 0 for all p, q, with equality if and only if p = q.</p>
+</li>
+</ul>
+<h4 id="intuition-behind-kl-divergence">
+  Intuition behind KL Divergence
+  <a class="heading-link" href="#intuition-behind-kl-divergence">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Assume that we have samples from the true data distribution Pdata and we learned a model Pθ parameterized by θ then KL Divergence can be thought of as the extra bits required to represent samples from Pdata by using the learned distribution Pθ instead. Normally using less bits would mean that Pθ is very close to Pdata.</p>
+<h3 id="maximum-log-likelihood">
+  Maximum Log Likelihood
+  <a class="heading-link" href="#maximum-log-likelihood">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Simplifying the KL Divergence as follows</p>
+<p><img src="/application29.png" alt="Alt text"></p>
+<ul>
+<li>The first term does not depend on Pθ .</li>
+<li>Then, minimizing KL divergence is equivalent to maximizing the expected log-likelihood
+<img src="/application30.png" alt="Alt text"></li>
+<li>Asks that Pθ assign high probability to instances sampled from Pdata ,
+so as to reflect the true distribution</li>
+<li>Because of log, samples x where Pθ (x) ≈ 0 weigh heavily in objective</li>
+<li>Although we can now compare models, since we are ignoring H(Pdata ) = −Ex∼Pdata [log Pdata (x)], we don’t know how close we are to the
+optimum</li>
+<li>Problem: In general we do not know Pdata .</li>
+</ul>
+<h4 id="maximum-likelihood">
+  Maximum Likelihood
+  <a class="heading-link" href="#maximum-likelihood">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li>Approximate the expected log-likelihood <br>
+Ex∼Pdata [log Pθ (x)]               <br>
+with the empirical log-likelihood:</li>
+</ul>
+<p><img src="/application31.png" alt=""></p>
+<ul>
+<li>Maximum likelihood learning is then:</li>
+</ul>
+<p><img src="/application32.png" alt=""></p>
+<ul>
+<li>Equivalently, maximize likelihood of the data</li>
+</ul>
+<h3 id="monte-carlo-estimation">
+  Monte Carlo Estimation
+  <a class="heading-link" href="#monte-carlo-estimation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>Express the quantity of interest as the expected value of a
+random variable.</li>
+</ul>
+<p><img src="/application33.png" alt="Alt text"></p>
+<ul>
+<li>
+<p>Generate T samples x1 , . . . , xT from the distribution P with respect to which the expectation was taken.</p>
+</li>
+<li>
+<p>Estimate the expected value from the samples using</p>
+</li>
+</ul>
+<p><img src="/application34.png" alt="Alt text"></p>
+<p>where x1 , . . . , xT are independent samples from P.</p>
+<h4 id="intuition">
+  Intuition?
+  <a class="heading-link" href="#intuition">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Most cases P(x) or the true data distribution might not be known. In that case sampling from the dataset and approximating the expected value according to Monte-Carle Estimation gives us a way to calculate the quantity of interest. In later sections the Monte Carlo Estimation will be used in derivations which would depict the usefulness of this approximation.</p>
+<h4 id="properties-of-monte-carlo-estimation">
+  Properties of Monte Carlo Estimation
+  <a class="heading-link" href="#properties-of-monte-carlo-estimation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><img src="/application35.png" alt=""></p>
+<h3 id="estimating-pθ-x-via-mle">
+  Estimating Pθ (x) via MLE
+  <a class="heading-link" href="#estimating-p%ce%b8-x-via-mle">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<h4 id="example">
+  Example
+  <a class="heading-link" href="#example">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li>Single variable example: A biased coin</li>
+<li>Two outcomes: heads (H) and tails (T )</li>
+<li>Data set: Tosses of the biased coin, e.g., D = {H, H, T , H, T }</li>
+<li>Assumption: the process is controlled by a probability distribution Pdata (x) where x ∈ {H, T }</li>
+<li>Class of models M: all probability distributions over x ∈ {H, T }.</li>
+<li>Example learning task: How should we choose Pθ (x) from M if 3 out of 5 tosses are heads in D?</li>
+</ul>
+<h4 id="mle-scoring-for-the-coin-example">
+  MLE scoring for the coin example
+  <a class="heading-link" href="#mle-scoring-for-the-coin-example">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li>We represent our model: <code>Pθ (x = H) = θ and Pθ (x = T ) = 1 − θ </code></li>
+<li>Example data: <code>D = {H, H, T , H, T }</code></li>
+<li>Likelihood of data: <code>mult(Pθ (xi )) for i = θ · θ · (1 − θ) · θ · (1 − θ)</code>
+<img src="/application36.png" alt=""></li>
+<li>Optimize for θ which makes D most likely. What is the solution in
+this case? θ = 0.6, optimization problem can be solved in closed-form</li>
+</ul>
+<h4 id="extending-the-mle-principle-to-autoregressive-models">
+  Extending the MLE principle to autoregressive models
+  <a class="heading-link" href="#extending-the-mle-principle-to-autoregressive-models">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Given an autoregressive model with n variables and factorization</p>
+<p><img src="/application37.png" alt="alt text"></p>
+<p>θ = (θ1 , · · · , θn ) are the parameters of all the conditionals. Training data <br>
+D = {x(1) , · · · , x(m) }. Maximum likelihood estimate of the parameters θ?</p>
+<ul>
+<li>Decomposition of Likelihood function</li>
+</ul>
+<p><img src="/application38.png" alt="alt text"></p>
+<ul>
+<li>Goal : maximize arg maxθ L(θ, D) = arg maxθ log L(θ, D)</li>
+<li>We no longer have a closed form solution</li>
+</ul>
+<h4 id="mle-learning-gradient-descent">
+  MLE Learning: Gradient Descent
+  <a class="heading-link" href="#mle-learning-gradient-descent">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Goal : maximize arg maxθ L(θ, D) = arg maxθ log L(θ, D)</p>
+<p><img src="/application39.png" alt="alt text"></p>
+<ul>
+<li>Initialize <code>θ0 = (θ1 , · · · , θn )</code> at random</li>
+<li>Compute <code>∇θℓ(θ)</code> (by back propagation)</li>
+<li><code>θt+1 = θt + αt∇θℓ(θ)</code></li>
+</ul>
+<p>Non-convex optimization problem, but often works well in practice</p>
+<h4 id="mle-learning-stochastic-gradient-descent">
+  MLE Learning: Stochastic Gradient Descent
+  <a class="heading-link" href="#mle-learning-stochastic-gradient-descent">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>What if m = |D| is huge?</p>
+<p>We have to sum the gradients for m samples from the dataset where each sample&rsquo;s probablity is represented by an autoregressive model of n variables. If m is huge let&rsquo;s assume = 10^6 then there will be at least 10^6*n computations per iteration if we use the Gradient Descent algorithm. This is an expensive cost for optimizing our model.</p>
+<p>Solution? Monte-Carlo to the rescue.</p>
+<p>The definition for Monte-Carlo</p>
+<p><img src="/application33.png" alt="Alt text"></p>
+<p>Definition for <code>∇θℓ(θ)</code></p>
+<p><img src="/application40.png" alt=""></p>
+<p>What&rsquo;s missing?</p>
+<p>Assuming the outer sum is what we need for computing expectation on sampling x from D and the inner sum highlighted in green is the random variable on which the expectation is being calculated then we are missing the probablities assosciated with the random variable being sampled from D.</p>
+<p><img src="/application41.png" alt=""></p>
+<p>Adding m * 1/m (Assuming the sampling process is uniform)</p>
+<p><img src="/application42.png" alt=""></p>
+<p>Then 1/m is the probablity associated for sampling each variable from D.</p>
+<p>And by using the Monte-Carlo Estimation we can compute <code>∇θℓ(θ)</code> in the following way.
+<img src="/application43.png" alt="alt text"></p>
+<h3 id="bias-variance-trade-off">
+  Bias-Variance Trade Off
+  <a class="heading-link" href="#bias-variance-trade-off">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>
+<p>If the hypothesis space is very limited, it might not be able to represent Pdata , even with unlimited data</p>
+<ul>
+<li>This type of limitation is called bias, as the learning is limited on how close it can approximate the target distribution</li>
+</ul>
+</li>
+<li>
+<p>If we select a highly expressive hypothesis class, we might represent better the data</p>
+<ul>
+<li>When we have small amount of data, multiple models can fit well, or even better than the true model. Moreover, small perturbations on D will result in very different estimates</li>
+<li>This limitation is call the variance.</li>
+</ul>
+</li>
+</ul>
+<h3 id="sign-off">
+  Sign-off
+  <a class="heading-link" href="#sign-off">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>For autoregressive models, it is easy to compute pθ (x)</li>
+<li>Natural to train them via maximum likelihood</li>
+<li>Higher log-likelihood doesn’t necessarily mean better looking samples</li>
+<li>Other ways of measuring similarity are possible (Generative Adversarial
+Networks, GANs)</li>
+</ul>
+
   </article>
 </section>
 
