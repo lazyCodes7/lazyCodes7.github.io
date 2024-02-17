@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>
+  CS236 Deep Generative Models (Part5) · rishab_m
+</title>
+  <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light dark">
+
+
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
+
+
+
+
+<meta name="author" content="Rishab Mudliar">
+<meta name="description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap Link to heading Autoregressive models: Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations Autoregressive models Pros:
+Easy to evaluate likelihoods Easy to train Cons:
+Requires an ordering Generation is sequential Cannot learn features in an unsupervised way Latent Variable Models: Introduction Link to heading Lots of variability in images x due to gender, eye color, hair color, pose, etc.">
+<meta name="keywords" content="blog,developer,personal">
+
+<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CS236 Deep Generative Models (Part5)"/>
+<meta name="twitter:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap Link to heading Autoregressive models: Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations Autoregressive models Pros:
+Easy to evaluate likelihoods Easy to train Cons:
+Requires an ordering Generation is sequential Cannot learn features in an unsupervised way Latent Variable Models: Introduction Link to heading Lots of variability in images x due to gender, eye color, hair color, pose, etc."/>
+
+<meta property="og:title" content="CS236 Deep Generative Models (Part5)" />
+<meta property="og:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap Link to heading Autoregressive models: Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations Autoregressive models Pros:
+Easy to evaluate likelihoods Easy to train Cons:
+Requires an ordering Generation is sequential Cannot learn features in an unsupervised way Latent Variable Models: Introduction Link to heading Lots of variability in images x due to gender, eye color, hair color, pose, etc." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://lazycodes7.github.io/blogs/cs236_5/" /><meta property="article:section" content="blogs" />
+<meta property="article:published_time" content="2024-02-11T12:48:56+05:30" />
+<meta property="article:modified_time" content="2024-02-11T12:48:56+05:30" />
+
+
+
+
+
+<link rel="canonical" href="https://lazycodes7.github.io/blogs/cs236_5/">
+
+
+<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
+
+
+  
+  
+  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+
+
+
+
+
+
+  
+    
+    
+    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
+  
+
+
+
+ 
+
+
+
+
+<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
+<link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
+<link rel="manifest" href="/site.webmanifest">
+<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+
+
+</head>
+
+
+
+
+
+
+<body class="preload-transitions colorscheme-auto">
+  
+<div class="float-container">
+    <a id="dark-mode-toggle" class="colorscheme-toggle">
+        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
+    </a>
+</div>
+
+
+  <main class="wrapper">
+    <nav class="navigation">
+  <section class="container">
+    <a class="navigation-title" href="/">
+      rishab_m
+    </a>
+    
+      <input type="checkbox" id="menu-toggle" />
+      <label class="menu-button float-right" for="menu-toggle">
+        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
+      </label>
+      <ul class="navigation-list">
+        
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/about/">About</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/blogs/">Blogs</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/posts/">GSoC</a>
+            </li>
+          
+            <li class="navigation-item">
+              <a class="navigation-link" href="/projects/">Projects</a>
+            </li>
+          
+        
+        
+      </ul>
+    
+  </section>
+</nav>
+
+
+    <div class="content">
+      
+  <section class="container page">
+  <article>
+    <header>
+      <h1 class="title">
+        <a class="title-link" href="https://lazycodes7.github.io/blogs/cs236_5/">
+          CS236 Deep Generative Models (Part5)
+        </a>
+      </h1>
+    </header>
+
+    <h1 id="about">
+  About
+  <a class="heading-link" href="#about">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h1>
+<p>These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.</p>
+<h2 id="recap">
+  Recap
+  <a class="heading-link" href="#recap">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>Autoregressive models:
+<ul>
+<li>Chain rule based factorization is fully general</li>
+<li>Compact representation via conditional independence and/or neural parameterizations</li>
+</ul>
+</li>
+<li>Autoregressive models
+<ul>
+<li>
+<p>Pros:</p>
+<ul>
+<li>Easy to evaluate likelihoods</li>
+<li>Easy to train</li>
+</ul>
+</li>
+<li>
+<p>Cons:</p>
+<ul>
+<li>Requires an ordering</li>
+<li>Generation is sequential</li>
+<li>Cannot learn features in an unsupervised way</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="latent-variable-models-introduction">
+  Latent Variable Models: Introduction
+  <a class="heading-link" href="#latent-variable-models-introduction">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h2>
+<ul>
+<li>
+<p>Lots of variability in images x due to gender, eye color, hair color,
+pose, etc. However, unless images are annotated, these factors of
+variation are not explicitly available (latent).</p>
+</li>
+<li>
+<p>Idea: explicitly model these factors using latent variables z</p>
+</li>
+</ul>
+<h3 id="latent-variable-models-motivation">
+  Latent Variable Models: Motivation
+  <a class="heading-link" href="#latent-variable-models-motivation">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><img src="/application44.png" alt="alt text"></p>
+<ul>
+<li>Only shaded variables x are observed in the data (pixel values)</li>
+<li>Latent variables z correspond to high level features
+<ul>
+<li>If z chosen properly, p(x|z) could be much simpler than p(x)</li>
+<li>If we had trained this model, then we could identify features via p(z | x), e.g., p(EyeColor = Blue|x)</li>
+</ul>
+</li>
+</ul>
+<p>Challenge: Very difficult to specify these conditionals by hand</p>
+<h3 id="deep-latent-variable-models">
+  Deep Latent Variable Models
+  <a class="heading-link" href="#deep-latent-variable-models">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><img src="/application45.png" alt="alt text"></p>
+<ul>
+<li>Use neural networks to model the conditionals (deep latent variable models):
+<ul>
+<li>z ∼ N (0, I )</li>
+<li>p(x | z) = N (µθ (z), Σθ (z)) where µθ ,Σθ are neural networks</li>
+</ul>
+</li>
+<li>Hope that after training, z will correspond to meaningful latent
+factors of variation (features). Unsupervised representation learning.</li>
+<li>As before, features can be computed via p(z | x)</li>
+</ul>
+<h3 id="mixture-of-gaussians-a-shallow-latent-variable-model">
+  Mixture of Gaussians: a Shallow Latent Variable Model
+  <a class="heading-link" href="#mixture-of-gaussians-a-shallow-latent-variable-model">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<ul>
+<li>z ∼ Categorical(1, · · · , K )</li>
+<li>p(x | z = k) = N (µk , Σk )</li>
+</ul>
+<p><img src="/application46.png" alt="alt text"></p>
+<p>Generative process</p>
+<ul>
+<li>Pick a mixture component k by sampling z</li>
+<li>Generate a data point by sampling from that Gaussian</li>
+</ul>
+<p><img src="/application47.png" alt="alt text"></p>
+<p>By learning p(x|z) we can do clustering by using p(z|x) as shown in the above image.</p>
+<p>Another advantage is that Gaussian distribution is a simple one. And might not model p(x|z) properly but by mixing multiple Gaussian models for each conditional we get a complex distribution that can approximate the true data distribution</p>
+<p><img src="/application48.png" alt="alt text"></p>
+<h3 id="variational-autoencoder">
+  Variational Autoencoder
+  <a class="heading-link" href="#variational-autoencoder">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>Extending the concept of mixture of gaussians discussed in last section, a variational autoencoder can be thought of as a mixture of gaussians of infinite Gaussians</p>
+<ul>
+<li>z ∼ N (0, I )</li>
+<li><img src="/application49.png" alt="alt text"></li>
+<li>Even though p(x | z) is simple, the marginal p(x) is very
+complex/flexible</li>
+</ul>
+<h3 id="marginal-likelihood">
+  Marginal Likelihood
+  <a class="heading-link" href="#marginal-likelihood">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p><img src="/application51.png" alt="alt text"></p>
+<ul>
+<li>Suppose some pixel values are missing at train time (e.g., top half)</li>
+<li>Let X denote observed random variables, and Z the unobserved ones (also
+called hidden or latent)</li>
+<li>Suppose we have a model for the joint distribution (e.g., PixelCNN) = p(X, Z; θ)
+What is the probability p(X = x̄; θ) of observing a training data point x̄?
+<img src="/application50.png" alt="alt text"></li>
+<li>Need to consider all possible ways to complete the image (fill green part)</li>
+</ul>
+<h4 id="marginal-likelihood-autoencoder">
+  Marginal Likelihood (Autoencoder)
+  <a class="heading-link" href="#marginal-likelihood-autoencoder">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>A mixture of an infinite number of Gaussians:</p>
+<ul>
+<li>z ∼ N (0, I )</li>
+<li>p(x | z) = N (µθ (z), Σθ (z)) where µθ ,Σθ are neural networks</li>
+<li>Z are unobserved at train time (also called hidden or latent)</li>
+<li>Suppose we have a model for the joint distribution. What is the probability p(X = x̄; θ) of observing a training data point x̄?
+<img src="/application52.png" alt="alt text"></li>
+</ul>
+<h4 id="marginal-likelihood-continued">
+  Marginal Likelihood Continued..
+  <a class="heading-link" href="#marginal-likelihood-continued">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<ul>
+<li>Considering the same joint distribution used to describe unobserved variables i.e <code>p(X, Z; θ)</code></li>
+<li>We have a dataset D, where for each datapoint the X variables are observed (e.g., pixel values) and the variables Z are never observed (e.g., cluster or class id.) D = {x(1) , · · · , x(M) }.</li>
+<li>Maximum likelihood learning:</li>
+</ul>
+<p><img src="/application53.png" alt="alt text"></p>
+<ul>
+<li><img src="/application54.png" alt="alt text"></li>
+<li>Need approximations. One gradient evaluation per training data point
+x ∈ D, so approximation needs to be cheap.</li>
+</ul>
+<h4 id="using-monte-carlo">
+  Using Monte Carlo
+  <a class="heading-link" href="#using-monte-carlo">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Likelihood function pθ (x) for Partially Observed Data is hard to compute:</p>
+<p><img src="/application55.png" alt="alt text"></p>
+<p>We can think of it as an (intractable) expectation. Monte Carlo to the rescue:</p>
+<ul>
+<li>Sample z(1) , · · · , z(k) uniformly at random</li>
+<li>Approximate expectation with sample average</li>
+</ul>
+<p><img src="/application56.png" alt="alt text"></p>
+<p>Works in theory but not in practice. For most z, pθ (x, z) is very low (most
+completions don’t make sense). Some completions have large pθ (x, z) but we will
+never ”hit” likely completions by uniform random sampling. Need a clever way to
+select z(j) to reduce variance of the estimator.</p>
+<p>What do we do? Could try to learn a way to sample z that is more likely to help us observe p(x)..</p>
+<h4 id="importance-sampling">
+  Importance Sampling
+  <a class="heading-link" href="#importance-sampling">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Instead of using a z/z solution we introduce q(z) where q(z) is a probablity distribution from which we sample z that are more likely to complete x.</p>
+<p><img src="/application57.png" alt="alt text"></p>
+<p>Monte Carlo to the rescue:</p>
+<ul>
+<li>Sample z(1) , · · · , z(k) from q(z)</li>
+<li>Approximate expectation with sample average
+<img src="/application58.png" alt="alt text"></li>
+</ul>
+<h4 id="calculating-log-likelihood">
+  Calculating log likelihood
+  <a class="heading-link" href="#calculating-log-likelihood">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>Likelihood function pθ (x) for Partially Observed Data is hard to compute:</p>
+<p><img src="/application57.png" alt="alt text"></p>
+<p>Monte Carlo to the rescue:</p>
+<ul>
+<li>Sample z(1) , · · · , z(k) from q(z)</li>
+<li>Approximate expectation with sample average
+<img src="/application58.png" alt="alt text"></li>
+</ul>
+<p>For training, we need the log-likelihood log (pθ (x)). We could estimate
+it as:</p>
+<p><img src="/application59.png" alt="alt text"></p>
+<p>And for the same case of k=1 if we calculate the log of expectation without the monte carlo approximation. We see a potential problem</p>
+<p><img src="/application60.png" alt="alt text"></p>
+<p>On the right hand side is the log of the expectation of sampling a single z from q(z) and on the left hand side is the output of the monte carlo approximation. It is clear that both of the values are not the same thing for k=1. For a higher k it might be same but for the base case we see that our estimation is not good.</p>
+<h3 id="evidence-lower-bound">
+  Evidence Lower Bound
+  <a class="heading-link" href="#evidence-lower-bound">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h3>
+<p>The Log-Likehlihood for partially missing data is hard to compute.</p>
+<p><img src="/application61.png" alt="alt text">
+log() is a concave function. log(px + (1 − p)x′) ≥ p log(x) + (1 − p) log(x′).</p>
+<p>Using Jensen Equality we approximate the Log Likelihood as given. It is called ELBO or Evidence Lower Bound where our goal is to maximize the ELBO as much as possible</p>
+<p><img src="/application63.png" alt="alt text"></p>
+<h4 id="variational-inference">
+  Variational Inference
+  <a class="heading-link" href="#variational-inference">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p>ELBO is maximum or equal when q = p(z|x; θ)</p>
+<p>Proof:
+<img src="/application66.png" alt="alt text"></p>
+<ul>
+<li>Confirms our previous importance sampling intuition: we should
+choose likely completions.</li>
+</ul>
+<h5 id="kl-divergence-relation-with-elbo">
+  KL-Divergence relation with ELBO
+  <a class="heading-link" href="#kl-divergence-relation-with-elbo">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p>Suppose q(z) is any probability distribution over the hidden variables.
+A little bit of algebra reveals</p>
+<p><img src="/application67.png" alt="alt text"></p>
+<p>Corresponding proof. <a href="https://chrisorm.github.io/VI-ELBO.html"  class="external-link" target="_blank" rel="noopener">External link</a></p>
+<p><img src="/proof1.png" alt=""></p>
+<p>Equality holds if q = p(z|x; θ) because DKL (q(z)∥p(z|x; θ))=0</p>
+<p><img src="/application68.png" alt="alt text"></p>
+<p>Then we can rewrite as follows.</p>
+<p><img src="/application69.png" alt="alt text"></p>
+<p>Which means -&gt; Minimizing KL-Divergence is equal to maximimzing ELBO</p>
+<h4 id="computing-q">
+  Computing q
+  <a class="heading-link" href="#computing-q">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><img src="/application70.png" alt="alt text"></p>
+<ul>
+<li>What if the posterior p(z|x; θ) is intractable to compute?</li>
+<li>Suppose q(z; ϕ) is a (tractable) probability distribution over the hidden
+variables parameterized by ϕ (variational parameters)
+<ul>
+<li>For example, a Gaussian with mean and covariance specified by ϕ
+q(z; ϕ) = N (ϕ1 , ϕ2 )</li>
+</ul>
+</li>
+<li>Variational inference: pick ϕ so that q(z; ϕ) is as close as possible to
+p(z|x; θ). In the figure, the posterior p(z|x; θ) (blue) is better approximated
+by N (2, 2) (orange) than N (−4, 0.75) (green)</li>
+</ul>
+<h5 id="variational-approximation-of-the-posterior">
+  Variational approximation of the posterior
+  <a class="heading-link" href="#variational-approximation-of-the-posterior">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h5>
+<p><img src="/application51.png" alt="alt text"></p>
+<ul>
+<li>
+<p>Assume p(xtop , xbottom ; θ) assigns high probability to images that look like
+digits. In this example, we assume z = xtop are unobserved (latent)</p>
+</li>
+<li>
+<p>Suppose q(xtop ; ϕ) is a (tractable) probability distribution over the hidden
+variables (missing pixels in this example) xtop parameterized by ϕ
+(variational parameters)</p>
+</li>
+</ul>
+<p><img src="/application71.png" alt="alt text"></p>
+<ul>
+<li>Is ϕi = 0.5 ∀i a good approximation to the posterior p(xtop |xbottom ; θ)? No</li>
+<li>Is ϕi = 1 ∀i a good approximation to the posterior p(xtop |xbottom ; θ)? No</li>
+<li>Is ϕi ≈ 1 for pixels i corresponding to the top part of digit 9 a good
+approximation? Yes</li>
+</ul>
+<h4 id="closing-notes">
+  Closing notes
+  <a class="heading-link" href="#closing-notes">
+    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
+    <span class="sr-only">Link to heading</span>
+  </a>
+</h4>
+<p><img src="/application72.png" alt="alt text"></p>
+<p>The better q(z; ϕ) can approximate the posterior p(z|x; θ), the smaller
+DKL (q(z; ϕ)∥p(z|x; θ)) we can achieve, the closer ELBO will be to
+log p(x; θ). Next: jointly optimize over θ and ϕ to maximize the ELBO
+over a dataset</p>
+<ul>
+<li>
+<p>Latent Variable Models Pros:</p>
+<ul>
+<li>Easy to build flexible models</li>
+<li>Suitable for unsupervised learning</li>
+</ul>
+</li>
+<li>
+<p>Latent Variable Models Cons:</p>
+<ul>
+<li>Hard to evaluate likelihoods</li>
+<li>Hard to train via maximum-likelihood</li>
+<li>Fundamentally, the challenge is that posterior inference p(z | x) is hard. Typically requires variational approximations</li>
+</ul>
+</li>
+<li>
+<p>Alternative: give up on KL-divergence and likelihood (GANs)</p>
+</li>
+</ul>
+
+  </article>
+</section>
+
+  
+
+    </div>
+
+    <footer class="footer">
+  <section class="container">
+    ©
+    
+      2019 -
+    
+    2024
+     Rishab Mudliar 
+    ·
+    
+    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
+    
+  </section>
+</footer>
+
+  </main>
+
+  
+
+  
+  
+  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
+  
+
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</body>
+
+</html>

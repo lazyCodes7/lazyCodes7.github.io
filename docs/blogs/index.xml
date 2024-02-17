@@ -6,8 +6,15 @@
     <description>Recent content in Blogs on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Mon, 05 Feb 2024 11:27:56 +0530</lastBuildDate>
+    <lastBuildDate>Sun, 11 Feb 2024 12:48:56 +0530</lastBuildDate>
     <atom:link href="https://lazycodes7.github.io/blogs/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS236 Deep Generative Models (Part5)</title>
+      <link>https://lazycodes7.github.io/blogs/cs236_5/</link>
+      <pubDate>Sun, 11 Feb 2024 12:48:56 +0530</pubDate>
+      <guid>https://lazycodes7.github.io/blogs/cs236_5/</guid>
+      <description>About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.&#xA;Recap Link to heading Autoregressive models: Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations Autoregressive models Pros:&#xA;Easy to evaluate likelihoods Easy to train Cons:&#xA;Requires an ordering Generation is sequential Cannot learn features in an unsupervised way Latent Variable Models: Introduction Link to heading Lots of variability in images x due to gender, eye color, hair color, pose, etc.</description>
+    </item>
     <item>
       <title>CS236 Deep Generative Models (Part4)</title>
       <link>https://lazycodes7.github.io/blogs/cs236_4/</link>
