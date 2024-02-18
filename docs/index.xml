@@ -6,8 +6,15 @@
     <description>Recent content on rishab_m</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Sun, 11 Feb 2024 12:48:56 +0530</lastBuildDate>
+    <lastBuildDate>Sat, 17 Feb 2024 12:09:56 +0530</lastBuildDate>
     <atom:link href="https://lazycodes7.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>CS236 Deep Generative Models (Part6)</title>
+      <link>https://lazycodes7.github.io/blogs/cs236_6/</link>
+      <pubDate>Sat, 17 Feb 2024 12:09:56 +0530</pubDate>
+      <guid>https://lazycodes7.github.io/blogs/cs236_6/</guid>
+      <description>About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.&#xA;Continuing.. Link to heading A variational approximation to the posterior Link to heading For cases when p(z|x; θ) is intractable we come up with a tractable approximation q(z; ϕ) that is as close as possible to p(z|x; θ)&#xA;In the case of an image having it&amp;rsquo;s top half unknown this is what we came up with the last time</description>
+    </item>
     <item>
       <title>CS236 Deep Generative Models (Part5)</title>
       <link>https://lazycodes7.github.io/blogs/cs236_5/</link>
