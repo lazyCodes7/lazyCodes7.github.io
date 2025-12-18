@@ -1,178 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>
-  CS236 Deep Generative Models (Part6) · rishab_m
-</title>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://lazyCodes7.github.io/images/favicon.png" />
+<title>CS236 Deep Generative Models (Part6) | Rishab Mudliar</title>
+<meta name="title" content="CS236 Deep Generative Models (Part6)" />
+<meta name="description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Continuing.. A variational approximation to the posterior For cases when p(z|x; θ) is intractable we come up with a tractable approximation q(z; ϕ) that is as close as possible to p(z|x; θ)
+In the case of an image having it&rsquo;s top half unknown this is what we came up with the last time" />
+<meta name="keywords" content="" />
 
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
-
-
-
-
-<meta name="author" content="Rishab Mudliar">
-<meta name="description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
-Continuing.. Link to heading A variational approximation to the posterior Link to heading For cases when p(z|x; θ) is intractable we come up with a tractable approximation q(z; ϕ) that is as close as possible to p(z|x; θ)
-In the case of an image having it&rsquo;s top half unknown this is what we came up with the last time">
-<meta name="keywords" content="blog,developer,personal">
-
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CS236 Deep Generative Models (Part6)"/>
-<meta name="twitter:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
-Continuing.. Link to heading A variational approximation to the posterior Link to heading For cases when p(z|x; θ) is intractable we come up with a tractable approximation q(z; ϕ) that is as close as possible to p(z|x; θ)
-In the case of an image having it&rsquo;s top half unknown this is what we came up with the last time"/>
 
 <meta property="og:title" content="CS236 Deep Generative Models (Part6)" />
-<meta property="og:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
-Continuing.. Link to heading A variational approximation to the posterior Link to heading For cases when p(z|x; θ) is intractable we come up with a tractable approximation q(z; ϕ) that is as close as possible to p(z|x; θ)
+<meta property="og:description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Continuing.. A variational approximation to the posterior For cases when p(z|x; θ) is intractable we come up with a tractable approximation q(z; ϕ) that is as close as possible to p(z|x; θ)
 In the case of an image having it&rsquo;s top half unknown this is what we came up with the last time" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lazycodes7.github.io/blogs/cs236_6/" /><meta property="article:section" content="blogs" />
+<meta property="og:url" content="https://lazyCodes7.github.io/blogs/cs236_6/" /><meta property="og:image" content="https://lazyCodes7.github.io/images/share.png"/><meta property="article:section" content="blogs" />
 <meta property="article:published_time" content="2024-02-17T12:09:56+05:30" />
-<meta property="article:modified_time" content="2024-02-17T12:09:56+05:30" />
+<meta property="article:modified_time" content="2024-02-17T12:09:56+05:30" /><meta property="og:site_name" content="Rishab M" />
 
 
 
 
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://lazyCodes7.github.io/images/share.png"/>
 
-<link rel="canonical" href="https://lazycodes7.github.io/blogs/cs236_6/">
-
-
-<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
-
-
-  
-  
-  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+<meta name="twitter:title" content="CS236 Deep Generative Models (Part6)"/>
+<meta name="twitter:description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Continuing.. A variational approximation to the posterior For cases when p(z|x; θ) is intractable we come up with a tractable approximation q(z; ϕ) that is as close as possible to p(z|x; θ)
+In the case of an image having it&rsquo;s top half unknown this is what we came up with the last time"/>
 
 
 
+<meta itemprop="name" content="CS236 Deep Generative Models (Part6)">
+<meta itemprop="description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Continuing.. A variational approximation to the posterior For cases when p(z|x; θ) is intractable we come up with a tractable approximation q(z; ϕ) that is as close as possible to p(z|x; θ)
+In the case of an image having it&rsquo;s top half unknown this is what we came up with the last time"><meta itemprop="datePublished" content="2024-02-17T12:09:56+05:30" />
+<meta itemprop="dateModified" content="2024-02-17T12:09:56+05:30" />
+<meta itemprop="wordCount" content="1078"><meta itemprop="image" content="https://lazyCodes7.github.io/images/share.png"/>
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
 
-  
-    
-    
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
-  
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
 
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
 
- 
+  a:hover {
+    text-decoration: underline;
+  }
 
+  nav a {
+    margin-right: 8px;
+  }
 
+  strong,
+  b {
+    color: var(--heading-color);
+  }
 
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
 
-<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
-<link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
 
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  main {
+    line-height: 1.6;
+  }
 
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  table {
+    width: 100%;
+  }
 
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
 
+  img {
+    max-width: 100%;
+  }
 
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
 
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
 
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
 
+  .title:hover {
+    text-decoration: none;
+  }
 
+  .title h1 {
+    font-size: 1.5em;
+  }
 
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
 
 </head>
 
+<body>
+  <header><a href="/" class="title">
+  <h2>Rishab Mudliar</h2>
+</a>
+<nav>
+<a href="/blogs/">Blogs</a>
 
+<a href="/posts/">GSoC</a>
 
+<a href="/archive/">Archive</a>
 
+<a href="/projects/">Projects</a>
 
-
-<body class="preload-transitions colorscheme-auto">
-  
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
-</div>
-
-
-  <main class="wrapper">
-    <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">
-      rishab_m
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/blogs/">Blogs</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">GSoC</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/projects/">Projects</a>
-            </li>
-          
-        
-        
-      </ul>
-    
-  </section>
 </nav>
+</header>
+  <main>
 
-
-    <div class="content">
-      
-  <section class="container page">
-  <article>
-    <header>
-      <h1 class="title">
-        <a class="title-link" href="https://lazycodes7.github.io/blogs/cs236_6/">
-          CS236 Deep Generative Models (Part6)
-        </a>
-      </h1>
-    </header>
-
-    <h1 id="about">
-  About
-  <a class="heading-link" href="#about">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
+<content>
+  <h1 id="about">About</h1>
 <p>These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.</p>
-<h2 id="continuing">
-  Continuing..
-  <a class="heading-link" href="#continuing">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h3 id="a-variational-approximation-to-the-posterior">
-  A variational approximation to the posterior
-  <a class="heading-link" href="#a-variational-approximation-to-the-posterior">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h2 id="continuing">Continuing..</h2>
+<h3 id="a-variational-approximation-to-the-posterior">A variational approximation to the posterior</h3>
 <p><img src="/application51.png" alt="alt text"></p>
 <p>For cases when p(z|x; θ) is intractable we come up with a tractable approximation q(z; ϕ) that is as close as possible to p(z|x; θ)</p>
 <p>In the case of an image having it&rsquo;s top half unknown this is what we came up with the last time</p>
@@ -191,13 +241,7 @@ variables (missing pixels in this example) xtop parameterized by ϕ
 <li>Is ϕi ≈ 1 for pixels i corresponding to the top part of digit 9 a good
 approximation? Yes</li>
 </ul>
-<h3 id="learning-via-stochastic-variational-inference-svi">
-  Learning via stochastic variational inference (SVI)
-  <a class="heading-link" href="#learning-via-stochastic-variational-inference-svi">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="learning-via-stochastic-variational-inference-svi">Learning via stochastic variational inference (SVI)</h3>
 <p>Our goal is to optimize ELBO given below.</p>
 <p><img src="/application73.png" alt="alt text"></p>
 <p>Steps:</p>
@@ -223,13 +267,7 @@ approximation? Yes</li>
 <p>The gradient with respect to ϕ is more complicated because the expectation
 depends on ϕ</p>
 <p>We still want to estimate with a Monte Carlo average</p>
-<h3 id="reparametrization">
-  Reparametrization
-  <a class="heading-link" href="#reparametrization">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="reparametrization">Reparametrization</h3>
 <p>Want to compute a gradient with respect to ϕ of</p>
 <p><img src="/application76.png" alt="alt text"></p>
 <p>where z is now continuous</p>
@@ -243,13 +281,7 @@ are equivalent ways of sampling</p>
 <p><img src="/application77.png" alt="alt text"></p>
 <p>Easy to estimate via Monte Carlo if r and g are differentiable w.r.t. ϕ and ϵ
 is easy to sample from (backpropagation)</p>
-<h4 id="using-reparametrization-for-elbo">
-  Using Reparametrization for ELBO
-  <a class="heading-link" href="#using-reparametrization-for-elbo">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="using-reparametrization-for-elbo">Using Reparametrization for ELBO</h4>
 <p><img src="/application78.png" alt="alt text">
 Using the reparameterization trick in ELBO. We can rewrite our equation as Eq(z;ϕ) [r (z, ϕ)] but if we observe it is not the same as Eq(z;ϕ) [r (z)] as our inner value in expectation depends on ϕ</p>
 <p>Does this change this? Yes
@@ -257,13 +289,7 @@ Can we still use reparametrization? Yes</p>
 <p>Assume z = µ + σϵ = g (ϵ; ϕ) like before.
 Then</p>
 <p><img src="/application79.png" alt="alt text"></p>
-<h3 id="amortized-inference">
-  Amortized Inference
-  <a class="heading-link" href="#amortized-inference">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="amortized-inference">Amortized Inference</h3>
 <p><img src="/application80.png" alt="alt text"></p>
 <ul>
 <li>So far we have used a set of variational parameters ϕi for each data point xi . Does not scale to large datasets.</li>
@@ -274,13 +300,7 @@ Then</p>
 </li>
 <li>We approximate the posteriors q(z|xi ) using this distribution qλ (z|x)</li>
 </ul>
-<h4 id="once-again">
-  Once again&hellip;
-  <a class="heading-link" href="#once-again">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="once-again">Once again&hellip;</h4>
 <p><img src="/application81.png" alt="alt text"></p>
 <ul>
 <li>Assume p(z, xi ; θ) is close to pdata (z, xi ). Suppose z captures information
@@ -293,13 +313,7 @@ variables z parameterized by ϕi
 via q(z; fλ (xi )). fλ learns how to solve the optimization problem for you</li>
 <li>For simplicity we refer q(z; fλ (xi)) as qϕ (z|x)</li>
 </ul>
-<h4 id="learning-with-amortized-inference">
-  Learning with Amortized Inference
-  <a class="heading-link" href="#learning-with-amortized-inference">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="learning-with-amortized-inference">Learning with Amortized Inference</h4>
 <p>As before, optimize ELBO as a function of θ, ϕ using (stochastic)
 gradient descent</p>
 <p><img src="/application82.png" alt="alt text"></p>
@@ -310,13 +324,7 @@ gradient descent</p>
 <li>Update θ, ϕ in the gradient direction</li>
 <li>How to compute the gradients? Use reparameterization like before</li>
 </ul>
-<h3 id="autoencoder-perspective">
-  Autoencoder: Perspective
-  <a class="heading-link" href="#autoencoder-perspective">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="autoencoder-perspective">Autoencoder: Perspective</h3>
 <p><img src="/application83.png" alt="alt text"></p>
 <ul>
 <li>Take a data point xi , map it to ẑ by sampling from qϕ (z|xi ) (encoder).
@@ -334,13 +342,7 @@ Gaussian with parameters decoderθ (ẑ)</li>
 <li>The first part is supposed to help us give likely completions given z. Or in terms of the perspective of the decoder it means that given x̂ from encoder we should be able to reconstruct xi</li>
 <li>Second term encourages ẑ to have a distribution similar to the prior p(z)</li>
 </ul>
-<h4 id="continued">
-  Continued
-  <a class="heading-link" href="#continued">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="continued">Continued</h4>
 <p><img src="/application84.png" alt="alt text"></p>
 <ul>
 <li>
@@ -356,13 +358,7 @@ Given an image xi , she (stochastically) compresses it using
 </ul>
 </li>
 </ul>
-<h3 id="summary-of-latent-variable-models">
-  Summary of Latent Variable Models
-  <a class="heading-link" href="#summary-of-latent-variable-models">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="summary-of-latent-variable-models">Summary of Latent Variable Models</h3>
 <ul>
 <li>Combine simple models to get a more flexible one (e.g., mixture of
 Gaussians)</li>
@@ -375,69 +371,17 @@ difficult</li>
 <li>Latent representations for any x can be inferred via qϕ (z|x)</li>
 </ul>
 
-  </article>
-</section>
+</content>
 
+
+
+<p>
   
-
-    </div>
-
-    <footer class="footer">
-  <section class="container">
-    ©
-    
-      2019 -
-    
-    2024
-     Rishab Mudliar 
-    ·
-    
-    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
-    
-  </section>
-</footer>
+</p>
 
   </main>
-
-  
-
-  
-  
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
 
   
 </body>

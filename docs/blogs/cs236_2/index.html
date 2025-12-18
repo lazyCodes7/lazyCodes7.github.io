@@ -1,192 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>
-  CS236 Deep Generative Models (Part2) · rishab_m
-</title>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
-
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
-
-
-
-
-<meta name="author" content="Rishab Mudliar">
-<meta name="description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
-Part 2 Link to heading Learning a generative model Link to heading In the last part we defined a statistical generative model represented as p(x) that lets us sample from this distribution to generate new images. But p(x) is unknown.
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://lazyCodes7.github.io/images/favicon.png" />
+<title>CS236 Deep Generative Models (Part2) | Rishab Mudliar</title>
+<meta name="title" content="CS236 Deep Generative Models (Part2)" />
+<meta name="description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Part 2 Learning a generative model In the last part we defined a statistical generative model represented as p(x) that lets us sample from this distribution to generate new images. But p(x) is unknown.
 How do we learn it?
-Before I go into it, we would be going into a lot of probablity terminologies that we will see.">
-<meta name="keywords" content="blog,developer,personal">
+Before I go into it, we would be going into a lot of probablity terminologies that we will see." />
+<meta name="keywords" content="" />
 
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CS236 Deep Generative Models (Part2)"/>
-<meta name="twitter:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
-Part 2 Link to heading Learning a generative model Link to heading In the last part we defined a statistical generative model represented as p(x) that lets us sample from this distribution to generate new images. But p(x) is unknown.
-How do we learn it?
-Before I go into it, we would be going into a lot of probablity terminologies that we will see."/>
 
 <meta property="og:title" content="CS236 Deep Generative Models (Part2)" />
-<meta property="og:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
-Part 2 Link to heading Learning a generative model Link to heading In the last part we defined a statistical generative model represented as p(x) that lets us sample from this distribution to generate new images. But p(x) is unknown.
+<meta property="og:description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Part 2 Learning a generative model In the last part we defined a statistical generative model represented as p(x) that lets us sample from this distribution to generate new images. But p(x) is unknown.
 How do we learn it?
 Before I go into it, we would be going into a lot of probablity terminologies that we will see." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lazycodes7.github.io/blogs/cs236_2/" /><meta property="article:section" content="blogs" />
+<meta property="og:url" content="https://lazyCodes7.github.io/blogs/cs236_2/" /><meta property="og:image" content="https://lazyCodes7.github.io/images/share.png"/><meta property="article:section" content="blogs" />
 <meta property="article:published_time" content="2024-01-24T15:27:56+05:30" />
-<meta property="article:modified_time" content="2024-01-24T15:27:56+05:30" />
+<meta property="article:modified_time" content="2024-01-24T15:27:56+05:30" /><meta property="og:site_name" content="Rishab M" />
 
 
 
 
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://lazyCodes7.github.io/images/share.png"/>
 
-<link rel="canonical" href="https://lazycodes7.github.io/blogs/cs236_2/">
-
-
-<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
-
-
-  
-  
-  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+<meta name="twitter:title" content="CS236 Deep Generative Models (Part2)"/>
+<meta name="twitter:description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Part 2 Learning a generative model In the last part we defined a statistical generative model represented as p(x) that lets us sample from this distribution to generate new images. But p(x) is unknown.
+How do we learn it?
+Before I go into it, we would be going into a lot of probablity terminologies that we will see."/>
 
 
 
+<meta itemprop="name" content="CS236 Deep Generative Models (Part2)">
+<meta itemprop="description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Part 2 Learning a generative model In the last part we defined a statistical generative model represented as p(x) that lets us sample from this distribution to generate new images. But p(x) is unknown.
+How do we learn it?
+Before I go into it, we would be going into a lot of probablity terminologies that we will see."><meta itemprop="datePublished" content="2024-01-24T15:27:56+05:30" />
+<meta itemprop="dateModified" content="2024-01-24T15:27:56+05:30" />
+<meta itemprop="wordCount" content="2138"><meta itemprop="image" content="https://lazyCodes7.github.io/images/share.png"/>
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
 
-  
-    
-    
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
-  
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
 
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
 
- 
+  a:hover {
+    text-decoration: underline;
+  }
 
+  nav a {
+    margin-right: 8px;
+  }
 
+  strong,
+  b {
+    color: var(--heading-color);
+  }
 
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
 
-<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
-<link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
 
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  main {
+    line-height: 1.6;
+  }
 
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  table {
+    width: 100%;
+  }
 
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
 
+  img {
+    max-width: 100%;
+  }
 
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
 
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
 
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
 
+  .title:hover {
+    text-decoration: none;
+  }
 
+  .title h1 {
+    font-size: 1.5em;
+  }
 
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
 
 </head>
 
+<body>
+  <header><a href="/" class="title">
+  <h2>Rishab Mudliar</h2>
+</a>
+<nav>
+<a href="/blogs/">Blogs</a>
 
+<a href="/posts/">GSoC</a>
 
+<a href="/archive/">Archive</a>
 
+<a href="/projects/">Projects</a>
 
-
-<body class="preload-transitions colorscheme-auto">
-  
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
-</div>
-
-
-  <main class="wrapper">
-    <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">
-      rishab_m
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/blogs/">Blogs</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">GSoC</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/projects/">Projects</a>
-            </li>
-          
-        
-        
-      </ul>
-    
-  </section>
 </nav>
+</header>
+  <main>
 
-
-    <div class="content">
-      
-  <section class="container page">
-  <article>
-    <header>
-      <h1 class="title">
-        <a class="title-link" href="https://lazycodes7.github.io/blogs/cs236_2/">
-          CS236 Deep Generative Models (Part2)
-        </a>
-      </h1>
-    </header>
-
-    <h1 id="about">
-  About
-  <a class="heading-link" href="#about">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
+<content>
+  <h1 id="about">About</h1>
 <p>These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.</p>
-<h1 id="part-2">
-  Part 2
-  <a class="heading-link" href="#part-2">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
-<h1 id="learning-a-generative-model">
-  Learning a generative model
-  <a class="heading-link" href="#learning-a-generative-model">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
+<h1 id="part-2">Part 2</h1>
+<h1 id="learning-a-generative-model">Learning a generative model</h1>
 <p>In the last part we defined a statistical generative model represented as p(x) that lets us sample from this distribution to generate new images. But p(x) is unknown.</p>
 <p>How do we learn it?</p>
 <p>Before I go into it, we would be going into a lot of probablity terminologies that we will see. So whoever is reading I hope you are good with your probability. If not, there are a lot of videos to understand these terms in an awesome way. I will try my best though and hope it is understandable</p>
 <p>Alright let&rsquo;s get started then.</p>
-<h2 id="probablity-distributions">
-  Probablity Distributions
-  <a class="heading-link" href="#probablity-distributions">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+<h2 id="probablity-distributions">Probablity Distributions</h2>
 <p>Our goal is to learn a distribution that approximates the data that we are trying to generate. But what is a distribution? Let&rsquo;s understand with an example.</p>
 <p>Take an unbiased coin and toss it. What is the output?
 Write the probablity associated with it.
@@ -199,99 +244,33 @@ Now write the probablity associated with the event that did not occur</p>
 <li>The probablity associated with random distribution</li>
 </ul>
 <p>Once you satisfy the checklist you plot the probablities associated with the random variable. Congratulations on creating a distribution for the first time or not..</p>
-<h2 id="types">
-  Types
-  <a class="heading-link" href="#types">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h3 id="discrete-probability-distributions">
-  Discrete Probability Distributions
-  <a class="heading-link" href="#discrete-probability-distributions">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h2 id="types">Types</h2>
+<h3 id="discrete-probability-distributions">Discrete Probability Distributions</h3>
 <p>Probability distributions associated with random variables that are discrete in nature.</p>
-<h4 id="examplestaken-from-the-slides">
-  Examples(taken from the slides)
-  <a class="heading-link" href="#examplestaken-from-the-slides">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<h5 id="bernoulli-distribution-biased-coin-flip">
-  Bernoulli distribution: (biased) coin flip
-  <a class="heading-link" href="#bernoulli-distribution-biased-coin-flip">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h4 id="examplestaken-from-the-slides">Examples(taken from the slides)</h4>
+<h5 id="bernoulli-distribution-biased-coin-flip">Bernoulli distribution: (biased) coin flip</h5>
 <p>D = {Heads, Tails} <br>
 Specify P(X = Heads) = p. Then P(X = Tails) = 1 − p. <br>
 Write: X ∼ Ber (p) <br>
 Sampling: flip a (biased) coin \</p>
-<h5 id="categorical-distribution-biased-m-sided-dice">
-  Categorical distribution: (biased) m-sided dice
-  <a class="heading-link" href="#categorical-distribution-biased-m-sided-dice">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="categorical-distribution-biased-m-sided-dice">Categorical distribution: (biased) m-sided dice</h5>
 <p>D = {1, · · · , m} <br>
 P <br>
 Specify P(Y = i) = pi , such that <br>
 pi = 1 <br>
 Write: Y ∼ Cat(p1 , · · · , pm ) <br>
 Sampling: roll a (biased) die</p>
-<h3 id="continuous-probablity-distribution">
-  Continuous Probablity Distribution
-  <a class="heading-link" href="#continuous-probablity-distribution">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
-<p>A continuous probability distribution is one in which a continuous random variable X can take on any value within a given range of values ‒ which can be infinite, and therefore uncountable. For example, time is infinite because you could count from 0 to a billion seconds, a trillion seconds, and so on, forever. Source(<a href="https://www.knime.com/blog/learn-continuous-probability-distribution"  class="external-link" target="_blank" rel="noopener">https://www.knime.com/blog/learn-continuous-probability-distribution</a>)</p>
+<h3 id="continuous-probablity-distribution">Continuous Probablity Distribution</h3>
+<p>A continuous probability distribution is one in which a continuous random variable X can take on any value within a given range of values ‒ which can be infinite, and therefore uncountable. For example, time is infinite because you could count from 0 to a billion seconds, a trillion seconds, and so on, forever. Source(<a href="https://www.knime.com/blog/learn-continuous-probability-distribution">https://www.knime.com/blog/learn-continuous-probability-distribution</a>)</p>
 <p>Normally these distributions are defined using a probablity density function or PDFs not the file format:p</p>
-<h4 id="example">
-  Example
-  <a class="heading-link" href="#example">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<h5 id="uniform-distribution">
-  Uniform Distribution
-  <a class="heading-link" href="#uniform-distribution">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h4 id="example">Example</h4>
+<h5 id="uniform-distribution">Uniform Distribution</h5>
 <p>A Uniform distribution and is related to the events which are equally likely to occur. It is defined by two parameters, x and y, where x = minimum value and y = maximum value. It is generally denoted by u(x, y).</p>
 <p>It is denoted as f(b)=1/y-x</p>
-<h3 id="joint-probablity-distribution">
-  Joint Probablity Distribution
-  <a class="heading-link" href="#joint-probablity-distribution">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="joint-probablity-distribution">Joint Probablity Distribution</h3>
 <p>The next topic is joint distribution which can be thought of as a distribution consisting of two or more random variables.</p>
-<h4 id="examples">
-  Examples
-  <a class="heading-link" href="#examples">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<h5 id="flip-of-coins">
-  Flip of coins
-  <a class="heading-link" href="#flip-of-coins">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h4 id="examples">Examples</h4>
+<h5 id="flip-of-coins">Flip of coins</h5>
 <p>Consider the flip of two fair coins; let A  and B  be discrete random variables associated with the outcomes of the first and second coin flips respectively. Each coin flip is a Bernoulli trial and has a Bernoulli distribution. If a coin displays &ldquo;heads&rdquo; then the associated random variable takes the value 1, and it takes the value 0 otherwise. The probability of each of these outcomes is 1/2.</p>
 <p>To model the joint distribution we have to consider the all the possible cases.</p>
 <p>In this case it will be</p>
@@ -306,20 +285,8 @@ Sampling: roll a (biased) die</p>
 <p>and this joint distribution will be represented as P(A, B) = P(A)P(B) A,B -&gt; {Heads, Tails}</p>
 <p>P(A) = 1/2 A -&gt; {Heads, Tails}</p>
 <p>P(B) = 1/2 B -&gt; {Heads, Tails}</p>
-<h3 id="sampling-from-a-distribution">
-  Sampling from a distribution
-  <a class="heading-link" href="#sampling-from-a-distribution">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
-<h4 id="modelling-a-pixels-color">
-  Modelling a pixel&rsquo;s color
-  <a class="heading-link" href="#modelling-a-pixels-color">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h3 id="sampling-from-a-distribution">Sampling from a distribution</h3>
+<h4 id="modelling-a-pixels-color">Modelling a pixel&rsquo;s color</h4>
 <p><img src="/application4.png" alt=""></p>
 <p>Let&rsquo;s say we want to generate an image pixel by pixel in the RGB space.</p>
 <p>For each channel assign a random variable. In this case -&gt; 3 random variables</p>
@@ -330,33 +297,15 @@ Blue Channel B. Val(B) = {0, · · · , 255}</p>
 <p>But how many parameters would be required to represent all the possibilities in this distribution</p>
 <p>Considering that each channel has 256 possible values. It will mean 256^3 possibilites and assuming that we assign the last probablity as 1 - the sum of possible probablities</p>
 <p>Then we get the number of parameters as 256^3 - 1</p>
-<h4 id="modelling-a-binary-image">
-  Modelling a binary image
-  <a class="heading-link" href="#modelling-a-binary-image">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="modelling-a-binary-image">Modelling a binary image</h4>
 <p><img src="/application5.png" alt=""></p>
 <p>Suppose X1 , . . . , Xn are binary (Bernoulli) random variables, i.e.,
 Val(Xi ) = {0, 1} = {Black, White}.</p>
 <p>Possible States?  Each variable takes two values 0 and 1 for n variable - 2^n combinations/states</p>
 <p>Sampling from p(x1 , . . . , xn ) generates an image</p>
 <p>No of parameters required to represent the distribution = 2^n-1</p>
-<h3 id="approximating-distributions">
-  Approximating distributions
-  <a class="heading-link" href="#approximating-distributions">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
-<h4 id="structure-through-independence">
-  Structure through Independence
-  <a class="heading-link" href="#structure-through-independence">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h3 id="approximating-distributions">Approximating distributions</h3>
+<h4 id="structure-through-independence">Structure through Independence</h4>
 <p>From previous examples we see that sampling an image can be expensive. Can we make some assumptions??</p>
 <p>Taking the binary image example what if we assume that the pixels of the binary image are independent.</p>
 <p>In that case,
@@ -370,13 +319,7 @@ Assuming each bernoulli distribution can be represented by a single parameter px
 <p><img src="/application6.png" alt=""></p>
 <p>Independence assumption is too strong. Model not likely to be useful <br>
 For example, each pixel chosen independently when we sample from it.</p>
-<h4 id="structure-through-conditional-independence">
-  Structure through conditional independence
-  <a class="heading-link" href="#structure-through-conditional-independence">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="structure-through-conditional-independence">Structure through conditional independence</h4>
 <p>Using Chain Rule
 p(x1 , . . . , xn ) = p(x1 )p(x2 | x1 )p(x3 | x1 , x2 ) · · · p(xn | x1 , · · · , xn−1 )</p>
 <p>How many parameters? 1 + 2 + · · · + 2n−1 = 2n − 1 <br>
@@ -388,13 +331,7 @@ Total 2^n parameters.</p>
 What this means is that the variable Xi+1 is independent of variables from X1 to Xi-1 given Xi. In that case we can modify the p(x1,&hellip;.,xn) as</p>
 <p>p(x1 , . . . , xn ) = p(x1 )p(x2 | x1 )p(x3 | x2 ) · · · p(xn | xn−1 )</p>
 <p>This forms the idea for Bayes Networks.</p>
-<h3 id="bayes-network-general-idea">
-  Bayes Network: General Idea
-  <a class="heading-link" href="#bayes-network-general-idea">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="bayes-network-general-idea">Bayes Network: General Idea</h3>
 <p>Use conditional parameterization (instead of joint parameterization)</p>
 <p>For each random variable Xi , specify p(xi |xAi ) for set XAi of random variables</p>
 <p>Then get joint parametrization as
@@ -402,13 +339,7 @@ p(x1 , . . . , xn ) = mult( p(xi |xAi ) ) for i = 1 to n</p>
 <p>Need to guarantee it is a legal probability distribution. It has to
 correspond to a chain rule factorization, with factors simplified due to
 assumed conditional independencies</p>
-<h3 id="bayes-networks-representation">
-  Bayes Networks (Representation)
-  <a class="heading-link" href="#bayes-networks-representation">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="bayes-networks-representation">Bayes Networks (Representation)</h3>
 <p><img src="/application7.png" alt="">
 A Bayesian network is specified by a directed acyclic graph (DAG)
 G = (V , E ) with:</p>
@@ -421,13 +352,7 @@ Graph G = (V , E ) is called the structure of the Bayesian Network</li>
 p(x1 , . . . xn ) = mult(p(xi | xPa(i) )) i∈V</p>
 <p>Claim: p(x1 , . . . xn ) is a valid probability distribution because of ordering implied by DAG</p>
 <p>Economical representation: exponential in |Pa(i)|, not |V |</p>
-<h4 id="examples-1">
-  Examples
-  <a class="heading-link" href="#examples-1">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="examples-1">Examples</h4>
 <p><img src="/application8.png" alt=""></p>
 <p>Consider the Bayes Network given.</p>
 <p>How do we represent this network in terms of probablity?</p>
@@ -446,13 +371,7 @@ p(d, i, g , s, l) = p(d)p(i | d)p(g | i, d)p(s | i, d, g )p(l | g , d, i, s)</p>
 D ⊥ I, <br>
 S ⊥ {D, G } | I , <br>
 L ⊥ {I , D, S} | G .</p>
-<h5 id="spam-classification">
-  Spam Classification
-  <a class="heading-link" href="#spam-classification">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="spam-classification">Spam Classification</h5>
 <p><img src="/application9.png" alt="">
 Classify e-mails as spam (Y = 1) or not spam (Y = 0)</p>
 <ul>
@@ -467,13 +386,7 @@ Classify e-mails as spam (Y = 1) or not spam (Y = 0)</p>
 <p>Are the independence assumptions made here reasonable? <br>
 Philosophy: Nearly all probabilistic models are “wrong”, but many are
 nonetheless useful</p>
-<h3 id="discriminative-versus-generative-models">
-  Discriminative versus generative models
-  <a class="heading-link" href="#discriminative-versus-generative-models">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="discriminative-versus-generative-models">Discriminative versus generative models</h3>
 <p><img src="/application11.png" alt=""></p>
 <ul>
 <li>Using chain rule p(Y , X) = p(X | Y )p(Y ) = p(Y | X)p(X). Corresponding Bayesian networks</li>
@@ -485,20 +398,8 @@ nonetheless useful</p>
 </ul>
 </li>
 </ul>
-<h4 id="example-1">
-  Example
-  <a class="heading-link" href="#example-1">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<h5 id="logistic-regression">
-  Logistic Regression
-  <a class="heading-link" href="#logistic-regression">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h4 id="example-1">Example</h4>
+<h5 id="logistic-regression">Logistic Regression</h5>
 <p>For the discriminative model, assume that p(Y = 1 | x; α) = f (x, α).</p>
 <p>Not represented as a table anymore. It is a parameterized function of x (regression)</p>
 <ul>
@@ -507,13 +408,7 @@ nonetheless useful</p>
 <li>Completely specified by a vector α of n + 1 parameters (compact representation)</li>
 </ul>
 <p>Linear dependence: let z(α, x) = α0 + sum(αi*xi) for i = 1 to n .Then, p(Y = 1 | x; α) = σ(z(α, x)), where σ(z) = 1/(1 + e^−z ) is called the logistic function</p>
-<h5 id="neural-models">
-  Neural Models
-  <a class="heading-link" href="#neural-models">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="neural-models">Neural Models</h5>
 <p>In discriminative models, we assume that <br>
 p(Y = 1 | x; α) = f (x, α)</p>
 <p>In previous example we have linear dependence</p>
@@ -527,99 +422,29 @@ Non-linear dependence: let h(A, b, x) = f (Ax + b) be a non-linear transformatio
 <li>More flexible</li>
 <li>More parameters: A, b, α</li>
 </ul>
-<h3 id="bayes-networks-with-continuous-variables">
-  Bayes Networks with Continuous Variables
-  <a class="heading-link" href="#bayes-networks-with-continuous-variables">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="bayes-networks-with-continuous-variables">Bayes Networks with Continuous Variables</h3>
 <p>Bayes Networks can also be used in case of continuous Variables. Here is an example</p>
-<h4 id="mixture-of-2-gaussians">
-  Mixture of 2 Gaussians
-  <a class="heading-link" href="#mixture-of-2-gaussians">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="mixture-of-2-gaussians">Mixture of 2 Gaussians</h4>
 <p>Consider that we want to map a bernoulli distribution Z to a gaussian distribution X. <br>
 Need to find p(x|z) <br>
 Z ∼ Bernoulli(p) <br>
 p(x|z) = p(X | (Z = 0)) ∼ N (µ0 , σ0 ) , p(X | (Z = 1)) ∼ N (µ1 , σ1 ) <br>
 The parameters are p, µ0 , σ0 , µ1 , σ1</p>
 <p>By mixing 2 Gaussians we have applied the concept of Bayes Networks where X depends on the variable Z.</p>
-<h3 id="wrapping-up">
-  Wrapping up
-  <a class="heading-link" href="#wrapping-up">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="wrapping-up">Wrapping up</h3>
 <p>So this part we kind of got a lot into understanding about various probability distributions. How to sample from distributions, how to approximate them etc. Next part will pretty much focus on the same terminology but using a different class of models termed as autoregressive models. Until then bye!!</p>
 
-  </article>
-</section>
+</content>
 
+
+
+<p>
   
-
-    </div>
-
-    <footer class="footer">
-  <section class="container">
-    ©
-    
-      2019 -
-    
-    2024
-     Rishab Mudliar 
-    ·
-    
-    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
-    
-  </section>
-</footer>
+</p>
 
   </main>
-
-  
-
-  
-  
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
 
   
 </body>

@@ -1,124 +1,174 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Google Summer of Code on rishab_m</title>
-    <link>https://lazycodes7.github.io/categories/google-summer-of-code/</link>
-    <description>Recent content in Google Summer of Code on rishab_m</description>
+    <title>Google Summer of Code on Rishab Mudliar</title>
+    <link>https://lazyCodes7.github.io/categories/google-summer-of-code/</link>
+    <description>Recent content in Google Summer of Code on Rishab Mudliar</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <lastBuildDate>Fri, 27 Jan 2023 14:56:36 +0530</lastBuildDate>
-    <atom:link href="https://lazycodes7.github.io/categories/google-summer-of-code/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-US</language>
+    <copyright>Copyright © 2026, Rishab Mudliar.</copyright>
+    <lastBuildDate>Fri, 27 Jan 2023 14:56:36 +0530</lastBuildDate><atom:link href="https://lazyCodes7.github.io/categories/google-summer-of-code/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Google Summer of Code at RedHenLab</title>
-      <link>https://lazycodes7.github.io/posts/experience/</link>
+      <link>https://lazyCodes7.github.io/posts/experience/</link>
       <pubDate>Fri, 27 Jan 2023 14:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/experience/</guid>
-      <description>Why am I writing this blog? Link to heading Well I did my Google Summer of Code in 2022 that was like two years back. But every year I get a lot of people on LinkedIn or Twitter DMing about guidance, tips or just wanting to know about my experience. So this is a blog for them and to answer their questions!&#xA;So let&amp;rsquo;s get started..&#xA;Why RedHenLab? Link to heading Here in my college people are passionate to do GSoC like I am not kidding.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/experience/</guid>
+      <description>Why am I writing this blog? Well I did my Google Summer of Code in 2022 that was like two years back. But every year I get a lot of people on LinkedIn or Twitter DMing about guidance, tips or just wanting to know about my experience. So this is a blog for them and to answer their questions!
+So let&amp;rsquo;s get started..
+Why RedHenLab? Here in my college people are passionate to do GSoC like I am not kidding.</description>
     </item>
+    
     <item>
       <title>Week-16 (Coding Period) 2nd September - 11th September</title>
-      <link>https://lazycodes7.github.io/posts/week16/</link>
+      <link>https://lazyCodes7.github.io/posts/week16/</link>
       <pubDate>Fri, 09 Sep 2022 23:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week16/</guid>
-      <description>This week Link to heading Deployed the pipeline to Case HPC Documented and commented the codebase Current progress of the pipeline Link to heading Stage 1: Curation Link to heading After working on collecting paintings related to Christian Iconography for 3-4 weeks. The final version of the dataset consists of approximately 9.6k data points.&#xA;Museums Link to heading Web Gallery of Art - 5k images Art Institute of Chicago - 500-700 Met Art - 500-700 Corpus Viteraeum - 2k National Gallery of Art, Washington DC - 1k-2k Artforms.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week16/</guid>
+      <description>This week  Deployed the pipeline to Case HPC Documented and commented the codebase  Current progress of the pipeline Stage 1: Curation After working on collecting paintings related to Christian Iconography for 3-4 weeks. The final version of the dataset consists of approximately 9.6k data points.
+Museums  Web Gallery of Art - 5k images Art Institute of Chicago - 500-700 Met Art - 500-700 Corpus Viteraeum - 2k National Gallery of Art, Washington DC - 1k-2k  Artforms.</description>
     </item>
+    
     <item>
       <title>Week-15 (Coding Period) 25th August - 2nd September</title>
-      <link>https://lazycodes7.github.io/posts/week15/</link>
+      <link>https://lazyCodes7.github.io/posts/week15/</link>
       <pubDate>Fri, 02 Sep 2022 23:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week15/</guid>
-      <description>This week Link to heading Implemented the transformer model for captioning task Presented the demo of the pipeline to the mentors Changing the dataset(torch.Dataset instance i.e) Link to heading Earlier the dataset instance of PyTorch that I was using was simple. Whenever I referred an index it would return the image and numericalized version of the caption. But I wanted to use GPT2 for what it is good for. Hint: Text generation.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week15/</guid>
+      <description>This week  Implemented the transformer model for captioning task Presented the demo of the pipeline to the mentors  Changing the dataset(torch.Dataset instance i.e) Earlier the dataset instance of PyTorch that I was using was simple. Whenever I referred an index it would return the image and numericalized version of the caption. But I wanted to use GPT2 for what it is good for. Hint: Text generation. So I changed the captions by providing a prompt as a token.</description>
     </item>
+    
     <item>
       <title>Week-14 (Coding Period) 18th August - 25th August</title>
-      <link>https://lazycodes7.github.io/posts/week14/</link>
+      <link>https://lazyCodes7.github.io/posts/week14/</link>
       <pubDate>Thu, 25 Aug 2022 23:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week14/</guid>
-      <description>This week Link to heading Used a transformer based model to work on the captioning task A Transformer that uses images + text Link to heading During the last week&amp;rsquo;s meeting I had concluded that using models like Word2Vec might not always work as they have a fixed representation of each word but words can differ contextually so this week I decided to use some better language models like GPT2 and BERT.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week14/</guid>
+      <description>This week  Used a transformer based model to work on the captioning task  A Transformer that uses images + text During the last week&amp;rsquo;s meeting I had concluded that using models like Word2Vec might not always work as they have a fixed representation of each word but words can differ contextually so this week I decided to use some better language models like GPT2 and BERT.
+VisionEncoderDecoder For incorporating transformer I used huggingface&amp;rsquo;s VisionEncoderDecoder implementation which helps us in initializing any vision-transformer(ViT, BEiT etc) based model as the encoder and a language model(GPT2, BERT, RoBERTa etc) as the decoder.</description>
     </item>
+    
     <item>
       <title>Week-13 (Coding Period) 11th August - 18th August</title>
-      <link>https://lazycodes7.github.io/posts/week13/</link>
+      <link>https://lazyCodes7.github.io/posts/week13/</link>
       <pubDate>Thu, 18 Aug 2022 23:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week13/</guid>
-      <description>This week Link to heading Worked on using the captions I had collected during the curation stage I also build up a CNN+LSTM model to see if we could achieve good captioning results without use of Transformers Approach towards using the text. Link to heading A image captioning model makes use of both text and an image but interpreting text can be difficult. Normally to solve this we use word embeddings which give us an idea about the similarity between two or more words.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week13/</guid>
+      <description>This week  Worked on using the captions I had collected during the curation stage I also build up a CNN+LSTM model to see if we could achieve good captioning results without use of Transformers  Approach towards using the text. A image captioning model makes use of both text and an image but interpreting text can be difficult. Normally to solve this we use word embeddings which give us an idea about the similarity between two or more words.</description>
     </item>
+    
     <item>
       <title>Week-12 (Coding Period) 4th August - 11th August</title>
-      <link>https://lazycodes7.github.io/posts/week12/</link>
+      <link>https://lazyCodes7.github.io/posts/week12/</link>
       <pubDate>Tue, 09 Aug 2022 23:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week12/</guid>
-      <description>This week Link to heading Read a chapter exclusively on saints from The Gothic Image by Emile Male. Annotated 200 images + previous images with more attributes I learned from reading the book by Emile Male Paintings in context Link to heading This whole time I had been curating images and trying to annotate them but after reading 70 pages of this book. It made things really clear for me so I think it will be great to explain how Christian Paintings really work.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week12/</guid>
+      <description>This week  Read a chapter exclusively on saints from The Gothic Image by Emile Male. Annotated 200 images + previous images with more attributes I learned from reading the book by Emile Male  Paintings in context This whole time I had been curating images and trying to annotate them but after reading 70 pages of this book. It made things really clear for me so I think it will be great to explain how Christian Paintings really work.</description>
     </item>
+    
     <item>
       <title>Week-11 (Coding Period) 29th July - 4th August</title>
-      <link>https://lazycodes7.github.io/posts/week11/</link>
+      <link>https://lazyCodes7.github.io/posts/week11/</link>
       <pubDate>Thu, 04 Aug 2022 23:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week11/</guid>
-      <description>This week Link to heading Worked on moving my module to CaseHPC Tried perfecting F-RCNN for detecting saints and their attributes in paintings. Regarding CaseHPC Link to heading One of the things I couldn&amp;rsquo;t do in the first phase of this program was to use Case Western&amp;rsquo;s HPC to train my models in general. So this week I decided to get my hands dirty and made my module work on one of the gpu nodes of Case HPC</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week11/</guid>
+      <description>This week  Worked on moving my module to CaseHPC Tried perfecting F-RCNN for detecting saints and their attributes in paintings.  Regarding CaseHPC One of the things I couldn&amp;rsquo;t do in the first phase of this program was to use Case Western&amp;rsquo;s HPC to train my models in general. So this week I decided to get my hands dirty and made my module work on one of the gpu nodes of Case HPC</description>
     </item>
+    
     <item>
       <title>Week-10 (Phase-1 Report) 22nd July - 29th July</title>
-      <link>https://lazycodes7.github.io/posts/week10/</link>
+      <link>https://lazyCodes7.github.io/posts/week10/</link>
       <pubDate>Tue, 26 Jul 2022 23:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week10/</guid>
-      <description>This week Link to heading This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1&#xA;The Modified Pipeline Link to heading 1. Data Curation. Link to heading 2. Image Captioning Model Link to heading Changes Link to heading I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week10/</guid>
+      <description>This week This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1
+The Modified Pipeline 1. Data Curation. 2. Image Captioning Model Changes   I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold.</description>
     </item>
+    
     <item>
       <title>Week-9 (Coding Period) 15th July - 22nd July</title>
-      <link>https://lazycodes7.github.io/posts/week9/</link>
+      <link>https://lazyCodes7.github.io/posts/week9/</link>
       <pubDate>Tue, 26 Jul 2022 14:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week9/</guid>
-      <description>This week Link to heading This week I spent my time working on the module that would extract features from paintings&#xA;Meeting 1 Link to heading Since I was done with my curation I wanted some idea on how to proceed forward with my project and so I had mailed my mentors regarding the next steps for this project. This meeting was mostly oriented with what I had done and what are the results I could produce for the first evaluation.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week9/</guid>
+      <description>This week This week I spent my time working on the module that would extract features from paintings
+Meeting 1 Since I was done with my curation I wanted some idea on how to proceed forward with my project and so I had mailed my mentors regarding the next steps for this project. This meeting was mostly oriented with what I had done and what are the results I could produce for the first evaluation.</description>
     </item>
+    
     <item>
       <title>Week-8 (Coding Period) 8th July - 15th July</title>
-      <link>https://lazycodes7.github.io/posts/week8/</link>
+      <link>https://lazyCodes7.github.io/posts/week8/</link>
       <pubDate>Mon, 18 Jul 2022 14:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week8/</guid>
-      <description>This week Link to heading This week I spent curating data from two sources.&#xA;1. Corpus Vitrearum. Link to heading Corpus Vitrearum is a museum that has around 7000 stained glass artworks that are stored according to their iconclasses. By using various scraping techniques I scraped 2000 images that pertain to Christian iconographic content.&#xA;During the curation process I am also logging some of the attributes from the metadata. The advantage of this is that it keeps the dataset open to more usecases.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week8/</guid>
+      <description>This week This week I spent curating data from two sources.
+1. Corpus Vitrearum. Corpus Vitrearum is a museum that has around 7000 stained glass artworks that are stored according to their iconclasses. By using various scraping techniques I scraped 2000 images that pertain to Christian iconographic content.
+During the curation process I am also logging some of the attributes from the metadata. The advantage of this is that it keeps the dataset open to more usecases.</description>
     </item>
+    
     <item>
       <title>Week-7 (Coding Period) 1st July - 8th July</title>
-      <link>https://lazycodes7.github.io/posts/week7/</link>
+      <link>https://lazyCodes7.github.io/posts/week7/</link>
       <pubDate>Mon, 11 Jul 2022 14:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week7/</guid>
-      <description>This week Link to heading This week I worked on curating data points from two sources i.e the Art Institute of Chicago and the Metropolitan Museum of Art.&#xA;1. Art Institute of Chicago. Link to heading The Art Institute of Chicago provides open access to around 50,000 artworks with rich metadata involved. By using the search tool provided by the Institute we have got around 1500 results that pertain to containing Christian content in them.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week7/</guid>
+      <description>This week This week I worked on curating data points from two sources i.e the Art Institute of Chicago and the Metropolitan Museum of Art.
+1. Art Institute of Chicago. The Art Institute of Chicago provides open access to around 50,000 artworks with rich metadata involved. By using the search tool provided by the Institute we have got around 1500 results that pertain to containing Christian content in them.
+Let&amp;rsquo;s look at one of the art pieces.</description>
     </item>
+    
     <item>
       <title>Week-5&#43;6 (Coding Period) 17th June - 1st July</title>
-      <link>https://lazycodes7.github.io/posts/week5/</link>
+      <link>https://lazyCodes7.github.io/posts/week5/</link>
       <pubDate>Sun, 03 Jul 2022 14:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week5/</guid>
-      <description>This week Link to heading I continued my search for licensed souces and also found a really good site that provides API access/open access to museum metadata After compiling enough sources for 2 weeks I finally started the process for curation. Source 1 - The Web Gallery of Art Link to heading The Web Gallery of Art provides access to 60,000 artworks in the form of a dataset. This source has also been used in other art-related datasets like SemArt and ArtDL.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week5/</guid>
+      <description>This week  I continued my search for licensed souces and also found a really good site that provides API access/open access to museum metadata After compiling enough sources for 2 weeks I finally started the process for curation.  Source 1 - The Web Gallery of Art The Web Gallery of Art provides access to 60,000 artworks in the form of a dataset. This source has also been used in other art-related datasets like SemArt and ArtDL.</description>
     </item>
+    
     <item>
       <title>Week-4 (Coding Period) 10th June - 17th June</title>
-      <link>https://lazycodes7.github.io/posts/week4/</link>
+      <link>https://lazyCodes7.github.io/posts/week4/</link>
       <pubDate>Sun, 19 Jun 2022 14:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week4/</guid>
-      <description>This week Link to heading The project kickoff&#xA;Before the coding period began I had previously been working on classification of the Christian icons in the painting. But in order to caption art, we needed a good source. So I had been collecting sources here.&#xA;In order to get some idea on how to proceed with the sources collected I contacted my mentor Fred.&#xA;Minutes of the meeting. Link to heading Attendees - Fred, Marcelo, Rishab, Tiago</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week4/</guid>
+      <description>This week The project kickoff
+Before the coding period began I had previously been working on classification of the Christian icons in the painting. But in order to caption art, we needed a good source. So I had been collecting sources here.
+In order to get some idea on how to proceed with the sources collected I contacted my mentor Fred.
+Minutes of the meeting. Attendees - Fred, Marcelo, Rishab, Tiago</description>
     </item>
+    
     <item>
       <title>Week-3 (Community Bonding) 3rd June - 10th June</title>
-      <link>https://lazycodes7.github.io/posts/week3/</link>
+      <link>https://lazyCodes7.github.io/posts/week3/</link>
       <pubDate>Sun, 12 Jun 2022 14:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week3/</guid>
-      <description>This week Link to heading This week was mostly aimed towards meeting people from RedHenLab as well as our peers.&#xA;Meeting #1 Link to heading Professor Mark organized a meeting consisting of mentors and contributors. The contributors were limited to the people Mark is mentoring. It was a normal discussion where people talked about the things they are doing where they are from etc.&#xA;Meeting #2 Link to heading During the first meeting, Mark had informed me that Parth&amp;rsquo;s project and mine arise from a similar arena i.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week3/</guid>
+      <description>This week This week was mostly aimed towards meeting people from RedHenLab as well as our peers.
+Meeting #1 Professor Mark organized a meeting consisting of mentors and contributors. The contributors were limited to the people Mark is mentoring. It was a normal discussion where people talked about the things they are doing where they are from etc.
+Meeting #2 During the first meeting, Mark had informed me that Parth&amp;rsquo;s project and mine arise from a similar arena i.</description>
     </item>
+    
     <item>
       <title>Week-2 (Community Bonding) 27th May - 3th June</title>
-      <link>https://lazycodes7.github.io/posts/week2/</link>
+      <link>https://lazyCodes7.github.io/posts/week2/</link>
       <pubDate>Sat, 04 Jun 2022 14:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week2/</guid>
-      <description>This week Link to heading CWRU Accounts Link to heading The first thing that happened this week was that we got our CWRU Gmail accounts.&#xA;HPC Setup Link to heading After this it was time to setup CWRU&amp;rsquo;s HPC(High Performing Cluster). The steps for that are following.&#xA;First setup CWRU&amp;rsquo;s VPN by following the guide here. Make sure that Duo is setup as a 2FA option as each time a connection to the VPN occurs a subsequent push notification is sent to Duo Mobile.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week2/</guid>
+      <description>This week CWRU Accounts The first thing that happened this week was that we got our CWRU Gmail accounts.
+HPC Setup After this it was time to setup CWRU&amp;rsquo;s HPC(High Performing Cluster). The steps for that are following.
+  First setup CWRU&amp;rsquo;s VPN by following the guide here. Make sure that Duo is setup as a 2FA option as each time a connection to the VPN occurs a subsequent push notification is sent to Duo Mobile.</description>
     </item>
+    
     <item>
       <title>Week-1 (Community Bonding) 20th May - 27th May</title>
-      <link>https://lazycodes7.github.io/posts/week1/</link>
+      <link>https://lazyCodes7.github.io/posts/week1/</link>
       <pubDate>Fri, 27 May 2022 14:56:36 +0530</pubDate>
-      <guid>https://lazycodes7.github.io/posts/week1/</guid>
-      <description>Introduction Link to heading Hi new readers! I am Rishab Mudliar and I am currently in the final year of my Computer Science Major. This blog is part of a series dedicated to noting down my activities during the period of Google Summer of Code.&#xA;GSoC Link to heading Google Summer of Code or the acronym GSoC is a program aimed at people in tech looking to contribute to open-source software development.</description>
+      
+      <guid>https://lazyCodes7.github.io/posts/week1/</guid>
+      <description>Introduction Hi new readers! I am Rishab Mudliar and I am currently in the final year of my Computer Science Major. This blog is part of a series dedicated to noting down my activities during the period of Google Summer of Code.
+GSoC Google Summer of Code or the acronym GSoC is a program aimed at people in tech looking to contribute to open-source software development. Selected contributors work for 12+ weeks on projects that solve interesting problems.</description>
     </item>
+    
   </channel>
 </rss>

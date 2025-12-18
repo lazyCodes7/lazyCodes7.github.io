@@ -1,218 +1,228 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>
-  Week-10 (Phase-1 Report) 22nd July - 29th July · rishab_m
-</title>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://lazyCodes7.github.io/images/favicon.png" />
+<title>Week-10 (Phase-1 Report) 22nd July - 29th July | Rishab Mudliar</title>
+<meta name="title" content="Week-10 (Phase-1 Report) 22nd July - 29th July" />
+<meta name="description" content="This week This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1
+The Modified Pipeline 1. Data Curation. 2. Image Captioning Model Changes   I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold." />
+<meta name="keywords" content="" />
 
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
-
-
-
-
-<meta name="author" content="Rishab Mudliar">
-<meta name="description" content="This week Link to heading This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1
-The Modified Pipeline Link to heading 1. Data Curation. Link to heading 2. Image Captioning Model Link to heading Changes Link to heading I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold.">
-<meta name="keywords" content="blog,developer,personal">
-
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Week-10 (Phase-1 Report) 22nd July - 29th July"/>
-<meta name="twitter:description" content="This week Link to heading This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1
-The Modified Pipeline Link to heading 1. Data Curation. Link to heading 2. Image Captioning Model Link to heading Changes Link to heading I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold."/>
 
 <meta property="og:title" content="Week-10 (Phase-1 Report) 22nd July - 29th July" />
-<meta property="og:description" content="This week Link to heading This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1
-The Modified Pipeline Link to heading 1. Data Curation. Link to heading 2. Image Captioning Model Link to heading Changes Link to heading I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold." />
+<meta property="og:description" content="This week This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1
+The Modified Pipeline 1. Data Curation. 2. Image Captioning Model Changes   I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lazycodes7.github.io/posts/week10/" /><meta property="article:section" content="posts" />
+<meta property="og:url" content="https://lazyCodes7.github.io/posts/week10/" /><meta property="og:image" content="https://lazyCodes7.github.io/images/share.png"/><meta property="article:section" content="posts" />
 <meta property="article:published_time" content="2022-07-26T23:56:36+05:30" />
-<meta property="article:modified_time" content="2022-07-26T23:56:36+05:30" />
+<meta property="article:modified_time" content="2022-07-26T23:56:36+05:30" /><meta property="og:site_name" content="Rishab M" />
 
 
 
 
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://lazyCodes7.github.io/images/share.png"/>
 
-<link rel="canonical" href="https://lazycodes7.github.io/posts/week10/">
-
-
-<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
-
-
-  
-  
-  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+<meta name="twitter:title" content="Week-10 (Phase-1 Report) 22nd July - 29th July"/>
+<meta name="twitter:description" content="This week This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1
+The Modified Pipeline 1. Data Curation. 2. Image Captioning Model Changes   I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold."/>
 
 
 
+<meta itemprop="name" content="Week-10 (Phase-1 Report) 22nd July - 29th July">
+<meta itemprop="description" content="This week This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1
+The Modified Pipeline 1. Data Curation. 2. Image Captioning Model Changes   I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold."><meta itemprop="datePublished" content="2022-07-26T23:56:36+05:30" />
+<meta itemprop="dateModified" content="2022-07-26T23:56:36+05:30" />
+<meta itemprop="wordCount" content="1663"><meta itemprop="image" content="https://lazyCodes7.github.io/images/share.png"/>
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
 
-  
-    
-    
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
-  
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
 
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
 
- 
+  a:hover {
+    text-decoration: underline;
+  }
 
+  nav a {
+    margin-right: 8px;
+  }
 
+  strong,
+  b {
+    color: var(--heading-color);
+  }
 
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
 
-<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
-<link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
 
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  main {
+    line-height: 1.6;
+  }
 
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  table {
+    width: 100%;
+  }
 
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
 
+  img {
+    max-width: 100%;
+  }
 
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
 
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
 
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
 
+  .title:hover {
+    text-decoration: none;
+  }
 
+  .title h1 {
+    font-size: 1.5em;
+  }
 
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
 
 </head>
 
+<body>
+  <header><a href="/" class="title">
+  <h2>Rishab Mudliar</h2>
+</a>
+<nav>
+<a href="/blogs/">Blogs</a>
 
+<a href="/posts/">GSoC</a>
 
+<a href="/archive/">Archive</a>
 
+<a href="/projects/">Projects</a>
 
-
-<body class="preload-transitions colorscheme-auto">
-  
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
-</div>
-
-
-  <main class="wrapper">
-    <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">
-      rishab_m
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/blogs/">Blogs</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">GSoC</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/projects/">Projects</a>
-            </li>
-          
-        
-        
-      </ul>
-    
-  </section>
 </nav>
+</header>
+  <main>
 
-
-    <div class="content">
-      
-  <section class="container post">
-    <article>
-      <header>
-        <div class="post-title">
-          <h1 class="title">
-            <a class="title-link" href="https://lazycodes7.github.io/posts/week10/">
-              Week-10 (Phase-1 Report) 22nd July - 29th July
-            </a>
-          </h1>
-        </div>
-        <div class="post-meta">
-          <div class="date">
-            <span class="posted-on">
-              <i class="fa fa-calendar" aria-hidden="true"></i>
-              <time datetime="2022-07-26T23:56:36&#43;05:30">
-                July 26, 2022
-              </time>
-            </span>
-            <span class="reading-time">
-              <i class="fa fa-clock-o" aria-hidden="true"></i>
-              9-minute read
-            </span>
-          </div>
-          <div class="authors">
-  <i class="fa fa-user" aria-hidden="true"></i>
-    <a href="/authors/rishab-mudliar/">Rishab Mudliar</a></div>
-
-          <div class="categories">
-  <i class="fa fa-folder" aria-hidden="true"></i>
-    <a href="/categories/google-summer-of-code/">Google Summer of Code</a></div>
-
-          
-        </div>
-      </header>
-
-      <div class="post-content">
-        
-        <h1 id="this-week">
-  This week
-  <a class="heading-link" href="#this-week">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
+<content>
+  <h1 id="this-week">This week</h1>
 <p>This week I completed the module that extracts various attributes from the paintings. Apart from that I will be showcasing in this blog whatever I have done in phase-1</p>
-<h2 id="the-modified-pipeline">
-  The Modified Pipeline
-  <a class="heading-link" href="#the-modified-pipeline">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
-<h3 id="1-data-curation">
-  1. Data Curation.
-  <a class="heading-link" href="#1-data-curation">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h2 id="the-modified-pipeline">The Modified Pipeline</h2>
+<h3 id="1-data-curation">1. Data Curation.</h3>
 <p><img src="/n_1.png" alt=""></p>
-<h3 id="2-image-captioning-model">
-  2. Image Captioning Model
-  <a class="heading-link" href="#2-image-captioning-model">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="2-image-captioning-model">2. Image Captioning Model</h3>
 <p><img src="/n_2.png" alt=""></p>
-<h3 id="changes">
-  Changes
-  <a class="heading-link" href="#changes">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="changes">Changes</h3>
 <ul>
 <li>
 <p>I have made very minute changes to the pipeline. One of my goals was to create a module for adding more data points but I have kept that on hold. Instead we just compute the saint label and directly add the image to a database. If I have more time I would definitely want to build something more concrete out of this.</p>
@@ -221,59 +231,29 @@ The Modified Pipeline Link to heading 1. Data Curation. Link to heading 2. Image
 <p>Second thing I changed was the Object-Detection module which in itself was part of the image-captioning module. Instead of using Faster-RCNN I have used YOLOv6 which gives me better performance and will be showcased in the later sections of this blog.</p>
 </li>
 </ul>
-<h3 id="the-process-for-curation">
-  The process for curation
-  <a class="heading-link" href="#the-process-for-curation">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="the-process-for-curation">The process for curation</h3>
 <p>Since the problem of using Christian Iconography in AI is relatively new. The fact is that there are no datasets for the same and hence my first task was to curate one. After the initial meeting with my mentors I understood that what we need to focus on is something simple. For eg why not just stick to tagging renaissance paintings and then later expand to other categories or just identify what Mother Mary might be doing in a painting.</p>
 <p>After this discussion I decided to stick to paintings of saints and Mary included. The task would be simple. Given a painting that contains an image of a saint what is he/she doing?</p>
 <p>Based on this I started I looking into various museums that could give me open access to data. After exploring this subject for around 2 weeks I logged down my sources here and decided that it was time to start with the curation.</p>
 <p>The process of curation is a tiring one is what I have found but nonetheless it was interesting and fun. I learned a lot of things related to iconography and information retrieval. Taking Mark&rsquo;s advice I utilized images found in museums belonging to the renaissance era with different artforms like fresco, oil paint etc.</p>
-<h3 id="analysis-of-the-metadata">
-  Analysis of the metadata.
-  <a class="heading-link" href="#analysis-of-the-metadata">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
-<p>After working on this task for 4 weeks I curated around 10,000 <a href="https://drive.google.com/drive/folders/1a1vUdRYvFHzw3xs_Y1Yxfe_tanLogWBj?usp=sharing"  class="external-link" target="_blank" rel="noopener">images</a> containing iconographic content in them.</p>
-<h4 id="sources">
-  Sources.
-  <a class="heading-link" href="#sources">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h3 id="analysis-of-the-metadata">Analysis of the metadata.</h3>
+<p>After working on this task for 4 weeks I curated around 10,000 <a href="https://drive.google.com/drive/folders/1a1vUdRYvFHzw3xs_Y1Yxfe_tanLogWBj?usp=sharing">images</a> containing iconographic content in them.</p>
+<h4 id="sources">Sources.</h4>
 <p>I have curated images from 5 sources.</p>
 <ol>
-<li><a href="https://www.wga.hu/"  class="external-link" target="_blank" rel="noopener">Web Gallery of Art</a> - 5k images</li>
-<li><a href="https://www.artic.edu/collection"  class="external-link" target="_blank" rel="noopener">Art Institute of Chicago</a> - 500-700</li>
-<li><a href="https://www.metmuseum.org/"  class="external-link" target="_blank" rel="noopener">Met Art</a> - 500-700</li>
-<li><a href="https://corpusvitrearum.de/"  class="external-link" target="_blank" rel="noopener">Corpus Viteraeum</a> - 2k</li>
-<li><a href="https://www.nga.gov/"  class="external-link" target="_blank" rel="noopener">National Gallery of Art, Washington DC</a> - 4-5k(WIP)</li>
+<li><a href="https://www.wga.hu/">Web Gallery of Art</a> - 5k images</li>
+<li><a href="https://www.artic.edu/collection">Art Institute of Chicago</a> - 500-700</li>
+<li><a href="https://www.metmuseum.org/">Met Art</a> - 500-700</li>
+<li><a href="https://corpusvitrearum.de/">Corpus Viteraeum</a> - 2k</li>
+<li><a href="https://www.nga.gov/">National Gallery of Art, Washington DC</a> - 4-5k(WIP)</li>
 </ol>
-<h4 id="artforms">
-  Artforms.
-  <a class="heading-link" href="#artforms">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="artforms">Artforms.</h4>
 <ol>
 <li>Painting</li>
 <li>Print</li>
 <li>Stained glass</li>
 </ol>
-<h4 id="metadata">
-  Metadata.
-  <a class="heading-link" href="#metadata">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="metadata">Metadata.</h4>
 <ol>
 <li>Title</li>
 <li>Medium</li>
@@ -281,76 +261,28 @@ The Modified Pipeline Link to heading 1. Data Curation. Link to heading 2. Image
 <li>Creation Time</li>
 <li>Description(Contextual meaning basically)</li>
 </ol>
-<h4 id="analyzing-the-timeframe-of-the-paintings">
-  Analyzing the timeframe of the paintings.
-  <a class="heading-link" href="#analyzing-the-timeframe-of-the-paintings">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="analyzing-the-timeframe-of-the-paintings">Analyzing the timeframe of the paintings.</h4>
 <p><img src="/timeframe.png" alt="">
 Out of the 10k paintings collected what we observe is that most of these paintings come from the renaissance era.</p>
-<h4 id="analyzing-the-medium-of-the-paintings">
-  Analyzing the medium of the paintings.
-  <a class="heading-link" href="#analyzing-the-medium-of-the-paintings">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="analyzing-the-medium-of-the-paintings">Analyzing the medium of the paintings.</h4>
 <p>Let&rsquo;s understand the medium of paintings that we have collected. Saying I have collected paintings is too abstract right. Time to go deep!</p>
 <p><img src="/medium.png" alt=""></p>
 <p>So what we observe are more variations like tempera, oil on wood, oil on canvas and transmitted light front single shot. These are weird names to me but nonetheless we get the idea as to what I have collected.</p>
-<h4 id="analyzing-the-descriptions-captions">
-  Analyzing the descriptions, captions
-  <a class="heading-link" href="#analyzing-the-descriptions-captions">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="analyzing-the-descriptions-captions">Analyzing the descriptions, captions</h4>
 <p>It is a bit difficult to qualitatively analyze each caption and hence I have just analyzed the lengths of the textual data.</p>
-<h5 id="titles">
-  Titles
-  <a class="heading-link" href="#titles">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="titles">Titles</h5>
 <p><img src="/title.png" alt="">
 From this I can say that the titles are relatively long even for a title. While I was scraping this data what I observed was that some titles were good enough to be used as captions as they were able to correctly describe the painting in short words.</p>
-<h5 id="descriptions">
-  Descriptions
-  <a class="heading-link" href="#descriptions">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="descriptions">Descriptions</h5>
 <p><img src="/description.png" alt="">
 In order to build a good captioning model we need captions that describe paintings on a contextual level and hence I have scraped images only from museums as they normally contain descriptions that are tagged by people that have certain level of expertise in this. They don&rsquo;t just describe the painting they also have the ability to describe the style and strokes of the artist.</p>
-<h4 id="collections">
-  Collections
-  <a class="heading-link" href="#collections">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="collections">Collections</h4>
 <p>The last thing I analyzed from the metadata was the places that it was collected or the artists who made it.
 <img src="/collection.png" alt=""></p>
-<h3 id="image-captioning-process">
-  Image-Captioning Process.
-  <a class="heading-link" href="#image-captioning-process">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="image-captioning-process">Image-Captioning Process.</h3>
 <p><img src="/n_2.png" alt="">
 After curating the images, the next step in the Emile Male Pipeline is to tag them. I had started with this in the last week after having a meeting with my mentors. Currently, I have only completed the object-detection part in the pipeline.</p>
-<h4 id="object-detection-module">
-  Object-Detection Module
-  <a class="heading-link" href="#object-detection-module">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="object-detection-module">Object-Detection Module</h4>
 <p>One of the first steps in the pipeline is to extract objects(saints, their attributes etc) and then pass them up to the encoder of the transformer. The only problem was that there was no dataset with bounding boxes present to identify saints, Mary, Jesus etc. So the first task was again to curate. For this I used the images that I had from the curation process and annotated 200 of them with various classes down below.</p>
 <ul>
 <li>Angel</li>
@@ -367,223 +299,68 @@ After curating the images, the next step in the Emile Male Pipeline is to tag th
 <li>Sheep</li>
 <li>Staff</li>
 </ul>
-<h5 id="samples">
-  Samples
-  <a class="heading-link" href="#samples">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="samples">Samples</h5>
 <p><img src="/sample.png" alt="">
 Following are some of the samples I recorded while creating bounding boxes. I have tried to annotate as much details I could understand based on the captions I had captured. Initially the dataset I had collected 53 labels as a result of which the model was performing poorly. I think that is because we would need more instance of each objects if we annotate the image to a higher extent. Hence I reduced the no of labels to 13 and the model performed considerably better even with 200 images.</p>
-<p>Note: I performed further augmentation (i.e horizontally flipping some images) to increase this size to 300. The final dataset is available for download <a href="https://drive.google.com/file/d/1DVDH3Ac0CsUVuHirM9ZDU6G9_ALcz3Wu/view?usp=sharing"  class="external-link" target="_blank" rel="noopener">here</a>. The samples are in the YOLOv6 format.</p>
-<h5 id="the-detection">
-  The detection
-  <a class="heading-link" href="#the-detection">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<p>Note: I performed further augmentation (i.e horizontally flipping some images) to increase this size to 300. The final dataset is available for download <a href="https://drive.google.com/file/d/1DVDH3Ac0CsUVuHirM9ZDU6G9_ALcz3Wu/view?usp=sharing">here</a>. The samples are in the YOLOv6 format.</p>
+<h5 id="the-detection">The detection</h5>
 <p>After building the dataset the next step is to work on the model that can extract bounding-boxes i.e the iconographic content from the images. For this I decided to use YOLOv6. I had used other models like F-RCNN but I didn&rsquo;t get good results with it.</p>
-<h5 id="yolov6-architecture">
-  YOLOv6 Architecture.
-  <a class="heading-link" href="#yolov6-architecture">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="yolov6-architecture">YOLOv6 Architecture.</h5>
 <p><img src="/yolo.png" alt=""></p>
-<h4 id="working-of-yolo">
-  Working of YOLO
-  <a class="heading-link" href="#working-of-yolo">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="working-of-yolo">Working of YOLO</h4>
 <p><img src="/yolo_process.jpg" alt="">
 The working of YOLO is simple. What it does is that it divides an image into N grids where each cell has a size S*S. Each of these N grids is responsible for the detection and localization of the object it contains.</p>
 <p>The cells present in the grid are used to generate the B bounding boxes. These bounding boxes contain the label predicted and the probablity of object being present in the bounding box. Also the bounding box that is generated is relative to the location of the cell.</p>
 <p>The advantage of this procedure mentioned is that the detection and classification happens in a single step unlike F-RCNN where we have to first extract features then extract boxes from FPN.</p>
-<h4 id="results-with-yolo">
-  Results with YOLO
-  <a class="heading-link" href="#results-with-yolo">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<h5 id="example-1">
-  Example-1
-  <a class="heading-link" href="#example-1">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h4 id="results-with-yolo">Results with YOLO</h4>
+<h5 id="example-1">Example-1</h5>
 <p><img src="/object-detections.png" alt="">
 So after training the model for 400 epochs. We put the model to test. The above images are some good example that showcases the working of the model. We are able to distinguish various sections in the painting with ease. If we take for example the second image. It is of a young John the Baptist and I am sort of impressed that it is able to see that along with other attributes like a book and a cross. That means our model is learning something and is not just making naive guesses.</p>
-<h4 id="example-2">
-  Example-2
-  <a class="heading-link" href="#example-2">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="example-2">Example-2</h4>
 <p><img src="/object-detections-2.png" alt="">
 Following are the results where the model fails miserably. The second image for instance predicts the person in painting to be that of Mary but we know it is not that. In face if we observe the person detected is actually executing someone. This is probably because while annotating a lot of the images consisted of Mary in them and so maybe the model has some bias towards it. Another image I will consider is the fourth one where there is indeed Christ in the painting but the model is not getting the bounding box right. This might be because most paintings show Christ hanging on a cross so maybe it could explain why Christ is detected close to a cross.</p>
-<h4 id="how-to-improve">
-  How to improve?
-  <a class="heading-link" href="#how-to-improve">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="how-to-improve">How to improve?</h4>
 <p>I think the main thing is that we need more data so for that we will have to annotate more instances and also more variations in the art styles as there is no guarantee that everything would work if there was a stained glass painting. Next we also have to annotate more objects in the paintings. For instance if we observe the last painting in Example-2 we see there is also a lion in the painting which is usually seen in some St Jerome paintings. So those attributes will further help in building a rich image-captioning model.</p>
-<h4 id="quantitative-result-with-yolo-training">
-  Quantitative Result with YOLO Training.
-  <a class="heading-link" href="#quantitative-result-with-yolo-training">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
-<h5 id="splits">
-  Splits
-  <a class="heading-link" href="#splits">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h4 id="quantitative-result-with-yolo-training">Quantitative Result with YOLO Training.</h4>
+<h5 id="splits">Splits</h5>
 <ul>
 <li>Training = 241 Images</li>
 <li>Validation = 38 Images</li>
 <li>Test = 20 Images</li>
 </ul>
-<h5 id="results-on-test-set">
-  Results on test set
-  <a class="heading-link" href="#results-on-test-set">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="results-on-test-set">Results on test set</h5>
 <ol>
 <li>mAP over all the classes - 29.8%</li>
 <li>Precision - 38.5%</li>
 <li>Recall - 37.7%</li>
 </ol>
-<h5 id="training-graphs">
-  Training Graphs
-  <a class="heading-link" href="#training-graphs">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="training-graphs">Training Graphs</h5>
 <p><img src="/results.png" alt=""></p>
-<h3 id="whats-next">
-  What&rsquo;s next?
-  <a class="heading-link" href="#whats-next">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="whats-next">What&rsquo;s next?</h3>
 <p>While the model is not perfect, I still can give an overview of what comes next.</p>
 <p><img src="/next_steps.jpg" alt=""></p>
 <p>So the idea is to use the created object-detection module to extract features. The features extracted will be then fed into a linear layer which will give us a fixed-length representation. Next this will be passed into the encoder block which will give us some other representation to be used in the process for generating the captions.</p>
-<h3 id="timeline-for-the-next-phase">
-  Timeline for the next phase.
-  <a class="heading-link" href="#timeline-for-the-next-phase">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="timeline-for-the-next-phase">Timeline for the next phase.</h3>
 <p><img src="/tentative_timeline.png" alt=""></p>
 <p>The next phase will be focussed upon building the bigger module for the Emile Male pipeline i.e to caption paintings. Now that I have collected good amount of images. My next step is to work on the model proposed and the deployment of the pipeline.</p>
-<h3 id="what-can-i-do-better-in-the-next-phase">
-  What can i do better in the next phase.
-  <a class="heading-link" href="#what-can-i-do-better-in-the-next-phase">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="what-can-i-do-better-in-the-next-phase">What can i do better in the next phase.</h3>
 <ul>
 <li>The first thing is to improve the object-detection module such that it can extract more attributes.</li>
 <li>I think thinking from the respect from what are my inputs/outputs is important as I got heavily involved in curation because of which I didn&rsquo;t have enough to show during the first phase</li>
 <li>Keeping it simple I think.</li>
 </ul>
 
-      </div>
+</content>
 
 
-      <footer>
-        
 
-
-        
-        
-        
-        
-        
-      </footer>
-    </article>
-
-    
-  </section>
-
-    </div>
-
-    <footer class="footer">
-  <section class="container">
-    ©
-    
-      2019 -
-    
-    2024
-     Rishab Mudliar 
-    ·
-    
-    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
-    
-  </section>
-</footer>
+<p>
+  
+</p>
 
   </main>
-
-  
-
-  
-  
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
 
   
 </body>

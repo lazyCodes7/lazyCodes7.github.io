@@ -58,14 +58,11 @@ Let's understand this with an example.
 
 ![p7](/p7.png)
 
-{{< rawhtml >}}
-    <details>
+<details>
     <summary>See the description.</summary>
     <br>
     This small devotional object differs stylistically from Buglioni's Madonna and Child Enthroned with Saints Francis and Anthony Abbot (1921.1180), also in the museum's collection. In contrast to the other work, the faces of the Madonna and Child are significantly less expressive, and the passages of exposed skin have been left unglazed. The Madonna holds a nude Christ on her left arm and wears a mantle of blue with green lining and a maroon tunic with a yellow collar and cuffs. Her bright yellow shoes and the purple of her tunic are characteristic of Buglioni's color scheme and can also be seen in the other work. The tabernacle frame is probably contemporary to the figures, although it may not have been created specifically for this altarpiece. Buglioni likely worked in the studio of Andrea della Robbia, where he would have studied the family's techniques for glazing terracotta. The frame is classically inspired, with Corinthian capitals and Buglioni's characteristic egg and dart 
-    </details>
-
-{{< /rawhtml >}}
+</details>
 
 This is a random image taken from the Cleveland Musuem of Art that provides open access to 60k images. 
 

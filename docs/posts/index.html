@@ -1,281 +1,403 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>
-  Posts · rishab_m
-</title>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://lazyCodes7.github.io/images/favicon.png" />
+<title>Posts | Rishab Mudliar</title>
+<meta name="title" content="Posts" />
+<meta name="description" content="Hugo &#43; Bear = :heart:" />
+<meta name="keywords" content="google-summer-of-code," />
 
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
-
-
-
-
-<meta name="author" content="Rishab Mudliar">
-<meta name="description" content="Rishab&#39;s personal website">
-<meta name="keywords" content="blog,developer,personal">
-
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Posts"/>
-<meta name="twitter:description" content="Rishab&#39;s personal website"/>
 
 <meta property="og:title" content="Posts" />
-<meta property="og:description" content="Rishab&#39;s personal website" />
+<meta property="og:description" content="Hugo &#43; Bear = :heart:" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://lazycodes7.github.io/posts/" />
+<meta property="og:url" content="https://lazyCodes7.github.io/posts/" /><meta property="og:image" content="https://lazyCodes7.github.io/images/share.png"/><meta property="og:site_name" content="Rishab M" />
 
 
 
 
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://lazyCodes7.github.io/images/share.png"/>
 
-<link rel="canonical" href="https://lazycodes7.github.io/posts/">
-
-
-<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
-
-
-  
-  
-  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+<meta name="twitter:title" content="Posts"/>
+<meta name="twitter:description" content="Hugo &#43; Bear = :heart:"/>
 
 
 
+<meta itemprop="name" content="Posts">
+<meta itemprop="description" content="Hugo &#43; Bear = :heart:">
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
+  <link rel="alternate" type="application/rss+xml" href="https://lazyCodes7.github.io/posts/index.xml" title="Rishab Mudliar" />
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
 
-  
-    
-    
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
-  
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
 
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
 
- 
+  a:hover {
+    text-decoration: underline;
+  }
 
+  nav a {
+    margin-right: 8px;
+  }
 
+  strong,
+  b {
+    color: var(--heading-color);
+  }
 
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
 
-<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
-<link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
 
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  main {
+    line-height: 1.6;
+  }
 
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  table {
+    width: 100%;
+  }
 
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
 
-<link rel="alternate" type="application/rss+xml" href="/posts/index.xml" title="rishab_m" />
+  img {
+    max-width: 100%;
+  }
 
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
 
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
 
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
 
+  .title:hover {
+    text-decoration: none;
+  }
 
+  .title h1 {
+    font-size: 1.5em;
+  }
 
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
 
 </head>
 
+<body>
+  <header><a href="/" class="title">
+  <h2>Rishab Mudliar</h2>
+</a>
+<nav>
+<a href="/blogs/">Blogs</a>
 
+<a href="/posts/">GSoC</a>
 
+<a href="/archive/">Archive</a>
 
+<a href="/projects/">Projects</a>
 
-
-<body class="preload-transitions colorscheme-auto">
-  
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
-</div>
-
-
-  <main class="wrapper">
-    <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">
-      rishab_m
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/blogs/">Blogs</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">GSoC</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/projects/">Projects</a>
-            </li>
-          
-        
-        
-      </ul>
-    
-  </section>
 </nav>
-
-
-    <div class="content">
+</header>
+  <main>
+<content>
+  
+  <ul class="blog-posts">
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2023-01-27'>
+            27 Jan, 2023
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/experience/">Google Summer of Code at RedHenLab</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-09-09'>
+            09 Sep, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week16/">Week-16 (Coding Period) 2nd September - 11th September</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-09-02'>
+            02 Sep, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week15/">Week-15 (Coding Period) 25th August - 2nd September</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-08-25'>
+            25 Aug, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week14/">Week-14 (Coding Period) 18th August - 25th August</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-08-18'>
+            18 Aug, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week13/">Week-13 (Coding Period) 11th August - 18th August</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-08-09'>
+            09 Aug, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week12/">Week-12 (Coding Period) 4th August - 11th August</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-08-04'>
+            04 Aug, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week11/">Week-11 (Coding Period) 29th July - 4th August</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-07-26'>
+            26 Jul, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week10/">Week-10 (Phase-1 Report) 22nd July - 29th July</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-07-26'>
+            26 Jul, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week9/">Week-9 (Coding Period) 15th July - 22nd July</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-07-18'>
+            18 Jul, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week8/">Week-8 (Coding Period) 8th July - 15th July</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-07-11'>
+            11 Jul, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week7/">Week-7 (Coding Period) 1st July - 8th July</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-07-03'>
+            03 Jul, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week5/">Week-5&#43;6 (Coding Period) 17th June - 1st July</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-06-19'>
+            19 Jun, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week4/">Week-4 (Coding Period) 10th June - 17th June</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-06-12'>
+            12 Jun, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week3/">Week-3 (Community Bonding) 3rd June - 10th June</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-06-04'>
+            04 Jun, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week2/">Week-2 (Community Bonding) 27th May - 3th June</a>
+    </li>
+    
+    <li>
+      <span>
+        <i>
+          <time datetime='2022-05-27'>
+            27 May, 2022
+          </time>
+        </i>
+      </span>
+      <a href="https://lazyCodes7.github.io/posts/week1/">Week-1 (Community Bonding) 20th May - 27th May</a>
+    </li>
+    
+  </ul>
+  
+  <small>
+    <div>
       
-  <section class="container list">
-    <header>
-      <h1 class="title">
-        <a class="title-link" href="https://lazycodes7.github.io/posts/">
-          Posts
-        </a>
-      </h1>
-    </header>
-    
-    <ul><li>
-  <span class="date">January 27, 2023</span>
-  <a class="title" href="/posts/experience/">Google Summer of Code at RedHenLab</a>
-</li>
-<li>
-  <span class="date">September 9, 2022</span>
-  <a class="title" href="/posts/week16/">Week-16 (Coding Period) 2nd September - 11th September</a>
-</li>
-<li>
-  <span class="date">September 2, 2022</span>
-  <a class="title" href="/posts/week15/">Week-15 (Coding Period) 25th August - 2nd September</a>
-</li>
-<li>
-  <span class="date">August 25, 2022</span>
-  <a class="title" href="/posts/week14/">Week-14 (Coding Period) 18th August - 25th August</a>
-</li>
-<li>
-  <span class="date">August 18, 2022</span>
-  <a class="title" href="/posts/week13/">Week-13 (Coding Period) 11th August - 18th August</a>
-</li>
-<li>
-  <span class="date">August 9, 2022</span>
-  <a class="title" href="/posts/week12/">Week-12 (Coding Period) 4th August - 11th August</a>
-</li>
-<li>
-  <span class="date">August 4, 2022</span>
-  <a class="title" href="/posts/week11/">Week-11 (Coding Period) 29th July - 4th August</a>
-</li>
-<li>
-  <span class="date">July 26, 2022</span>
-  <a class="title" href="/posts/week10/">Week-10 (Phase-1 Report) 22nd July - 29th July</a>
-</li>
-<li>
-  <span class="date">July 26, 2022</span>
-  <a class="title" href="/posts/week9/">Week-9 (Coding Period) 15th July - 22nd July</a>
-</li>
-<li>
-  <span class="date">July 18, 2022</span>
-  <a class="title" href="/posts/week8/">Week-8 (Coding Period) 8th July - 15th July</a>
-</li>
-<li>
-  <span class="date">July 11, 2022</span>
-  <a class="title" href="/posts/week7/">Week-7 (Coding Period) 1st July - 8th July</a>
-</li>
-<li>
-  <span class="date">July 3, 2022</span>
-  <a class="title" href="/posts/week5/">Week-5&#43;6 (Coding Period) 17th June - 1st July</a>
-</li>
-<li>
-  <span class="date">June 19, 2022</span>
-  <a class="title" href="/posts/week4/">Week-4 (Coding Period) 10th June - 17th June</a>
-</li>
-<li>
-  <span class="date">June 12, 2022</span>
-  <a class="title" href="/posts/week3/">Week-3 (Community Bonding) 3rd June - 10th June</a>
-</li>
-<li>
-  <span class="date">June 4, 2022</span>
-  <a class="title" href="/posts/week2/">Week-2 (Community Bonding) 27th May - 3th June</a>
-</li>
-<li>
-  <span class="date">May 27, 2022</span>
-  <a class="title" href="/posts/week1/">Week-1 (Community Bonding) 20th May - 27th May</a>
-</li>
-</ul>
-
-    
-
-
-
-
-
-
-  </section>
-
     </div>
-
-    <footer class="footer">
-  <section class="container">
-    ©
-    
-      2019 -
-    
-    2024
-     Rishab Mudliar 
-    ·
-    
-    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
-    
-  </section>
-</footer>
+  </small>
+  
+</content>
 
   </main>
-
-  
-
-  
-  
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
 
   
 </body>

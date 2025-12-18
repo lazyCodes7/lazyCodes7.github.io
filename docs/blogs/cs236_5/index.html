@@ -1,174 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 
 <head>
-  <title>
-  CS236 Deep Generative Models (Part5) · rishab_m
-</title>
+  <meta http-equiv="X-Clacks-Overhead" content="GNU Terry Pratchett" />
   <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="light dark">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="shortcut icon" href="https://lazyCodes7.github.io/images/favicon.png" />
+<title>CS236 Deep Generative Models (Part5) | Rishab Mudliar</title>
+<meta name="title" content="CS236 Deep Generative Models (Part5)" />
+<meta name="description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap  Autoregressive models:  Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations   Autoregressive models   Pros:
+ Easy to evaluate likelihoods Easy to train    Cons:
+ Requires an ordering Generation is sequential Cannot learn features in an unsupervised way      Latent Variable Models: Introduction   Lots of variability in images x due to gender, eye color, hair color, pose, etc." />
+<meta name="keywords" content="" />
 
-
-<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests; block-all-mixed-content; default-src 'self'; child-src 'self'; font-src 'self' https://fonts.gstatic.com https://cdn.jsdelivr.net/; form-action 'self'; frame-src 'self'; img-src 'self'; object-src 'none'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com/ https://cdn.jsdelivr.net/; script-src 'self' 'unsafe-inline' https://www.google-analytics.com; prefetch-src 'self'; connect-src 'self' https://www.google-analytics.com;">
-
-
-
-
-<meta name="author" content="Rishab Mudliar">
-<meta name="description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
-Recap Link to heading Autoregressive models: Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations Autoregressive models Pros:
-Easy to evaluate likelihoods Easy to train Cons:
-Requires an ordering Generation is sequential Cannot learn features in an unsupervised way Latent Variable Models: Introduction Link to heading Lots of variability in images x due to gender, eye color, hair color, pose, etc.">
-<meta name="keywords" content="blog,developer,personal">
-
-<meta name="twitter:card" content="summary"/><meta name="twitter:title" content="CS236 Deep Generative Models (Part5)"/>
-<meta name="twitter:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
-Recap Link to heading Autoregressive models: Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations Autoregressive models Pros:
-Easy to evaluate likelihoods Easy to train Cons:
-Requires an ordering Generation is sequential Cannot learn features in an unsupervised way Latent Variable Models: Introduction Link to heading Lots of variability in images x due to gender, eye color, hair color, pose, etc."/>
 
 <meta property="og:title" content="CS236 Deep Generative Models (Part5)" />
-<meta property="og:description" content="About Link to heading These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
-Recap Link to heading Autoregressive models: Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations Autoregressive models Pros:
-Easy to evaluate likelihoods Easy to train Cons:
-Requires an ordering Generation is sequential Cannot learn features in an unsupervised way Latent Variable Models: Introduction Link to heading Lots of variability in images x due to gender, eye color, hair color, pose, etc." />
+<meta property="og:description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap  Autoregressive models:  Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations   Autoregressive models   Pros:
+ Easy to evaluate likelihoods Easy to train    Cons:
+ Requires an ordering Generation is sequential Cannot learn features in an unsupervised way      Latent Variable Models: Introduction   Lots of variability in images x due to gender, eye color, hair color, pose, etc." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://lazycodes7.github.io/blogs/cs236_5/" /><meta property="article:section" content="blogs" />
+<meta property="og:url" content="https://lazyCodes7.github.io/blogs/cs236_5/" /><meta property="og:image" content="https://lazyCodes7.github.io/images/share.png"/><meta property="article:section" content="blogs" />
 <meta property="article:published_time" content="2024-02-11T12:48:56+05:30" />
-<meta property="article:modified_time" content="2024-02-11T12:48:56+05:30" />
+<meta property="article:modified_time" content="2024-02-11T12:48:56+05:30" /><meta property="og:site_name" content="Rishab M" />
 
 
 
 
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://lazyCodes7.github.io/images/share.png"/>
 
-<link rel="canonical" href="https://lazycodes7.github.io/blogs/cs236_5/">
-
-
-<link rel="preload" href="/fonts/forkawesome-webfont.woff2?v=1.2.0" as="font" type="font/woff2" crossorigin>
-
-
-  
-  
-  <link rel="stylesheet" href="/css/coder.min.e1bdf152d93b060b06ba5d496486ed9c201a8b95d335e035beb5faebe3b61cad.css" integrity="sha256-4b3xUtk7BgsGul1JZIbtnCAai5XTNeA1vrX66&#43;O2HK0=" crossorigin="anonymous" media="screen" />
+<meta name="twitter:title" content="CS236 Deep Generative Models (Part5)"/>
+<meta name="twitter:description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap  Autoregressive models:  Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations   Autoregressive models   Pros:
+ Easy to evaluate likelihoods Easy to train    Cons:
+ Requires an ordering Generation is sequential Cannot learn features in an unsupervised way      Latent Variable Models: Introduction   Lots of variability in images x due to gender, eye color, hair color, pose, etc."/>
 
 
 
+<meta itemprop="name" content="CS236 Deep Generative Models (Part5)">
+<meta itemprop="description" content="About These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.
+Recap  Autoregressive models:  Chain rule based factorization is fully general Compact representation via conditional independence and/or neural parameterizations   Autoregressive models   Pros:
+ Easy to evaluate likelihoods Easy to train    Cons:
+ Requires an ordering Generation is sequential Cannot learn features in an unsupervised way      Latent Variable Models: Introduction   Lots of variability in images x due to gender, eye color, hair color, pose, etc."><meta itemprop="datePublished" content="2024-02-11T12:48:56+05:30" />
+<meta itemprop="dateModified" content="2024-02-11T12:48:56+05:30" />
+<meta itemprop="wordCount" content="1320"><meta itemprop="image" content="https://lazyCodes7.github.io/images/share.png"/>
+<meta itemprop="keywords" content="" />
+<meta name="referrer" content="no-referrer-when-downgrade" />
 
+  <style>
+  :root {
+    --width: 720px;
+    --font-main: Verdana, sans-serif;
+    --font-secondary: Verdana, sans-serif;
+    --font-scale: 1em;
+    --background-color: #fff;
+    --heading-color: #222;
+    --text-color: #444;
+    --link-color: #3273dc;
+    --visited-color: #8b6fcb;
+    --blockquote-color: #222;
+  }
 
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --background-color: #01242e;
+      --heading-color: #eee;
+      --text-color: #ddd;
+      --link-color: #8cc2dd;
+      --visited-color: #8b6fcb;
+      --blockquote-color: #ccc;
+    }
+  }
 
-  
-    
-    
-    <link rel="stylesheet" href="/css/coder-dark.min.a00e6364bacbc8266ad1cc81230774a1397198f8cfb7bcba29b7d6fcb54ce57f.css" integrity="sha256-oA5jZLrLyCZq0cyBIwd0oTlxmPjPt7y6KbfW/LVM5X8=" crossorigin="anonymous" media="screen" />
-  
+  body {
+    font-family: var(--font-secondary);
+    font-size: var(--font-scale);
+    margin: auto;
+    padding: 20px;
+    max-width: var(--width);
+    text-align: left;
+    background-color: var(--background-color);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    line-height: 1.5;
+    color: var(--text-color);
+  }
 
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-main);
+    color: var(--heading-color);
+  }
 
+  a {
+    color: var(--link-color);
+    cursor: pointer;
+    text-decoration: none;
+  }
 
- 
+  a:hover {
+    text-decoration: underline;
+  }
 
+  nav a {
+    margin-right: 8px;
+  }
 
+  strong,
+  b {
+    color: var(--heading-color);
+  }
 
+  button {
+    margin: 0;
+    cursor: pointer;
+  }
 
-<link rel="icon" type="image/svg+xml" href="/images/favicon.svg" sizes="any">
-<link rel="icon" type="image/png" href="/images/rm.png" sizes="32x32">
-<link rel="icon" type="image/png" href="/images/favicon-16x16.png" sizes="16x16">
+  time {
+    font-family: monospace;
+    font-style: normal;
+    font-size: 15px;
+  }
 
-<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-<link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+  main {
+    line-height: 1.6;
+  }
 
-<link rel="manifest" href="/site.webmanifest">
-<link rel="mask-icon" href="/images/safari-pinned-tab.svg" color="#5bbad5">
+  table {
+    width: 100%;
+  }
 
+  hr {
+    border: 0;
+    border-top: 1px dashed;
+  }
 
+  img {
+    max-width: 100%;
+  }
 
+  code {
+    font-family: monospace;
+    padding: 2px;
+    border-radius: 3px;
+  }
 
+  blockquote {
+    border-left: 1px solid #999;
+    color: var(--blockquote-color);
+    padding-left: 20px;
+    font-style: italic;
+  }
 
+  footer {
+    padding: 25px 0;
+    text-align: center;
+  }
 
+  .title:hover {
+    text-decoration: none;
+  }
 
+  .title h1 {
+    font-size: 1.5em;
+  }
 
+  .inline {
+    width: auto !important;
+  }
+
+  .highlight,
+  .code {
+    border-radius: 3px;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    overflow-x: auto;
+  }
+
+   
+  ul.blog-posts {
+    list-style-type: none;
+    padding: unset;
+  }
+
+  ul.blog-posts li {
+    display: flex;
+  }
+
+  ul.blog-posts li span {
+    flex: 0 0 130px;
+  }
+
+  ul.blog-posts li a:visited {
+    color: var(--visited-color);
+  }
+
+</style>
 
 </head>
 
+<body>
+  <header><a href="/" class="title">
+  <h2>Rishab Mudliar</h2>
+</a>
+<nav>
+<a href="/blogs/">Blogs</a>
 
+<a href="/posts/">GSoC</a>
 
+<a href="/archive/">Archive</a>
 
+<a href="/projects/">Projects</a>
 
-
-<body class="preload-transitions colorscheme-auto">
-  
-<div class="float-container">
-    <a id="dark-mode-toggle" class="colorscheme-toggle">
-        <i class="fa fa-adjust fa-fw" aria-hidden="true"></i>
-    </a>
-</div>
-
-
-  <main class="wrapper">
-    <nav class="navigation">
-  <section class="container">
-    <a class="navigation-title" href="/">
-      rishab_m
-    </a>
-    
-      <input type="checkbox" id="menu-toggle" />
-      <label class="menu-button float-right" for="menu-toggle">
-        <i class="fa fa-bars fa-fw" aria-hidden="true"></i>
-      </label>
-      <ul class="navigation-list">
-        
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/about/">About</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/blogs/">Blogs</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/posts/">GSoC</a>
-            </li>
-          
-            <li class="navigation-item">
-              <a class="navigation-link" href="/projects/">Projects</a>
-            </li>
-          
-        
-        
-      </ul>
-    
-  </section>
 </nav>
+</header>
+  <main>
 
-
-    <div class="content">
-      
-  <section class="container page">
-  <article>
-    <header>
-      <h1 class="title">
-        <a class="title-link" href="https://lazycodes7.github.io/blogs/cs236_5/">
-          CS236 Deep Generative Models (Part5)
-        </a>
-      </h1>
-    </header>
-
-    <h1 id="about">
-  About
-  <a class="heading-link" href="#about">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h1>
+<content>
+  <h1 id="about">About</h1>
 <p>These blogs are my notes that represent my interpretation of the CS236 course taught by Stefano.</p>
-<h2 id="recap">
-  Recap
-  <a class="heading-link" href="#recap">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+<h2 id="recap">Recap</h2>
 <ul>
 <li>Autoregressive models:
 <ul>
@@ -196,13 +253,7 @@ Requires an ordering Generation is sequential Cannot learn features in an unsupe
 </ul>
 </li>
 </ul>
-<h2 id="latent-variable-models-introduction">
-  Latent Variable Models: Introduction
-  <a class="heading-link" href="#latent-variable-models-introduction">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h2>
+<h2 id="latent-variable-models-introduction">Latent Variable Models: Introduction</h2>
 <ul>
 <li>
 <p>Lots of variability in images x due to gender, eye color, hair color,
@@ -213,13 +264,7 @@ variation are not explicitly available (latent).</p>
 <p>Idea: explicitly model these factors using latent variables z</p>
 </li>
 </ul>
-<h3 id="latent-variable-models-motivation">
-  Latent Variable Models: Motivation
-  <a class="heading-link" href="#latent-variable-models-motivation">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="latent-variable-models-motivation">Latent Variable Models: Motivation</h3>
 <p><img src="/application44.png" alt="alt text"></p>
 <ul>
 <li>Only shaded variables x are observed in the data (pixel values)</li>
@@ -231,13 +276,7 @@ variation are not explicitly available (latent).</p>
 </li>
 </ul>
 <p>Challenge: Very difficult to specify these conditionals by hand</p>
-<h3 id="deep-latent-variable-models">
-  Deep Latent Variable Models
-  <a class="heading-link" href="#deep-latent-variable-models">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="deep-latent-variable-models">Deep Latent Variable Models</h3>
 <p><img src="/application45.png" alt="alt text"></p>
 <ul>
 <li>Use neural networks to model the conditionals (deep latent variable models):
@@ -250,13 +289,7 @@ variation are not explicitly available (latent).</p>
 factors of variation (features). Unsupervised representation learning.</li>
 <li>As before, features can be computed via p(z | x)</li>
 </ul>
-<h3 id="mixture-of-gaussians-a-shallow-latent-variable-model">
-  Mixture of Gaussians: a Shallow Latent Variable Model
-  <a class="heading-link" href="#mixture-of-gaussians-a-shallow-latent-variable-model">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="mixture-of-gaussians-a-shallow-latent-variable-model">Mixture of Gaussians: a Shallow Latent Variable Model</h3>
 <ul>
 <li>z ∼ Categorical(1, · · · , K )</li>
 <li>p(x | z = k) = N (µk , Σk )</li>
@@ -271,13 +304,7 @@ factors of variation (features). Unsupervised representation learning.</li>
 <p>By learning p(x|z) we can do clustering by using p(z|x) as shown in the above image.</p>
 <p>Another advantage is that Gaussian distribution is a simple one. And might not model p(x|z) properly but by mixing multiple Gaussian models for each conditional we get a complex distribution that can approximate the true data distribution</p>
 <p><img src="/application48.png" alt="alt text"></p>
-<h3 id="variational-autoencoder">
-  Variational Autoencoder
-  <a class="heading-link" href="#variational-autoencoder">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="variational-autoencoder">Variational Autoencoder</h3>
 <p>Extending the concept of mixture of gaussians discussed in last section, a variational autoencoder can be thought of as a mixture of gaussians of infinite Gaussians</p>
 <ul>
 <li>z ∼ N (0, I )</li>
@@ -285,13 +312,7 @@ factors of variation (features). Unsupervised representation learning.</li>
 <li>Even though p(x | z) is simple, the marginal p(x) is very
 complex/flexible</li>
 </ul>
-<h3 id="marginal-likelihood">
-  Marginal Likelihood
-  <a class="heading-link" href="#marginal-likelihood">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="marginal-likelihood">Marginal Likelihood</h3>
 <p><img src="/application51.png" alt="alt text"></p>
 <ul>
 <li>Suppose some pixel values are missing at train time (e.g., top half)</li>
@@ -302,13 +323,7 @@ What is the probability p(X = x̄; θ) of observing a training data point x̄?
 <img src="/application50.png" alt="alt text"></li>
 <li>Need to consider all possible ways to complete the image (fill green part)</li>
 </ul>
-<h4 id="marginal-likelihood-autoencoder">
-  Marginal Likelihood (Autoencoder)
-  <a class="heading-link" href="#marginal-likelihood-autoencoder">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="marginal-likelihood-autoencoder">Marginal Likelihood (Autoencoder)</h4>
 <p>A mixture of an infinite number of Gaussians:</p>
 <ul>
 <li>z ∼ N (0, I )</li>
@@ -317,13 +332,7 @@ What is the probability p(X = x̄; θ) of observing a training data point x̄?
 <li>Suppose we have a model for the joint distribution. What is the probability p(X = x̄; θ) of observing a training data point x̄?
 <img src="/application52.png" alt="alt text"></li>
 </ul>
-<h4 id="marginal-likelihood-continued">
-  Marginal Likelihood Continued..
-  <a class="heading-link" href="#marginal-likelihood-continued">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="marginal-likelihood-continued">Marginal Likelihood Continued..</h4>
 <ul>
 <li>Considering the same joint distribution used to describe unobserved variables i.e <code>p(X, Z; θ)</code></li>
 <li>We have a dataset D, where for each datapoint the X variables are observed (e.g., pixel values) and the variables Z are never observed (e.g., cluster or class id.) D = {x(1) , · · · , x(M) }.</li>
@@ -335,13 +344,7 @@ What is the probability p(X = x̄; θ) of observing a training data point x̄?
 <li>Need approximations. One gradient evaluation per training data point
 x ∈ D, so approximation needs to be cheap.</li>
 </ul>
-<h4 id="using-monte-carlo">
-  Using Monte Carlo
-  <a class="heading-link" href="#using-monte-carlo">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="using-monte-carlo">Using Monte Carlo</h4>
 <p>Likelihood function pθ (x) for Partially Observed Data is hard to compute:</p>
 <p><img src="/application55.png" alt="alt text"></p>
 <p>We can think of it as an (intractable) expectation. Monte Carlo to the rescue:</p>
@@ -355,13 +358,7 @@ completions don’t make sense). Some completions have large pθ (x, z) but we w
 never ”hit” likely completions by uniform random sampling. Need a clever way to
 select z(j) to reduce variance of the estimator.</p>
 <p>What do we do? Could try to learn a way to sample z that is more likely to help us observe p(x)..</p>
-<h4 id="importance-sampling">
-  Importance Sampling
-  <a class="heading-link" href="#importance-sampling">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="importance-sampling">Importance Sampling</h4>
 <p>Instead of using a z/z solution we introduce q(z) where q(z) is a probablity distribution from which we sample z that are more likely to complete x.</p>
 <p><img src="/application57.png" alt="alt text"></p>
 <p>Monte Carlo to the rescue:</p>
@@ -370,13 +367,7 @@ select z(j) to reduce variance of the estimator.</p>
 <li>Approximate expectation with sample average
 <img src="/application58.png" alt="alt text"></li>
 </ul>
-<h4 id="calculating-log-likelihood">
-  Calculating log likelihood
-  <a class="heading-link" href="#calculating-log-likelihood">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="calculating-log-likelihood">Calculating log likelihood</h4>
 <p>Likelihood function pθ (x) for Partially Observed Data is hard to compute:</p>
 <p><img src="/application57.png" alt="alt text"></p>
 <p>Monte Carlo to the rescue:</p>
@@ -391,25 +382,13 @@ it as:</p>
 <p>And for the same case of k=1 if we calculate the log of expectation without the monte carlo approximation. We see a potential problem</p>
 <p><img src="/application60.png" alt="alt text"></p>
 <p>On the right hand side is the log of the expectation of sampling a single z from q(z) and on the left hand side is the output of the monte carlo approximation. It is clear that both of the values are not the same thing for k=1. For a higher k it might be same but for the base case we see that our estimation is not good.</p>
-<h3 id="evidence-lower-bound">
-  Evidence Lower Bound
-  <a class="heading-link" href="#evidence-lower-bound">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h3>
+<h3 id="evidence-lower-bound">Evidence Lower Bound</h3>
 <p>The Log-Likehlihood for partially missing data is hard to compute.</p>
 <p><img src="/application61.png" alt="alt text">
 log() is a concave function. log(px + (1 − p)x′) ≥ p log(x) + (1 − p) log(x′).</p>
 <p>Using Jensen Equality we approximate the Log Likelihood as given. It is called ELBO or Evidence Lower Bound where our goal is to maximize the ELBO as much as possible</p>
 <p><img src="/application63.png" alt="alt text"></p>
-<h4 id="variational-inference">
-  Variational Inference
-  <a class="heading-link" href="#variational-inference">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="variational-inference">Variational Inference</h4>
 <p>ELBO is maximum or equal when q = p(z|x; θ)</p>
 <p>Proof:
 <img src="/application66.png" alt="alt text"></p>
@@ -417,30 +396,18 @@ log() is a concave function. log(px + (1 − p)x′) ≥ p log(x) + (1 − p) lo
 <li>Confirms our previous importance sampling intuition: we should
 choose likely completions.</li>
 </ul>
-<h5 id="kl-divergence-relation-with-elbo">
-  KL-Divergence relation with ELBO
-  <a class="heading-link" href="#kl-divergence-relation-with-elbo">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="kl-divergence-relation-with-elbo">KL-Divergence relation with ELBO</h5>
 <p>Suppose q(z) is any probability distribution over the hidden variables.
 A little bit of algebra reveals</p>
 <p><img src="/application67.png" alt="alt text"></p>
-<p>Corresponding proof. <a href="https://chrisorm.github.io/VI-ELBO.html"  class="external-link" target="_blank" rel="noopener">External link</a></p>
+<p>Corresponding proof. <a href="https://chrisorm.github.io/VI-ELBO.html">External link</a></p>
 <p><img src="/proof1.png" alt=""></p>
 <p>Equality holds if q = p(z|x; θ) because DKL (q(z)∥p(z|x; θ))=0</p>
 <p><img src="/application68.png" alt="alt text"></p>
 <p>Then we can rewrite as follows.</p>
 <p><img src="/application69.png" alt="alt text"></p>
 <p>Which means -&gt; Minimizing KL-Divergence is equal to maximimzing ELBO</p>
-<h4 id="computing-q">
-  Computing q
-  <a class="heading-link" href="#computing-q">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="computing-q">Computing q</h4>
 <p><img src="/application70.png" alt="alt text"></p>
 <ul>
 <li>What if the posterior p(z|x; θ) is intractable to compute?</li>
@@ -455,13 +422,7 @@ q(z; ϕ) = N (ϕ1 , ϕ2 )</li>
 p(z|x; θ). In the figure, the posterior p(z|x; θ) (blue) is better approximated
 by N (2, 2) (orange) than N (−4, 0.75) (green)</li>
 </ul>
-<h5 id="variational-approximation-of-the-posterior">
-  Variational approximation of the posterior
-  <a class="heading-link" href="#variational-approximation-of-the-posterior">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h5>
+<h5 id="variational-approximation-of-the-posterior">Variational approximation of the posterior</h5>
 <p><img src="/application51.png" alt="alt text"></p>
 <ul>
 <li>
@@ -481,13 +442,7 @@ variables (missing pixels in this example) xtop parameterized by ϕ
 <li>Is ϕi ≈ 1 for pixels i corresponding to the top part of digit 9 a good
 approximation? Yes</li>
 </ul>
-<h4 id="closing-notes">
-  Closing notes
-  <a class="heading-link" href="#closing-notes">
-    <i class="fa fa-link" aria-hidden="true" title="Link to heading"></i>
-    <span class="sr-only">Link to heading</span>
-  </a>
-</h4>
+<h4 id="closing-notes">Closing notes</h4>
 <p><img src="/application72.png" alt="alt text"></p>
 <p>The better q(z; ϕ) can approximate the posterior p(z|x; θ), the smaller
 DKL (q(z; ϕ)∥p(z|x; θ)) we can achieve, the closer ELBO will be to
@@ -514,69 +469,17 @@ over a dataset</p>
 </li>
 </ul>
 
-  </article>
-</section>
+</content>
 
+
+
+<p>
   
-
-    </div>
-
-    <footer class="footer">
-  <section class="container">
-    ©
-    
-      2019 -
-    
-    2024
-     Rishab Mudliar 
-    ·
-    
-    Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> & <a href="https://github.com/luizdepra/hugo-coder/" target="_blank" rel="noopener">Coder</a>.
-    
-  </section>
-</footer>
+</p>
 
   </main>
-
-  
-
-  
-  
-  <script src="/js/coder.min.6ae284be93d2d19dad1f02b0039508d9aab3180a12a06dcc71b0b0ef7825a317.js" integrity="sha256-auKEvpPS0Z2tHwKwA5UI2aqzGAoSoG3McbCw73gloxc="></script>
-  
-
-  
-
-  
-
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
+  <footer>Made with <a href="https://github.com/janraasch/hugo-bearblog/">Hugo ʕ•ᴥ•ʔ Bear</a>
+</footer>
 
   
 </body>

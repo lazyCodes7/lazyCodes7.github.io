@@ -2,108 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lazycodes7.github.io/blogs/</loc>
+    <loc>https://lazyCodes7.github.io/</loc>
+    <lastmod>2024-02-17T12:09:56+05:30</lastmod>
+    <priority>0</priority>
+  </url><url>
+    <loc>https://lazyCodes7.github.io/blogs/</loc>
     <lastmod>2024-02-17T12:09:56+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/blogs/cs236_6/</loc>
+    <loc>https://lazyCodes7.github.io/blogs/cs236_6/</loc>
     <lastmod>2024-02-17T12:09:56+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/</loc>
-    <lastmod>2024-02-17T12:09:56+05:30</lastmod>
-  </url><url>
-    <loc>https://lazycodes7.github.io/blogs/cs236_5/</loc>
+    <loc>https://lazyCodes7.github.io/blogs/cs236_5/</loc>
     <lastmod>2024-02-11T12:48:56+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/blogs/cs236_4/</loc>
+    <loc>https://lazyCodes7.github.io/blogs/cs236_4/</loc>
     <lastmod>2024-02-05T11:27:56+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/blogs/cs236_3/</loc>
+    <loc>https://lazyCodes7.github.io/blogs/cs236_3/</loc>
     <lastmod>2024-01-26T15:27:56+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/blogs/cs236_2/</loc>
+    <loc>https://lazyCodes7.github.io/blogs/cs236_2/</loc>
     <lastmod>2024-01-24T15:27:56+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/blogs/cs236_1/</loc>
+    <loc>https://lazyCodes7.github.io/blogs/cs236_1/</loc>
     <lastmod>2024-01-19T15:27:56+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/authors/</loc>
+    <loc>https://lazyCodes7.github.io/categories/google-summer-of-code/</loc>
     <lastmod>2023-01-27T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/categories/</loc>
+    <loc>https://lazyCodes7.github.io/posts/experience/</loc>
     <lastmod>2023-01-27T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/categories/google-summer-of-code/</loc>
+    <loc>https://lazyCodes7.github.io/posts/</loc>
     <lastmod>2023-01-27T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/experience/</loc>
-    <lastmod>2023-01-27T14:56:36+05:30</lastmod>
-  </url><url>
-    <loc>https://lazycodes7.github.io/posts/</loc>
-    <lastmod>2023-01-27T14:56:36+05:30</lastmod>
-  </url><url>
-    <loc>https://lazycodes7.github.io/authors/rishab-mudliar/</loc>
-    <lastmod>2023-01-27T14:56:36+05:30</lastmod>
-  </url><url>
-    <loc>https://lazycodes7.github.io/posts/week16/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week16/</loc>
     <lastmod>2022-09-09T23:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week15/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week15/</loc>
     <lastmod>2022-09-02T23:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week14/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week14/</loc>
     <lastmod>2022-08-25T23:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week13/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week13/</loc>
     <lastmod>2022-08-18T23:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week12/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week12/</loc>
     <lastmod>2022-08-09T23:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week11/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week11/</loc>
     <lastmod>2022-08-04T23:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week10/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week10/</loc>
     <lastmod>2022-07-26T23:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week9/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week9/</loc>
     <lastmod>2022-07-26T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week8/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week8/</loc>
     <lastmod>2022-07-18T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week7/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week7/</loc>
     <lastmod>2022-07-11T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week5/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week5/</loc>
     <lastmod>2022-07-03T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week4/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week4/</loc>
     <lastmod>2022-06-19T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week3/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week3/</loc>
     <lastmod>2022-06-12T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week2/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week2/</loc>
     <lastmod>2022-06-04T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/posts/week1/</loc>
+    <loc>https://lazyCodes7.github.io/posts/week1/</loc>
     <lastmod>2022-05-27T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/blogs/bertelsmann-scholarship/</loc>
+    <loc>https://lazyCodes7.github.io/archive/</loc>
     <lastmod>2021-03-23T15:27:56+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/blogs/networking-protocols/</loc>
+    <loc>https://lazyCodes7.github.io/archive/bertelsmann-scholarship/</loc>
+    <lastmod>2021-03-23T15:27:56+05:30</lastmod>
+  </url><url>
+    <loc>https://lazyCodes7.github.io/archive/networking-protocols/</loc>
     <lastmod>2020-03-28T14:56:36+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/blogs/first/</loc>
+    <loc>https://lazyCodes7.github.io/archive/first/</loc>
     <lastmod>2020-01-01T14:27:35+05:30</lastmod>
   </url><url>
-    <loc>https://lazycodes7.github.io/about/</loc>
-  </url><url>
-    <loc>https://lazycodes7.github.io/projects/</loc>
-  </url><url>
-    <loc>https://lazycodes7.github.io/series/</loc>
-  </url><url>
-    <loc>https://lazycodes7.github.io/tags/</loc>
+    <loc>https://lazyCodes7.github.io/projects/</loc>
+    <priority>0</priority>
   </url>
 </urlset>

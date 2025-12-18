@@ -1,0 +1,2 @@
+User-Agent: *
+Sitemap: https://lazyCodes7.github.io/sitemap.xml
