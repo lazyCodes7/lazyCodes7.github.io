@@ -86,5 +86,10 @@ url = "/projects/"
 
 [[languages.en.menu.main]]
 name = "Archive"
-weight = 3
+weight = 4
 url = "/archive/"
+
+[[languages.en.menu.main]]
+name = "CV"
+weight = 5
+url = "/cv/cv.pdf"
